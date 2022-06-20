@@ -1,0 +1,82 @@
+.swiper-container {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  touch-action: pan-y;
+}
+
+.swiper-list {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  transition: transform 0.3s ease-out;
+}
+
+.swiper-list-large {
+  display: flex;
+  flex-direction: column;
+  height: 65vmin;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  transition: transform 0.3s ease-out;
+}
+
+.swiper-list-large.is-swiping {
+  transition: none;
+}
+
+.swiper-list.is-swiping {
+  transition: none;
+}
+
+.swiper-indicator {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+}
+
+.swiper-indicator-item {
+  width: 12px;
+  height: 12px;
+  margin: 0 4px;
+  border-radius: 50%;
+  background-color: #cccccc;
+  cursor: pointer;
+}
+
+.swiper-indicator-item-large {
+  /* width: 70%; */
+  height: max-content;
+  margin: 0 4px;
+  /* border-radius: 50%; */
+  color: #cccccc;
+  cursor: pointer;
+  text-align: left;
+}
+
+.swiper-indicator-item.active {
+  background-color: #345995;
+}
+.swiper-indicator-item-large.active {
+  color: #345995;
+}
+
+#small{
+  display: none;
+}
+#large{
+  display: flex;
+}
+
+@media screen and (max-width: 1024px) {
+  #small{
+    display: block;
+  }
+  #large{
+    display: none;
+  }
+}

@@ -39,11 +39,6 @@
     "babel-loader": "^8.2.5",
     "eslint": "8.17.0",
     "eslint-config-next": "12.1.6",
-    "eslint-plugin-storybook": "^0.5.12",
-    "nodemon": "^2.0.15",
-    "sb": "^6.5.9"
-  },
-  "resolve": {
-    "react": "18.2.0"
+    "nodemon": "^2.0.15"
   }
 }

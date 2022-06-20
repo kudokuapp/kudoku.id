@@ -9,7 +9,7 @@ const Placeholder = ({ }) => {
     const [flip, setFlip] = useState("placeholder");
 
     const startVerify = async () => {
-        await axios.get('http://localhost:3000/verify/getcode', {
+        await axios.get('https://kudoku.id/verify/getcode', {
             params: {
                 ver: phoneNumber
             }
@@ -22,7 +22,7 @@ const Placeholder = ({ }) => {
     };
 
     const checkVerify = async () => {
-        await axios.get('http://localhost:3000/verify/verifycode', {
+        await axios.get('https://kudoku.id/verify/verifycode', {
             params: {
                 ver: phoneNumber,
                 cipher: cipher

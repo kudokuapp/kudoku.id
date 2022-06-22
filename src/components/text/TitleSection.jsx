@@ -6,7 +6,7 @@ const TitleSectionPrimary = () => {
         <>
         <Title.Consumer>
         {(titleSection) => {
-            return <h1 className="text-left text-5xl font-bold">{titleSection}</h1>;
+            return <h1 className="text-left text-4xl font-bold">{titleSection}</h1>;
         }}
         </Title.Consumer>
         </>
@@ -18,7 +18,7 @@ const TitleSectionPrimaryCenter = () => {
         <>
         <Title.Consumer>
         {(titleSection) => {
-            return <h1 className="text-center text-5xl font-bold">{titleSection}</h1>;
+            return <h1 className="text-center text-4xl font-bold">{titleSection}</h1>;
         }}
         </Title.Consumer>
         </>
@@ -30,7 +30,7 @@ const TitleSectionSecondary = () => {
         <>
         <Title.Consumer>
         {(titleSection) => {
-            return <h1 className="text-left text-5xl font-bold text-secondary">{titleSection}</h1>;
+            return <h1 className="text-left text-4xl font-bold text-secondary">{titleSection}</h1>;
         }}
         </Title.Consumer>
         </>
@@ -42,7 +42,7 @@ const TitleSectionWhite = () => {
         <>
         <Title.Consumer>
         {(titleSection) => {
-            return <h1 className="text-left text-5xl font-bold text-white">{titleSection}</h1>;
+            return <h1 className="text-left text-4xl font-bold text-white">{titleSection}</h1>;
         }}
         </Title.Consumer>
         </>
@@ -54,7 +54,7 @@ const TitleSectionWhiteCenter = () => {
         <>
         <Title.Consumer>
         {(titleSection) => {
-            return <h1 className="text-center text-5xl font-bold text-white">{titleSection}</h1>;
+            return <h1 className="text-center text-4xl font-bold text-white">{titleSection}</h1>;
         }}
         </Title.Consumer>
         </>
@@ -66,7 +66,7 @@ const TitleSectionBlack = () => {
         <>
         <Title.Consumer>
         {(titleSection) => {
-            return <h1 className="text-left text-5xl font-bold text-black">{titleSection}</h1>;
+            return <h1 className="text-left text-4xl font-bold text-black">{titleSection}</h1>;
         }}
         </Title.Consumer>
         </>
@@ -78,7 +78,19 @@ const TitleSectionPrimaryContainer = () => {
         <>
         <Title.Consumer>
         {(titleSection) => {
-            return <h1 className="text-left text-5xl font-bold text-primaryContainer">{titleSection}</h1>;
+            return <h1 className="text-left text-4xl font-bold text-primaryContainer">{titleSection}</h1>;
+        }}
+        </Title.Consumer>
+        </>
+    )
+}
+
+const TitleSectionPrimaryOnContainer = () => {
+    return (
+        <>
+        <Title.Consumer>
+        {(titleSection) => {
+            return <h1 className="text-left text-4xl font-bold text-onPrimaryContainer">{titleSection}</h1>;
         }}
         </Title.Consumer>
         </>
@@ -100,4 +112,4 @@ const TitleSectionPrimaryContainerCenter = () => {
 export {
     TitleSectionPrimary, TitleSectionSecondary, TitleSectionWhite, 
     TitleSectionPrimaryContainer, TitleSectionPrimaryCenter, 
-    TitleSectionBlack, TitleSectionPrimaryContainerCenter, TitleSectionWhiteCenter};
+    TitleSectionBlack, TitleSectionPrimaryContainerCenter, TitleSectionWhiteCenter, TitleSectionPrimaryOnContainer};

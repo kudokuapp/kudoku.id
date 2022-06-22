@@ -28,6 +28,7 @@ module.exports = {
         "onSurfaceVariant": "#44474F",
         "outline": "#74777F",
         "neutral": "#44474F",
+        "neutralOnBackground": "#1A1B1F",
         "LIGHT/onPrimaryContainer": "#001A40"
       }
     },

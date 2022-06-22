@@ -1,7 +1,7 @@
 export const en = {
     "section1": {
-      "reach": "Reach your financial dreams with Kudoku.",
-      "potential": "Maximized your full financial potential.",
+      "reach": "Having a full control of your personal finance is not a hard thing to do.",
+      "potential": "You only need one app to do that for you.",
       "invite": "Get your invite now!",
       "policy": "By clicking the button, you agree with our Privacy Policy.",
       "rolling": "Rolling out when it is fun to use",
@@ -26,6 +26,30 @@ export const en = {
     "section5": {
       "features": "Kudoku has the features.",
       "Both": "Both familiar and new",
+      "multiAccount": {
+        "title": "Multi account connectivity",
+        "description": "Tired of controlling your financial in different accounts? Connect your Kudoku profile to all your bank accounts and digital wallets. Start controlling your personal finance in an easy way."
+      },
+      "expenseTracking": {
+        "title": "Automated expense tracking ",
+        "description": "Writing your expenses manually is a daunting task. There will be an automated expense tracker available for free by the time you connect your financial accounts."
+      },
+      "finansialInsight": {
+        "title": "Personal financial insights",
+        "description": "Everyone has their own financial situation. A financial insights based on how you spend your money will help you understand your situation. "
+      },
+      "coupleFeatures": {
+        "title": "Couple Features",
+        "description": "We know, it’s a different game when managing finance with our spouse. But it will become enjoyable experience with the right tools in your hand."
+      },
+      "multiPayment": {
+        "title": "In-app multi payment",
+        "description": "Choosing which one of financial accounts for paying takes time. Kudoku let you make payment only from one app using balance from your financial accounts."
+      },
+      "moneyTransfer": {
+        "title": "Interbank money transfer",
+        "description": "We all wanted to avoid transfer fees. Kudoku use third party API to help you reduce fees for interbank transfer."
+      }
     },
     "section6": {
       "title": "Curious about your financial situation?",

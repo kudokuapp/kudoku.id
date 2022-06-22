@@ -51,9 +51,9 @@ const RegisterKudoku = () => {
                 <div className="slides">
 
                     <div id="slide-1" >
-                        <div className="flex flex-row w-full justify-between mx-8 h-max py-14">
+                        <div className="flex lg:flex-row flex-col w-full justify-between mx-8 h-max py-14">
 
-                            <div className="flex flex-col justify-between text-left w-1/2">
+                            <div className="flex flex-col justify-between text-left lg:w-1/2">
                                 <div>
                                     <Title.Provider value={en.section1.reach}>
                                         <TitleSectionPrimary />

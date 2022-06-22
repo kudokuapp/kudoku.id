@@ -1,3 +1,6 @@
+import { en } from "../../../../public/static/locales/en/common";
+import { TitleSectionWhite } from "../../text/TitleSection";
+import { Title } from "../finansial-check/FinansialCheck";
 
 
 const Explanation = () => {
@@ -14,7 +17,9 @@ const Explanation = () => {
 
                             <div className="flex flex-col justify-between align-middle">
                                 <div>
-                                    <h1 className="text-left text-5xl text-white font-bold">Kudoku is a personal financial app management that covers all your financial aspects.</h1>
+                                <Title.Provider value={en.section2.finansialApp}>
+                                    <TitleSectionWhite />
+                                </Title.Provider>
                                 </div>
                             </div>
 

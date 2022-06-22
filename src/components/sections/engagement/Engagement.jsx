@@ -1,4 +1,6 @@
+import Image from "next/image";
 import { en } from "../../../../public/static/locales/en/common";
+import socialMedia from "../../../core/mock/socialMedia";
 import { SubTitleSectionMd, SubTitleSectionSecondaryCenterLg } from "../../text/SubtitleSection";
 import { TitleSectionBlack, TitleSectionPrimaryCenter, TitleSectionWhite } from "../../text/TitleSection";
 import { Title } from "../finansial-check/FinansialCheck";
@@ -24,6 +26,11 @@ const Engagement = () => {
                                     <Title.Provider value={en.section8.left.description}>
                                         <SubTitleSectionSecondaryCenterLg />
                                     </Title.Provider>
+                                </div>
+                                <div className="d-flex flex-row space-x-10">
+                                    {socialMedia.map((item,index)=>{
+                                        return <Image src={item.imgSrc} width={40} height={40} alt="" key={index}/>
+                                    })} 
                                 </div>
                             </div>
 

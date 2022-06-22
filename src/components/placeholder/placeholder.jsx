@@ -32,7 +32,7 @@ const Placeholder = ({}) => {
       })
       .then((res) => {
         window.open(
-          `https://kudoku.typeform.com/to/PZR271ql#wa=${phoneNumber}#index=1`,
+          `https://kudoku.typeform.com/to/PZR271ql#wa=${phoneNumber}&index=1`,
           "_blank"
         );
         console.log(phoneNumber);

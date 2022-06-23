@@ -26,7 +26,7 @@ export default function Navbar({ }) {
   return (
     <nav className={styles.navbar}>
       <div className={styles.image}>
-        <Link href="/">
+        <Link href="/" className={styles.link}>
           <Image src={Logo} alt="Kudoku Logo" />
         </Link>
       </div>

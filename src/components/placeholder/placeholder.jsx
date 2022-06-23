@@ -31,7 +31,7 @@ const Placeholder = ({}) => {
         }
       })
       .then((res) => {
-        window.location = "/signup"
+        window.location = `/signup?wa=${phoneNumber}`
         console.log(phoneNumber);
         console.log(res.data.results);
         // return setData(res.data.results)

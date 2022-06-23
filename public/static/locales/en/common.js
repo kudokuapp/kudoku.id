@@ -120,6 +120,6 @@ export const en = {
       "imprint": "Imprint",
       "term": "Terms of Service",
       "policy": "Privacy Policy",
-      "copyright" : "2022 Kudoku"
+      "copyright" : "2022 PT. Kudoku Finansial Indonesia"
     },
 }

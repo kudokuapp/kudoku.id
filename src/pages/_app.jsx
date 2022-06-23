@@ -1,6 +1,5 @@
 import "../styles/globals.css";
 import "../styles/slides.css";
-import "../styles/component.css";
 import "../styles/Swiper.css";
 import "../styles/Swiperitem.css";
 import "../styles/placeholder.css";

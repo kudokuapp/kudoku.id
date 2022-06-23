@@ -72,14 +72,14 @@ const RegisterKudoku = () => {
 
 								<Image src={People} alt="" />
 
-								<div className="text-xs relative bottom-0 pl-4 text-primary mb-4 -ml-3">
+								{/* <div className="text-xs relative bottom-0 pl-4 text-primary mb-4 -ml-3">
 									<Link href="/">
 										<a onClick={(e) => changeLanguage(e, "/en")}>EN</a>
 									</Link>{" "}
 									<Link href="/">
 										<a onClick={(e) => changeLanguage(e, "/id")}>ID</a>
 									</Link>
-								</div>
+								</div> */}
 							</div>
 						</div>
 					</div>

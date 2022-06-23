@@ -31,10 +31,7 @@ const Placeholder = ({}) => {
         }
       })
       .then((res) => {
-        window.open(
-          `https://kudoku.typeform.com/to/PZR271ql#wa=${phoneNumber}&index=1`,
-          "_blank"
-        );
+        window.location = "/signup"
         console.log(phoneNumber);
         console.log(res.data.results);
         // return setData(res.data.results)

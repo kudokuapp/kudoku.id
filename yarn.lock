@@ -775,6 +775,19 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
+"@typeform/embed-react@^1.17.0":
+  version "1.17.0"
+  resolved "https://registry.yarnpkg.com/@typeform/embed-react/-/embed-react-1.17.0.tgz#f42f2918c8103927238caf930dd6aa5ef42a651c"
+  integrity sha512-KWLlyISmapKZk5tkOQ3MmEagZ3cOd4y2AOaQbtmwCX565KJX0PbMA4YZbhVoe119LT+K72fU45X+8VjbNCPegQ==
+  dependencies:
+    "@typeform/embed" "1.36.0"
+    fast-deep-equal "^3.1.3"
+
+"@typeform/embed@1.36.0":
+  version "1.36.0"
+  resolved "https://registry.yarnpkg.com/@typeform/embed/-/embed-1.36.0.tgz#609351546ac41856584112b0992f00aeb85e8103"
+  integrity sha512-7T+xbbGw7/o6bOOuMHrD7scwvl+YiJmYIiUP7YOGlyzA5BPSGt3wQx9M+J8D/X12MhgFNX4kgkwhPNyiALXxIg==
+
 "@types/hoist-non-react-statics@^3.3.1":
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/@types/hoist-non-react-statics/-/hoist-non-react-statics-3.3.1.tgz#1124aafe5118cb591977aeb1ceaaed1070eb039f"

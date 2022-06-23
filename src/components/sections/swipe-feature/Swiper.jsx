@@ -95,7 +95,7 @@ function Swiper({ items }) {
   };
 
   return (
-    <div className="m-6 flex relative flex-row h-screen">
+    <div className="lg:m-6 flex relative flex-row h-screen">
 
       <div className="slider">
 

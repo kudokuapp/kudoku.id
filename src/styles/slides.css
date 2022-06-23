@@ -61,7 +61,7 @@
         transform-origin: center center;
         transition: transform 0.5s;
         position: relative;
-        padding: 0 20px;
+        padding: 0 1vmax;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -71,7 +71,7 @@
         width: 100%;
         height: 95%;
         border-radius: 50px;
-        padding: 0 20px;
+        padding: 0 1vmax;
         background: #2C5EA8;
         transform-origin: center center;
         transition: transform 0.5s;

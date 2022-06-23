@@ -11,7 +11,7 @@ import Mortgage from '../../../../public/static/assets/feature/mortgageControlPr
 const AllFeature = () => {
     return (
         <>
-        <div className="m-6 flex relative flex-row h-max">
+        <div className="lg:m-6 mt-12 flex relative flex-row h-max">
 
             <div className="slider">
 

@@ -1,7 +1,5 @@
-import React from 'react';
+import React from "react";
 
-export function getTouchEventData(
-  e
-) {
-  return 'changedTouches' in e ? e.changedTouches[0] : e;
+export function getTouchEventData(e) {
+	return "changedTouches" in e ? e.changedTouches[0] : e;
 }

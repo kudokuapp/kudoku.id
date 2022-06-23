@@ -9,7 +9,7 @@ import { Title } from "../finansial-check/FinansialCheck";
 const Engagement = () => {
     return (
         <>
-        <div className="m-6 grid md:grid-cols-3 md:gap-4 relative h-max">
+        <div className="lg:m-6 grid md:grid-cols-3 md:gap-4 relative h-max">
 
             <div className="slider md:col-span-2">
 

@@ -51,11 +51,11 @@ const Placeholder = ({}) => {
   };
   return (
     <>
-      <div className={`my-2 flex flex-row justify-between align-middle w-2/3 ${flip}`}>
+      <div className={`my-2 flex flex-row justify-between align-middle lg:w-2/3 ${flip}`}>
         <div className="flip-card-inner flex-row justify-between align-middle items-center self-center">
           <div className="flip-card-front">
             <div className="flex flex-row">
-              <div className="mr-4">+62</div>
+              <div className="mr-4 mt-1">+62</div>
               <input
                 type="number"
                 value={phoneNumber}

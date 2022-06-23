@@ -8,14 +8,14 @@ import CardTools from "../../card/card-tools";
 const Tools = () => {
     return (
         <>
-        <div className="m-6 flex relative flex-row h-max">
+        <div className="lg:m-6 flex relative flex-row h-max">
 
             <div className="slider">
 
                 <div className="slides">
 
                     <div id="slide-1" className="m-auto">
-                        <div className="flex w-full justify-between mx-8 h-max py-14">
+                        <div className="flex w-full justify-between mx-8 h-max py-28">
 
                             <div className="flex flex-col justify-between">
                                 <div>

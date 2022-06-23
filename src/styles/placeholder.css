@@ -1,14 +1,12 @@
 .placeholder{
   background-color: transparent;
   height: 80px;
-  width: 50vmin;
   border-radius: 15px;
 }
 
 .flip-card {
   background-color: transparent;
   height: 80px;
-  width: 50vmin;
   border-radius: 15px;
 }
 
@@ -19,6 +17,7 @@
   text-align: center;
   transition: transform 0.6s;
   transform-style: preserve-3d;
+  font-size:0.8em;
 }
 
 .flip-card .flip-card-inner {
@@ -56,5 +55,17 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
+  width: 16vmax;
 }
  
+input[type=number]::placeholder {
+  font-size:0.8em;
+}
+
+.btn-try{
+  margin-left: 2vmin;
+  background: #345995;
+  color: white;
+  padding: 0.5em;
+  border-radius: 0.5em;
+}

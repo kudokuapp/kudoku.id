@@ -6,7 +6,7 @@ import { Title } from "../finansial-check/FinansialCheck";
 const Team = () => {
     return (
         <>
-        <div className="m-6 flex relative flex-row h-max">
+        <div className="lg:m-6 flex relative flex-row h-max">
 
             <div className="slider">
 

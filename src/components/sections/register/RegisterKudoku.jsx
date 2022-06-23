@@ -44,7 +44,7 @@ const RegisterKudoku = () => {
       };
     return (
         <>
-        <div className="m-6 flex relative flex-row h-max">
+        <div className="lg:m-6 mt-4 flex relative flex-row h-max">
  
             <div className="slider">
 

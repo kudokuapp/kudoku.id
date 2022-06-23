@@ -3,13 +3,14 @@ import Link from "next/link";
 import Image from "next/image";
 import Logo from "../../../public/static/assets/logo/variant2.svg";
 import { MaterialUISwitch } from "./MaterialUISwitch";
+import styles from './Navbar.module.css'
 
 
 var language = "en"
 
 
 export default function Navbar({ }) {
-  const [navbarOpen, setNavbarOpen] = React.useState(false);
+  const [navbarOpen, setNavbarOpen] = useState(false);
   const [toggle, setToggle] = useState(true);
 
   const changeLanguage = (e, toggle) => {
@@ -23,15 +24,15 @@ export default function Navbar({ }) {
     }
   };
   return (
-<nav className="px-2 sm:px-1">
-  <div className="container flex flex-wrap justify-between items-center mx-auto">
-    <Link href="/" className="flex items-center">
-    <Image src={Logo} width={200} height={50} className="mr-3 h-6 sm:h-9" alt="Kudoku Logo" />
-  </Link>
-  <div className="flex md:order-2">
-      <MaterialUISwitch />
-  </div>
-  </div>
-</nav>
+    <nav className={styles.navbar}>
+      <div className={styles.image}>
+        <Link href="/">
+          <Image src={Logo} alt="Kudoku Logo" />
+        </Link>
+      </div>
+      <div className={styles.switch}>
+          <MaterialUISwitch disabled defaultChecked className={styles.switch__item}/>
+      </div>
+    </nav>
   );
 }

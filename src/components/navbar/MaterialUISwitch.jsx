@@ -13,9 +13,11 @@ export const MaterialUISwitch = styled(Switch)(({ theme }) => ({
         color: '#2C5EA8',
         transform: 'translateX(22px)',
         '& .MuiSwitch-thumb:before': {
-          backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 20 20"><path fill="${encodeURIComponent(
+          backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="9" width="15" viewBox="0 0 15 9"><path fill="${encodeURIComponent(
             '#fff',
-          )}" d="M4.2 2.5l-.7 1.8-1.8.7 1.8.7.7 1.8.6-1.8L6.7 5l-1.9-.7-.6-1.8zm15 8.3a6.7 6.7 0 11-6.6-6.6 5.8 5.8 0 006.6 6.6z"/></svg>')`,
+          )}" d="M0.0566406 8.99973V0.272461H5.32369V1.20996H1.11346V4.15882H5.05096V5.09632H1.11346V8.06223H5.39187V8.99973H0.0566406Z"/><path fill="${encodeURIComponent(
+            '#fff',
+          )}" d="M14.149 0.272461V8.99973H13.1262L8.37056 2.14746H8.28533V8.99973H7.22852V0.272461H8.25124L13.024 7.14178H13.1092V0.272461H14.149Z"/></svg>')`,
         },
         '& + .MuiSwitch-track': {
           opacity: 1,
@@ -36,9 +38,11 @@ export const MaterialUISwitch = styled(Switch)(({ theme }) => ({
         top: 0,
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
-        backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 20 20"><path fill="${encodeURIComponent(
+        backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="9" width="11" viewBox="0 0 11 9"><path fill="${encodeURIComponent(
           '#fff',
-        )}" d="M9.305 1.667V3.75h1.389V1.667h-1.39zm-4.707 1.95l-.982.982L5.09 6.072l.982-.982-1.473-1.473zm10.802 0L13.927 5.09l.982.982 1.473-1.473-.982-.982zM10 5.139a4.872 4.872 0 00-4.862 4.86A4.872 4.872 0 0010 14.862 4.872 4.872 0 0014.86 10 4.872 4.872 0 0010 5.139zm0 1.389A3.462 3.462 0 0113.471 10a3.462 3.462 0 01-3.473 3.472A3.462 3.462 0 016.527 10 3.462 3.462 0 0110 6.528zM1.665 9.305v1.39h2.083v-1.39H1.666zm14.583 0v1.39h2.084v-1.39h-2.084zM5.09 13.928L3.616 15.4l.982.982 1.473-1.473-.982-.982zm9.82 0l-.982.982 1.473 1.473.982-.982-1.473-1.473zM9.305 16.25v2.083h1.389V16.25h-1.39z"/></svg>')`,
+        )}" d="M1.11346 0.272461V8.99973H0.0566406V0.272461H1.11346Z"/><path fill="${encodeURIComponent(
+          '#fff',
+        )}" d="M5.9256 8.99973H3.23242V0.272461H6.04492C6.89151 0.272461 7.61595 0.447177 8.21822 0.796609C8.82049 1.1432 9.28214 1.64178 9.60316 2.29235C9.92418 2.94007 10.0847 3.71564 10.0847 4.61905C10.0847 5.52814 9.92276 6.31081 9.5989 6.96706C9.27504 7.62047 8.80344 8.12331 8.18413 8.47559C7.56481 8.82502 6.81197 8.99973 5.9256 8.99973ZM4.28924 8.06223H5.85742C6.57901 8.06223 7.17702 7.92303 7.65146 7.64462C8.12589 7.36621 8.47958 6.9699 8.71254 6.4557C8.94549 5.9415 9.06197 5.32928 9.06197 4.61905C9.06197 3.91451 8.94691 3.30797 8.7168 2.79945C8.48668 2.28809 8.14293 1.89604 7.68555 1.62331C7.22816 1.34774 6.65856 1.20996 5.97674 1.20996H4.28924V8.06223Z"/></svg>')`,
       },
     },
     '& .MuiSwitch-track': {

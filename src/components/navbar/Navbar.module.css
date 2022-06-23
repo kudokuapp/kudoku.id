@@ -1,0 +1,33 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    padding: 2.5em 1.5em 0.5em 1.5em;
+}
+
+@media (max-width: 500px) {
+    .navbar {
+        padding: 2.0em 0.5em 0.5em 0.5em;
+    }
+}
+
+.image {
+    display: flex;
+    align-items: center;
+    max-width: 12rem;
+    /* To make it the same with the switch */
+    padding-left: 7px;
+}
+
+.switch {
+    display: flex;
+    align-items: center;
+}
+
+/* .switch__item {
+    display: flex;
+} */

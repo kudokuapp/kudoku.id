@@ -24,18 +24,18 @@ const tools = [
 	},
 	{
 		imgSrc: FrameCouple,
-		title: en.section6.health.title,
-		description: en.section6.health.description,
-	},
-	{
-		imgSrc: FrameBank,
 		title: en.section6.ideal.title,
 		description: en.section6.ideal.description,
 	},
 	{
-		imgSrc: FrameTransfer,
+		imgSrc: FrameBank,
 		title: en.section6.checklist.title,
 		description: en.section6.checklist.description,
+	},
+	{
+		imgSrc: FrameTransfer,
+		title: en.section6.vote.title,
+		description: en.section6.vote.description,
 	},
 ];
 

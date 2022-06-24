@@ -56,7 +56,12 @@ body {
 		"Segoe UI Symbol", "Noto Color Emoji";
 	max-width: 1400px;
 }
-
+@media screen and (max-width: 360px){
+  html,
+  body {
+    margin: 0 1vmin;
+  }
+}
 a {
 	color: inherit;
 	text-decoration: none;

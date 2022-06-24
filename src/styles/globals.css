@@ -65,3 +65,9 @@ a {
 * {
 	box-sizing: border-box;
 }
+
+/* @layer components {
+	.kudoku-card {
+		@apply relative flex items-center;
+	}
+} */

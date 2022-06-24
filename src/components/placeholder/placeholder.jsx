@@ -74,6 +74,7 @@ const Placeholder = ({}) => {
 							onChange={setCipher}
 							numInputs={6}
 							separator={<span>-</span>}
+							isInputNum={true}
 						/>
 						<button onClick={handleCheckVerify}>verify</button>
 					</div>

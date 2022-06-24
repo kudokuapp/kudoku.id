@@ -16,7 +16,7 @@ const Typeform = ({ wa }) => {
 	);
 };
 
-export function Signup() {
+export default function Index() {
 	const router = useRouter();
 
 	return (

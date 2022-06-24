@@ -27,13 +27,16 @@
 .flip-card-front,
 .flip-card-back {
 	position: absolute;
-	width: 100%;
+	min-width: max-content;
 	height: 100%;
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 	border: 4px solid #74777f;
 	padding: 20px;
 	border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items:center;
 }
 
 .flip-card-front {
@@ -56,17 +59,15 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type="number"] {
 	-moz-appearance: textfield;
-	width: 16vmax;
+	width: 14vmax;
 }
 
 input[type="number"]::placeholder {
-	font-size: 0.8em;
+	font-size: 1em;
 }
 
 .btn-try {
 	margin-left: 2vmin;
 	background: #345995;
 	color: white;
-	padding: 0.5em;
-	border-radius: 0.5em;
 }

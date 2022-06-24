@@ -23,6 +23,9 @@ const CardFeature = () => {
 						<h4 className="text-md text-left font-light text-black mt-4">
 							{item.description}
 						</h4>
+						<h4 className="text-md text-left font-light text-black mt-4">
+							{item.description2}
+						</h4>
 					</div>
 				);
 			})}

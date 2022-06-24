@@ -24,7 +24,7 @@ const FinansialCheck = () => {
 										</Title.Provider>
 									</div>
 
-									<div className="grid md:grid-cols-3 lg:gap-3 grid-cols-1 gap-1 mt-10">
+									<div className="grid md:grid-cols-3 lg:gap-10 grid-cols-1 gap-4 mt-10">
 										<CardFeature />
 									</div>
 								</div>

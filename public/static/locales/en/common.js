@@ -3,14 +3,19 @@ export const en = {
 		reach:
 			"Having a full control of your personal finance is not a hard thing to do.",
 		potential: "You only need one app to do that for you.",
-		invite: "Get your invite now!",
+		alpha: "Kudoku will enter its Alpha version.",
+		invite: "Get early access and help shape the product by joining the waitlist!",
 		policy: "By clicking the button, you agree with our Privacy Policy.",
 		rolling: "Rolling out when it is fun to use",
 		coming: "Coming to Web, Android, and Apple devices.",
 	},
 	section2: {
 		finansialApp:
-			"No, It’s not just another financial app. Kudoku is a financial management app that covers all your financial aspects.",
+			"No, It’s not just another financial app.",
+		cover:
+			"Kudoku is a financial management app that covers",
+		ascpect:
+			"all your financial aspects.",
 	},
 	section3: {
 		all: "All in one app. ",
@@ -31,32 +36,44 @@ export const en = {
 		multiAccount: {
 			title: "Multi account connectivity",
 			description:
-				"Tired of controlling your financial in different accounts? Connect your Kudoku profile to all your bank accounts and digital wallets. Start controlling your personal finance in an easy way.",
+				"Tired of controlling your financial in different accounts?",
+			description2:
+				"Connect your Kudoku profile to all your bank accounts and digital wallets. Start controlling your personal finance in an easy way.",
 		},
 		expenseTracking: {
 			title: "Automated expense tracking ",
 			description:
-				"Writing your expenses manually is a daunting task. There will be an automated expense tracker available for free by the time you connect your financial accounts.",
+				"Writing your expenses manually is a daunting task.",
+			description2:
+				"There will be an automated expense tracker available for free by the time you connect your financial accounts.",
 		},
 		finansialInsight: {
 			title: "Personal financial insights",
 			description:
-				"Everyone has their own financial situation. A financial insights based on how you spend your money will help you understand your situation. ",
+				"Everyone has their own financial situation.",
+			description2:
+				"A financial insights based on how you spend your money will help you understand your situation.",
 		},
 		coupleFeatures: {
 			title: "Couple Features",
 			description:
-				"We know, it’s a different game when managing finance with our spouse. But it will become enjoyable experience with the right tools in your hand.",
+				"We know, it’s a different game when managing finance with our spouse.",
+			description2:
+				"But it will become enjoyable experience with the right tools in your hand.",
 		},
 		multiPayment: {
 			title: "In-app multi payment",
 			description:
-				"Choosing which one of financial accounts for paying takes time. Kudoku let you make payment only from one app using balance from your financial accounts.",
+				"Choosing which one of financial accounts for paying takes time.",
+			description2:
+				"Kudoku let you make payment only from one app using balance from your financial accounts.",
 		},
 		moneyTransfer: {
 			title: "Interbank money transfer",
 			description:
-				"We all wanted to avoid transfer fees. Kudoku use third party API to help you reduce fees for interbank transfer.",
+				"We all wanted to avoid transfer fees.",
+			description2:
+				"Kudoku use third party API to help you reduce fees for interbank transfer.",
 		},
 	},
 	section6: {
@@ -73,19 +90,14 @@ export const en = {
 			description:
 				"That Rp 510.900.000 Honda CRV that you bought 5 years ago... What if you put it in BBCA instead?",
 		},
-		payment: {
-			title: "Multi-payment",
-			description:
-				"Pay any kind of your expense through Kudoku API. No need to change app. Hell yeah motherfucker.",
-		},
 		health: {
 			title: "Financial health check",
-			description: "Find out how healthy your financial condition right now.",
+			description: "A healthy financial condition is a must to keep you sane. Find out how healthy your financial condition right now.",
 		},
 		ideal: {
 			title: "Ideal budgeting",
 			description:
-				"Get the most suitable budgeting based on your current lifestyle.",
+				"Different person has different lifestyle. Get the most suitable budgeting based on your current lifestyle.",
 		},
 		checklist: {
 			title: "Indonesia finance checklist",
@@ -101,7 +113,7 @@ export const en = {
 	section7: {
 		title: "Ask us anything about Kudoku",
 		subtitle:
-			"You can book a slot with the founders that suits your time on the website!",
+			"For you who’re curious enough, choose a time with the founders and start asking. We’re open to discuss anything about this amazing app.",
 		coo: {
 			title: "Founder (COO)",
 			description: "Rizqy Fachri",
@@ -125,8 +137,7 @@ export const en = {
 			title: "Feels like helping us?",
 			description: "Here are some ways you can.",
 			waitlist: "Join the waitlist",
-			tweet: "Tweet about us",
-			igFilter: "Try our IG filter",
+			tweet: "Follow us on Twitter",
 		},
 	},
 	footer: {

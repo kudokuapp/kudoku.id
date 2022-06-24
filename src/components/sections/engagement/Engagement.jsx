@@ -70,11 +70,6 @@ const Engagement = () => {
 										>
 											<SubTitleSectionMd />
 										</Title.Provider>
-										<Title.Provider
-											value={en.section8.right.igFilter + " " + "->"}
-										>
-											<SubTitleSectionMd />
-										</Title.Provider>
 									</div>
 								</div>
 							</div>

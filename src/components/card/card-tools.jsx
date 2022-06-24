@@ -24,7 +24,7 @@ const CardTools = () => {
 							className="text-white w-full bg-neutralOnBackground opacity-50 rounded-md p-2 mt-2"
 							disabled
 						>
-							Cooming soon
+							Coming soon
 						</button>
 					</div>
 				);

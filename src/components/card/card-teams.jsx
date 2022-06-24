@@ -7,7 +7,7 @@ const CardTeam = () => {
 			{teams.map((item, index) => {
 				return (
 					<div
-						className="card-finansial-check bg-white w-full flex flex-col md:my-0 my-2 justify-between"
+						className="card-finansial-check bg-white w-fit flex flex-col md:my-0 my-2 justify-between"
 						key={index}
 					>
 						<div className="bg-primary py-6 px-11 rounded-full">

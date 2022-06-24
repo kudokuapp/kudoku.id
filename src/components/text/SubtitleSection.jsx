@@ -14,6 +14,20 @@ const SubTitleSection = () => {
 	);
 };
 
+const SubTitleSectionWM = () => {
+	return (
+		<>
+			<Title.Consumer>
+				{(subtitleSection) => {
+					return (
+						<h4 className="text-black text-left">{subtitleSection}</h4>
+					);
+				}}
+			</Title.Consumer>
+		</>
+	);
+};
+
 const SubTitleSectionMd = () => {
 	return (
 		<>
@@ -21,6 +35,22 @@ const SubTitleSectionMd = () => {
 				{(subtitleSection) => {
 					return (
 						<h4 className="text-white text-left text-2xl mt-10">
+							{subtitleSection}
+						</h4>
+					);
+				}}
+			</Title.Consumer>
+		</>
+	);
+};
+
+const SubTitleSectionMdBlack = () => {
+	return (
+		<>
+			<Title.Consumer>
+				{(subtitleSection) => {
+					return (
+						<h4 className="text-black text-left text-2xl mt-10">
 							{subtitleSection}
 						</h4>
 					);
@@ -80,4 +110,6 @@ export {
 	SubTitleSectionSecondaryCenterLg,
 	SubTitleSectionWhiteCenter,
 	SubTitleSectionMd,
+	SubTitleSectionWM,
+	SubTitleSectionMdBlack
 };

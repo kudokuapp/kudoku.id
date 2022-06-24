@@ -24,7 +24,7 @@ const Team = () => {
 										</Title.Provider>
 									</div>
 
-									<div className="grid md:grid-cols-3 lg:gap-3 mt-10">
+									<div className="grid md:grid-cols-3 lg:gap-8 self-center mt-10">
 										<CardTeam />
 									</div>
 								</div>

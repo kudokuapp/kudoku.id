@@ -54,7 +54,7 @@ const Placeholder = ({}) => {
 				<div className="flip-card-inner flex-row justify-between align-middle items-center self-center">
 					<div className="flip-card-front">
 						<div className="flex flex-row">
-							<div className="mr-4 mt-1">+62</div>
+							<div className=" mr-2 rounded-md p-2 flex flex-row items-center justify-center bg-neutralBackground">+62</div>
 							<input
 								type="number"
 								value={phoneNumber}
@@ -63,8 +63,8 @@ const Placeholder = ({}) => {
 								}}
 								placeholder="Your WhatsApp here"
 							/>
-							<button className="btn-try min-w-fit" onClick={handleStartVerify}>
-								try it first
+							<button className="btn-try rounded-md p-2 min-w-fit" onClick={handleStartVerify}>
+								Try it first
 							</button>
 						</div>
 					</div>

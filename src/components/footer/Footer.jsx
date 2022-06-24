@@ -18,22 +18,16 @@ const Footer = () => {
 						</Title.Provider>
 					</div>
 				</div>
-				<div className="flex flex-row justify-between align-middle gap-6">
-					<Link href="/imprint" className="hover:text-secondary">
-						<Title.Provider value={en.footer.imprint}>
-							<SubTitleSection />
-						</Title.Provider>
-					</Link>
-					<Link href="/terms">
-						<Title.Provider value={en.footer.term}>
-							<SubTitleSection />
-						</Title.Provider>
-					</Link>
-					<Link href="/privacy">
-						<Title.Provider value={en.footer.policy}>
-							<SubTitleSection />
-						</Title.Provider>
-					</Link>
+				<div className="flex flex-row justify-between align-middle gap-6 mt-10">
+					<button className="hover:text-primary cursor-pointer text-black hover:font-bold w-max h-max">
+						<Link href="/imprint">Imprint</Link>
+					</button>
+					<button className="hover:text-primary cursor-pointer text-black hover:font-bold w-max h-max">
+						<Link href="/terms">Terms of Service</Link>
+					</button>
+					<button className="hover:text-primary cursor-pointer text-black hover:font-bold w-max h-max">
+						<Link href="/privacy">Privacy Policy</Link>
+					</button>
 				</div>
 			</div>
 

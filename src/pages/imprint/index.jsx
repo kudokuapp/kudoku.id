@@ -2,7 +2,7 @@ import Link from "next/link";
 import Navbar from "../../components/navbar/Navbar";
 import Sidebar from "../../components/sidebar/Sidebar";
 
-export default function Index() {
+export default function Imprint() {
 	return (
 		<div className="flex md:flex-none">
 			<div className="w-1/6 scale-0 sm:scale-100">

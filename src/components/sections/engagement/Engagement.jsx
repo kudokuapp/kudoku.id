@@ -29,7 +29,7 @@ const Engagement = () => {
 											<SubTitleSectionSecondaryCenterLg />
 										</Title.Provider>
 									</div>
-									<div className="d-flex flex-row space-x-10">
+									<div className="flex flex-row justify-between mt-2">
 										{socialMedia.map((item, index) => {
 											return (
 												<Image

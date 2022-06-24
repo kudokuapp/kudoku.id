@@ -156,6 +156,7 @@ function Swiper({ items }) {
 				</div>
 			</div>
 		</div>
+		
 	);
 }
 

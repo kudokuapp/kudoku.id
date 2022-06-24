@@ -4,7 +4,7 @@ const RoundedSub = () => {
 	return (
 		<>
 			<div className="beforeRegister" id="beforeRegister">
-				<div className="text-sm mt-2 text-black border-solid border-2 py-2 px-4 w-fit rounded-full">
+				<div className="text-sm mt-2 text-black border-solid border-2 py-2 px-4 w-fit rounded-lg">
 					{en.section1.rolling}
 				</div>
 				<div className="text-sm text-left w-auto text-neutral mt-4">

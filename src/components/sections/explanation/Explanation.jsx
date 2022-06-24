@@ -9,10 +9,16 @@ const Explanation = () => {
 				<div className="slider">
 					<div className="slides-primary">
 						<div id="slide-1" className="m-auto">
-							<div className="flex w-fit justify-between align-middle mx-8 h-full py-14">
-								<div className="flex flex-col justify-between align-middle">
+							<div className="flex w-screen mx-8 h-full py-14">
+								<div className="flex flex-col">
 									<div>
 										<Title.Provider value={en.section2.finansialApp}>
+											<TitleSectionWhite />
+										</Title.Provider>
+										<Title.Provider value={en.section2.cover}>
+											<TitleSectionWhite />
+										</Title.Provider>
+										<Title.Provider value={en.section2.ascpect}>
 											<TitleSectionWhite />
 										</Title.Provider>
 									</div>

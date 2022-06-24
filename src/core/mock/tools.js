@@ -19,8 +19,8 @@ const tools = [
 	},
 	{
 		imgSrc: FrameFinansial,
-		title: en.section6.payment.title,
-		description: en.section6.payment.description,
+		title: en.section6.health.title,
+		description: en.section6.health.description,
 	},
 	{
 		imgSrc: FrameCouple,

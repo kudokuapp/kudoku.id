@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "primary" : "#345995",
+        "primary" : "#2c5ea8",
         "on" : "#FFFFFF",
         "primaryContainer" : "#D6E3FF",
         "onPrimaryContainer" : "#001A40",
@@ -28,6 +28,7 @@ module.exports = {
         "onSurfaceVariant": "#44474F",
         "outline": "#74777F",
         "neutral": "#44474F",
+        "neutralBackground": "#E1E1E1",
         "neutralOnBackground": "#1A1B1F",
         "LIGHT/onPrimaryContainer": "#001A40"
       }

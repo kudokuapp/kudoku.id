@@ -9,7 +9,7 @@ import { en } from "../../../../public/static/locales/en/common";
 import { id } from "../../../../public/static/locales/id/common";
 import Link from "next/link";
 import Placeholder from "../../placeholder/placeholder";
-import { SubTitleSection, SubTitleSectionSm } from "../../text/SubtitleSection";
+import { SubTitleSection, SubTitleSectionSm, SubTitleSectionWM } from "../../text/SubtitleSection";
 import RoundedSub from "../../text/DoubleSub";
 
 var language = "en";
@@ -51,16 +51,20 @@ const RegisterKudoku = () => {
 					<div className="slides">
 						<div id="slide-1">
 							<div className="flex lg:flex-row flex-col w-full justify-between mx-8 h-max py-14">
-								<div className="flex flex-col justify-between text-left lg:w-1/2">
+								<div className="flex flex-col justify-between text-left">
 									<div>
 										<Title.Provider value={en.section1.reach}>
 											<TitleSectionPrimary />
 										</Title.Provider>
+                                        <div className="mt-8"></div>
 										<Title.Provider value={en.section1.potential}>
 											<TitleSectionSecondary />
 										</Title.Provider>
-										<Title.Provider value={en.section1.invite}>
+										<Title.Provider value={en.section1.alpha}>
 											<SubTitleSection />
+										</Title.Provider>
+										<Title.Provider value={en.section1.invite}>
+											<SubTitleSectionWM />
 										</Title.Provider>
 										<Placeholder />
 										<Title.Provider value={en.section1.policy}>
@@ -70,7 +74,7 @@ const RegisterKudoku = () => {
 									<RoundedSub />
 								</div>
 
-								<Image src={People} alt="" />
+								<Image src={People} alt="" width={1200} height={800} />
 
 								{/* <div className="text-xs relative bottom-0 pl-4 text-primary mb-4 -ml-3">
 									<Link href="/">

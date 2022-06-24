@@ -22,6 +22,9 @@ const Team = () => {
 										<Title.Provider value={en.section7.subtitle}>
 											<TitleSectionPrimaryContainerCenter />
 										</Title.Provider>
+										<Title.Provider value={en.section7.subtitle2}>
+											<TitleSectionPrimaryContainerCenter />
+										</Title.Provider>
 									</div>
 
 									<div className="grid md:grid-cols-3 lg:gap-8 self-center mt-10">

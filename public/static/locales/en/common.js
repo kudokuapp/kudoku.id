@@ -113,7 +113,9 @@ export const en = {
 	section7: {
 		title: "Ask us anything about Kudoku",
 		subtitle:
-			"For you who’re curious enough, choose a time with the founders and start asking. We’re open to discuss anything about this amazing app.",
+			"For you who’re curious enough, choose a time with the founders and start asking.",
+		subtitle2:
+			"We’re open to discuss anything about this amazing app.",
 		coo: {
 			title: "Founder (COO)",
 			description: "Rizqy Fachri",

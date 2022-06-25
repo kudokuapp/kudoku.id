@@ -7,7 +7,7 @@ import Tools from "../components/sections/tools/tools";
 import Footer from "../components/footer/Footer";
 import Navbar from "../components/navbar/Navbar";
 import Head from "next/head";
-import Engagement from "../container/Engagement/Engagement";
+import Engagement from "../container/engagement/Engagement";
 
 const HeadIndex = () => {
 	return (

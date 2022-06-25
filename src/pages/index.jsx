@@ -130,7 +130,7 @@ export default function Index() {
 	return (
 		<>
 			<HeadIndex />
-			<div className="flex flex-col h-full w-full font-inter">
+			<main className="flex flex-col h-full w-full font-inter">
 				<div className="flex flex-col h-screen w-full">
 					<Navbar />
 					<RegisterKudoku />
@@ -144,7 +144,7 @@ export default function Index() {
 					{/* <Engagement /> */}
 					<Footer />
 				</div>
-			</div>
+			</main>
 		</>
 	);
 }

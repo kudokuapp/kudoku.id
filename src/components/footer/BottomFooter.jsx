@@ -2,9 +2,9 @@ import Link from "next/link";
 
 export default function BottomFooter() {
 	return (
-		<div className="sm:flex justify-between items-end mt-14 block">
+		<div className="sm:flex justify-between items-end sm:mt-14 mt-6 block">
 			<div>
-				<ul className="flex gap-6">
+				<ul className="flex sm:gap-6 gap-4">
 					<li>
 						<button className="bottom-footer__text">
 							<Link href="/imprint">Imprint</Link>

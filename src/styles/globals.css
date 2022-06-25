@@ -44,6 +44,12 @@
 	font-style: normal;
 }
 
+@layer components {
+	.body {
+		@apply md:mx-4 lg:mx-auto sm:mx-2;
+	}
+}
+
 html,
 body {
 	padding: 0;
@@ -55,12 +61,13 @@ body {
 		"Noto Sans", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji",
 		"Segoe UI Symbol", "Noto Color Emoji";
 	max-width: 1400px;
+	/* overflow-x: hidden; */
 }
-@media screen and (max-width: 1024px){
-  html,
-  body {
-    margin: 0 4vmin;
-  }
+@media screen and (max-width: 1024px) {
+	html,
+	body {
+		margin: 0 3vmin;
+	}
 }
 a {
 	color: inherit;

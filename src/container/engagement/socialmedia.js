@@ -10,35 +10,35 @@ import tiktok from "../../../public/static/assets/social-media/tiktok.svg";
 const socialmedia = [
 	{
 		imgSrc: facebook,
-		link: "",
+		link: "https://facebook.com/appkudoku",
 	},
 	{
 		imgSrc: twitter,
-		link: "",
+		link: "https://twitter.com/kudokuapp",
 	},
 	{
 		imgSrc: linkedin,
-		link: "",
+		link: "https://linkedin.com/company/kudoku",
 	},
 	{
 		imgSrc: instagram,
-		link: "",
+		link: "https://instagram.com/kudokuapp",
 	},
 	{
 		imgSrc: pinterest,
-		link: "",
+		link: "https://pinterest.com/kudokuapp",
 	},
 	{
 		imgSrc: medium,
-		link: "",
+		link: "https://medium.com/@kudokuapp",
 	},
 	{
 		imgSrc: youtube,
-		link: "",
+		link: "https://www.youtube.com/channel/UCV120Cd9mcb_bsxc3rlW28A",
 	},
 	{
 		imgSrc: tiktok,
-		link: "",
+		link: "https://tiktok.com/@kudokuapp",
 	},
 ];
 

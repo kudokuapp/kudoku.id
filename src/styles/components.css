@@ -4,11 +4,11 @@
 
 @layer components {
 	.top-footer__text {
-		@apply text-left text-4xl font-bold text-onPrimaryContainer w-max h-max hover:text-primary hover:text-[2.5rem] mb-6;
+		@apply text-left sm:text-4xl text-2xl font-bold text-onPrimaryContainer w-max h-max hover:text-primary hover:text-[2.5rem] mb-6;
 	}
 
 	.bottom-footer__text {
-		@apply hover:text-primary hover:font-bold w-max h-max text-onPrimaryContainer;
+		@apply hover:text-primary hover:font-bold w-max h-max text-onPrimaryContainer text-sm sm:text-base;
 	}
 
 	.navbar {

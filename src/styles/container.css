@@ -4,22 +4,68 @@
 
 @layer components {
 	.engagement__text {
-		@apply text-primary text-center text-4xl font-bold;
+		@apply text-primary text-center sm:text-4xl text-2xl font-bold;
 	}
 
 	.engagament__text-secondary {
-		@apply text-secondary text-2xl text-center mt-10;
+		@apply text-secondary sm:text-2xl text-center sm:mt-10 mt-8 text-xl;
 	}
 
 	.engagament__text-rightone {
-		@apply text-left text-4xl font-bold text-white;
+		@apply sm:text-left text-center lg:text-4xl font-bold text-3xl;
+	}
+
+	.engagement-r__link {
+		@apply cursor-pointer text-onPrimary sm:text-left text-center lg:text-2xl hover:text-errorContainer hover:font-bold text-xl;
 	}
 
 	.card-main {
-		@apply w-full h-full px-16 py-14 rounded-[3.5rem] origin-center;
+		@apply w-full h-full lg:px-16 lg:py-14 sm:px-12 sm:py-10 px-8 py-8 lg:rounded-[3.5rem] md:rounded-[2.5rem] sm:rounded-[2.0rem] rounded-[1.5rem];
 		overflow-x: hidden;
 		scroll-snap-type: x mandatory;
 		scroll-behavior: smooth;
 		-webkit-overflow-scrolling: touch;
+	}
+}
+
+.shakeit__link {
+	animation: shakeit 0.5s;
+	animation-duration: 0.5s;
+	animation-iteration-count: 4;
+}
+
+@keyframes shakeit {
+	0% {
+		transform: translate(1px, 1px) rotate(0deg);
+	}
+	10% {
+		transform: translate(-1px, -2px) rotate(-1deg);
+	}
+	20% {
+		transform: translate(-3px, 0px) rotate(1deg);
+	}
+	30% {
+		transform: translate(3px, 2px) rotate(0deg);
+	}
+	40% {
+		transform: translate(1px, -1px) rotate(1deg);
+	}
+	50% {
+		transform: translate(-1px, 2px) rotate(-1deg);
+	}
+	60% {
+		transform: translate(-3px, 1px) rotate(0deg);
+	}
+	70% {
+		transform: translate(3px, 1px) rotate(-1deg);
+	}
+	80% {
+		transform: translate(-1px, -1px) rotate(1deg);
+	}
+	90% {
+		transform: translate(1px, 2px) rotate(0deg);
+	}
+	100% {
+		transform: translate(1px, -2px) rotate(-1deg);
 	}
 }

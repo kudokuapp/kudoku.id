@@ -4,11 +4,10 @@ import FinansialCheck from "../components/sections/finansial-check/FinansialChec
 import RegisterKudoku from "../components/sections/register/RegisterKudoku";
 import Team from "../components/sections/team/Team";
 import Tools from "../components/sections/tools/tools";
-import Engagement2 from "../components/sections/engagement/Engagement";
 import Footer from "../components/footer/Footer";
 import Navbar from "../components/navbar/Navbar";
 import Head from "next/head";
-// import Engagement from "../container/Engagement/Engagement";
+import Engagement from "../container/Engagement/Engagement";
 
 const HeadIndex = () => {
 	return (
@@ -140,8 +139,7 @@ export default function Index() {
 					<FinansialCheck />
 					<Tools />
 					<Team />
-					<Engagement2 />
-					{/* <Engagement /> */}
+					<Engagement />
 					<Footer />
 				</div>
 			</main>

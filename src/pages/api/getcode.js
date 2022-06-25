@@ -11,7 +11,7 @@ export default function handler(req, res) {
 	client.verify
 		.services(process.env.VERIFY_SERVICE_SID)
 		.verifications.create({
-			to: `+${req.query.ver}`,
+			to: `+62${req.query.ver}`,
 			channel: "sms",
 			locale: locale,
 		})

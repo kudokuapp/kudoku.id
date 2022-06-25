@@ -2,6 +2,14 @@ import React, { useState, Component } from "react";
 import axios from "axios";
 import OtpInput from "react-otp-input";
 
+const ifFirstCharIsZero = (phoneNum) => {
+	if (phoneNum.charAt(0) === "0") {
+		return phoneNum.substring(1);
+	} else {
+		return phoneNum;
+	}
+};
+
 const Placeholder = ({}) => {
 	const [data, setData] = useState();
 	const [phoneNumber, setPhoneNumber] = useState("");
@@ -23,6 +31,7 @@ const Placeholder = ({}) => {
 	};
 
 	const checkVerify = async () => {
+		phoneNumber = ifFirstCharIsZero(phoneNumber);
 		await axios
 			.get("/api/verifycode", {
 				params: {
@@ -31,7 +40,7 @@ const Placeholder = ({}) => {
 				},
 			})
 			.then((res) => {
-				window.location = `/signup?wa=${phoneNumber}`;
+				window.location = `/signup?wa=+62${phoneNumber}`;
 				console.log(phoneNumber);
 				console.log(res.data.results);
 				// return setData(res.data.results)
@@ -54,16 +63,22 @@ const Placeholder = ({}) => {
 				<div className="flip-card-inner flex-row justify-between align-middle items-center self-center">
 					<div className="flip-card-front">
 						<div className="flex flex-row">
-							<div className=" mr-2 rounded-md p-2 flex flex-row items-center justify-center bg-neutralBackground">+62</div>
+							<div className=" mr-2 rounded-md p-2 flex flex-row items-center justify-center bg-neutralBackground">
+								+62
+							</div>
 							<input
-								type="number"
+								type={"number"}
 								value={phoneNumber}
 								onChange={(e) => {
 									setPhoneNumber(e.target.value);
 								}}
 								placeholder="Your WhatsApp here"
+								minLength={10}
 							/>
-							<button className="btn-try rounded-md p-2 min-w-fit" onClick={handleStartVerify}>
+							<button
+								className="btn-try rounded-md p-2 min-w-fit"
+								onClick={handleStartVerify}
+							>
 								Try it first
 							</button>
 						</div>

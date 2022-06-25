@@ -73,7 +73,7 @@ const HeadIndex = () => {
 				href="/favicon-16x16.png"
 			/>
 			<link rel="manifest" href="/manifest.json" />
-			<meta name="msapplication-TileColor" content="#ffffff" />
+			<meta name="msapplication-TileColor" content="#345665" />
 			<meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
 			<meta name="theme-color" content="#345665" />
 
@@ -84,35 +84,41 @@ const HeadIndex = () => {
 				name="description"
 				content="Meet the all-in-one calendar. Schedule time for todos, events, and contacts with joy. Try it for free!"
 			/>
-			<link rel="canonical" href="https://www.amie.so/" />
+			<link rel="canonical" href="https://www.kudoku.id/" />
 			<meta property="fb:app_id" content="" />
 			<meta property="fb:pages" content="" />
 			<meta property="og:type" content="product" />
-			<meta property="og:url" content="https://www.amie.so/" />
-			<meta property="og:title" content="Amie - Joyful productivity" />
+			<meta property="og:url" content="https://www.kudoku.id/" />
+			<meta property="og:title" content="Kudoku - Start Your Finance Journey" />
 			<meta
 				property="og:description"
-				content="Meet the all-in-one calendar. Schedule time for todos, events, and contacts with joy. Try it for free!"
+				content="Meet the all-in-one personal finance app. Track and analyze your income, expense, assets, and liabilities with joy. Try it for free!"
 			/>
-			<meta property="og:image" content="https://www.amie.so/images/meta.png" />
+			<meta
+				property="og:image"
+				content="https://www.kudoku.id/images/meta.png"
+			/>
 			<meta name="twitter:card" content="photo" />
-			<meta name="twitter:site" content="@tryamie" />
-			<meta name="twitter:creator" content="@tryamie" />
-			<meta name="twitter:title" content="Amie - Joyful productivity" />
+			<meta name="twitter:site" content="@kudokuapp" />
+			<meta name="twitter:creator" content="@kudokuapp" />
+			<meta
+				name="twitter:title"
+				content="Kudoku - Start Your Finance Journey"
+			/>
 			<meta
 				name="twitter:description"
-				content="Meet the all-in-one calendar. Schedule time for todos, events, and contacts with joy. Try it for free!"
+				content="Meet the all-in-one personal finance app. Track and analyze your income, expense, assets, and liabilities with joy. Try it for free!"
 			/>
 			<meta
 				name="twitter:image:src"
-				content="https://www.amie.so/images/meta.png"
+				content="https://www.kudoku.id/images/meta.png"
 			/>
-			<meta itemProp="name" content="Amie - Joyful productivity" />
+			<meta itemProp="name" content="Kudoku - Start Your Finance Journey" />
 			<meta
 				itemProp="description"
-				content="Meet the all-in-one calendar. Schedule time for todos, events, and contacts with joy. Try it for free!"
+				content="Meet the all-in-one personal finance app. Track and analyze your income, expense, assets, and liabilities with joy. Try it for free!"
 			/>
-			<meta itemProp="image" content="https://www.amie.so/images/meta.png" />
+			<meta itemProp="image" content="https://www.kudoku.id/images/meta.png" />
 			<meta name="mobile-web-app-capable" content="yes" />
 			<meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 			<meta name="next-head-count" content="35" />

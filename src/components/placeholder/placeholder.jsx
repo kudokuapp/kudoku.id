@@ -40,7 +40,7 @@ const Placeholder = ({}) => {
 				},
 			})
 			.then((res) => {
-				window.location = `/signup?wa=+62${phoneNumber}`;
+				window.location = `/signup?wa=62${phoneNumber}`;
 				console.log(phoneNumber);
 				console.log(res.data.results);
 				// return setData(res.data.results)

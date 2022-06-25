@@ -59,6 +59,7 @@ const Placeholder = ({}) => {
 		<>
 			<div
 				className={`my-2 flex flex-row justify-between align-middle lg:w-2/3 ${flip}`}
+        id="placeholder"
 			>
 				<div className="flip-card-inner flex-row justify-between align-middle items-center self-center">
 					<div className="flip-card-front">
@@ -67,7 +68,11 @@ const Placeholder = ({}) => {
 								+62
 							</div>
 							<input
-								type={"number"}
+                onKeyPress={(event) => {
+                  if (!/[0-9]/.test(event.key)) {
+                    event.preventDefault();
+                  }
+                }}
 								value={phoneNumber}
 								onChange={(e) => {
 									setPhoneNumber(e.target.value);

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { en } from "../../../../public/static/locales/en/common";
 import socialMedia from "../../../core/mock/socialMedia";
 import {
@@ -13,6 +14,15 @@ import {
 import { Title } from "../finansial-check/FinansialCheck";
 
 const Engagement2 = () => {
+	const handleAnchor = (event) => {
+		event.preventDefault();
+		var reqId = "#placeholder";
+    	window.scrollTo(0, $(reqId).offset().top-85);
+	};
+	const handleShake = () => {
+		var d = document.getElementById('placeholder');
+		d.className += " shakeit";
+	}
 	return (
 		<>
 			<div className="lg:m-6 grid md:grid-cols-3 md:gap-4 relative h-max">
@@ -60,11 +70,11 @@ const Engagement2 = () => {
 										<Title.Provider value={en.section8.right.description}>
 											<TitleSectionBlack />
 										</Title.Provider>
-										<Title.Provider
-											value={en.section8.right.waitlist + " " + "->"}
-										>
-											<SubTitleSectionMd />
-										</Title.Provider>
+										<Link href="" onClick={handleAnchor}>
+											<h4 className="text-white text-left text-2xl mt-10 cursor-pointer" onClick={handleShake}>
+												{en.section8.right.waitlist + " " + "->"}
+											</h4>
+										</Link>
 										<Title.Provider
 											value={en.section8.right.tweet + " " + "->"}
 										>

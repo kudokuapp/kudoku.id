@@ -59,7 +59,7 @@ body {
 @media screen and (max-width: 1024px){
   html,
   body {
-    margin: 0 1vmin;
+    margin: 0 4vmin;
   }
 }
 a {

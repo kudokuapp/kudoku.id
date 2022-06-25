@@ -5,10 +5,10 @@ import Sidebar from "../../components/sidebar/Sidebar";
 export default function Index() {
 	return (
 		<div className="flex md:flex-none">
-			<div className="w-1/6 scale-0 sm:scale-100">
+			<div className="w-0 lg:w-1/6 md:w-1/6 scale-0 sm:scale-100">
 				<Sidebar />
 			</div>
-			<div className="w-full sm:w-5/6">
+			<div className="w-screen sm:w-5/6">
 				<Navbar />
 				<div className=" bg-white p-14 rounded-3xl drop-shadow-md mt-12 mx-6">
 					<h1 className="text-primary text-6xl font-bold mb-12">Imprint</h1>

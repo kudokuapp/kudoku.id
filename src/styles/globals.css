@@ -56,11 +56,11 @@ body {
 		"Segoe UI Symbol", "Noto Color Emoji";
 	max-width: 1400px;
 }
-@media screen and (max-width: 360px){
-  html,
-  body {
-    margin: 0 1vmin;
-  }
+@media screen and (max-width: 360px) {
+	html,
+	body {
+		margin: 0 1vmin;
+	}
 }
 a {
 	color: inherit;
@@ -70,9 +70,3 @@ a {
 * {
 	box-sizing: border-box;
 }
-
-/* @layer components {
-	.kudoku-card {
-		@apply relative flex items-center;
-	}
-} */

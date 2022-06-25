@@ -12,7 +12,7 @@ import {
 } from "../../text/TitleSection";
 import { Title } from "../finansial-check/FinansialCheck";
 
-const Engagement = () => {
+const Engagement2 = () => {
 	return (
 		<>
 			<div className="lg:m-6 grid md:grid-cols-3 md:gap-4 relative h-max">
@@ -81,4 +81,4 @@ const Engagement = () => {
 	);
 };
 
-export default Engagement;
+export default Engagement2;

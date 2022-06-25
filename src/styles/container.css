@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	.engagement__text {
+		@apply text-primary text-center text-4xl font-bold;
+	}
+
+	.engagament__text-secondary {
+		@apply text-secondary text-2xl text-center mt-10;
+	}
+
+	.engagament__text-rightone {
+		@apply text-left text-4xl font-bold text-white;
+	}
+
+	.card-main {
+		@apply w-full h-full px-16 py-14 rounded-[3.5rem] origin-center;
+		overflow-x: hidden;
+		scroll-snap-type: x mandatory;
+		scroll-behavior: smooth;
+		-webkit-overflow-scrolling: touch;
+	}
+}

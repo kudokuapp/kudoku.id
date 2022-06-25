@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	.top-footer__text {
+		@apply text-left text-4xl font-bold text-onPrimaryContainer w-max h-max hover:text-primary hover:text-[2.5rem] mb-6;
+	}
+
+	.bottom-footer__text {
+		@apply hover:text-primary hover:font-bold w-max h-max text-onPrimaryContainer;
+	}
+
+	.navbar {
+		@apply flex justify-between flex-nowrap items-center my-0 mx-auto pt-10 pb-2 px-8 w-full;
+	}
+
+	.navbar__image {
+		@apply flex items-center max-w-[12rem] pl-[7px];
+	}
+
+	.navbar__switch {
+		@apply flex items-center;
+	}
+}
+
+@media (max-width: 500px) {
+	.navbar {
+		padding: 2em 0.5em 0.5em 0.5em;
+	}
+}

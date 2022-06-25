@@ -1,3 +1,3 @@
 export default function Index() {
-	return <p>privacy</p>;
+	return <p>asu</p>;
 }

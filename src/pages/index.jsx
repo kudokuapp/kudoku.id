@@ -4,9 +4,10 @@ import FinansialCheck from "../components/sections/finansial-check/FinansialChec
 import RegisterKudoku from "../components/sections/register/RegisterKudoku";
 import Team from "../components/sections/team/Team";
 import Tools from "../components/sections/tools/tools";
-import Engagement from "../components/sections/engagement/Engagement";
+import Engagement2 from "../components/sections/engagement/Engagement";
 import Footer from "../components/footer/Footer";
 import Navbar from "../components/navbar/Navbar";
+import Engagement from "../container/Engagement/Engagement";
 
 export default function Index() {
 	return (
@@ -20,7 +21,8 @@ export default function Index() {
 				<FinansialCheck />
 				<Tools />
 				<Team />
-				<Engagement />
+				<Engagement2 />
+				{/* <Engagement /> */}
 				<Footer />
 			</div>
 		</div>

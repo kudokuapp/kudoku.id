@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import Logo from "../../../public/static/assets/logo/variant2.svg";
 import { MaterialUISwitch } from "./MaterialUISwitch";
-import styles from "./Navbar.module.css";
 
 var language = "en";
 
@@ -22,18 +21,14 @@ export default function Navbar({}) {
 		}
 	};
 	return (
-		<nav className={styles.navbar}>
-			<div className={styles.image}>
-				<Link href="/" className={styles.link}>
+		<nav className="navbar">
+			<div className="navbar__image cursor-pointer">
+				<Link href="/">
 					<Image src={Logo} alt="Kudoku Logo" />
 				</Link>
 			</div>
-			<div className={styles.switch}>
-				<MaterialUISwitch
-					disabled
-					defaultChecked
-					className={styles.switch__item}
-				/>
+			<div className="navbar__switch">
+				<MaterialUISwitch disabled defaultChecked />
 			</div>
 		</nav>
 	);

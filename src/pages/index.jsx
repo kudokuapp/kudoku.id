@@ -82,7 +82,7 @@ const HeadIndex = () => {
 			<meta name="title" content="Kudoku - Start Your Finance Journey" />
 			<meta
 				name="description"
-				content="Meet the all-in-one calendar. Schedule time for todos, events, and contacts with joy. Try it for free!"
+				content="Meet the all-in-one personal finance app. Track and analyze your income, expense, assets, and liabilities with joy. Try it for free!"
 			/>
 			<link rel="canonical" href="https://www.kudoku.id/" />
 			<meta property="fb:app_id" content="" />

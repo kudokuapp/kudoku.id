@@ -4,7 +4,7 @@ import OtpInput from "react-otp-input";
 
 const ifFirstCharIsZero = (phoneNum) => {
 	if (phoneNum.charAt(0) === "0") {
-		return phoneNum.substring(1);
+		return phoneNum.slice(1);
 	} else {
 		return phoneNum;
 	}

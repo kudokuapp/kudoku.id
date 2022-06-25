@@ -3,13 +3,17 @@
 @tailwind utilities;
 
 @layer components {
+	/* -----------FOOTER-------------------- */
 	.top-footer__text {
-		@apply text-left sm:text-4xl text-2xl font-bold text-onPrimaryContainer w-max h-max hover:text-primary sm:hover:text-[2.5rem] hover:text-[2.0rem] mb-6;
+		@apply text-left sm:text-4xl text-2xl font-bold text-onPrimaryContainer w-max h-max hover:text-primary sm:hover:text-[2.5rem] hover:text-[1.75rem] mb-6;
 	}
 
 	.bottom-footer__text {
 		@apply hover:text-primary hover:font-bold w-max h-max text-onPrimaryContainer text-sm sm:text-base;
 	}
+	/* -------------------------------------- */
+
+	/* -----------------NAVBAR----------------- */
 
 	.navbar {
 		@apply flex justify-between flex-nowrap items-center my-0 mx-auto pt-10 pb-2 px-8 w-full;
@@ -22,10 +26,11 @@
 	.navbar__switch {
 		@apply flex items-center;
 	}
-}
 
-@media (max-width: 500px) {
-	.navbar {
-		padding: 2em 0.5em 0.5em 0.5em;
+	@media (max-width: 500px) {
+		.navbar {
+			padding: 2em 0.5em 0.5em 0.5em;
+		}
 	}
+	/* ------------------------------------------------------------ */
 }

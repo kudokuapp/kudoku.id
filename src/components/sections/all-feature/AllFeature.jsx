@@ -16,9 +16,9 @@ const AllFeature = () => {
 						<div id="slide-1">
 							<div className="flex flex-row w-full justify-center align-middleh-max py-14">
 								<div className="flex flex-col w-screen justify-center align-middle mx-8">
-									<h1 className="text-left text-4xl text-primary font-bold">
+									<h1 className="text-left text-4xl text-LIGHT/onPrimaryContainer font-bold">
 										All in one app.
-										<span className="text-LIGHT/onPrimaryContainer">
+										<span className="text-black">
 											<br />
 											So you can focus on achieving your financial independence.
 										</span>

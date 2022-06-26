@@ -5,7 +5,7 @@ import socialmedia from "./socialmedia";
 export default function EngagementL() {
 	return (
 		<section className="card-main bg-onPrimary md:col-span-2">
-			<h2 className="engagement__text">Proudly built in Public</h2>
+			<h2 className="engagement__text text-primary">Proudly built in Public</h2>
 			<h3 className="engagament__text-secondary sm:mx-16 mx-4">
 				Follow our journey building Kudoku in public. We regularly share
 				progress, successes and failures so you can learn with us!

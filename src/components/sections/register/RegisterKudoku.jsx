@@ -7,9 +7,7 @@ import {
 } from "../../text/TitleSection";
 import { en } from "../../../../public/static/locales/en/common";
 import { id } from "../../../../public/static/locales/id/common";
-import Link from "next/link";
 import Placeholder from "../../placeholder/placeholder";
-import { SubTitleSection, SubTitleSectionSm, SubTitleSectionWM } from "../../text/SubtitleSection";
 import RoundedSub from "../../text/DoubleSub";
 
 var language = "en";
@@ -60,16 +58,7 @@ const RegisterKudoku = () => {
 										<Title.Provider value={en.section1.potential}>
 											<TitleSectionSecondary />
 										</Title.Provider>
-										<Title.Provider value={en.section1.alpha}>
-											<SubTitleSection />
-										</Title.Provider>
-										<Title.Provider value={en.section1.invite}>
-											<SubTitleSectionWM />
-										</Title.Provider>
 										<Placeholder />
-										<Title.Provider value={en.section1.policy}>
-											<SubTitleSectionSm />
-										</Title.Provider>
 									</div>
 									<RoundedSub />
 								</div>

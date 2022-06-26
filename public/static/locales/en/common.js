@@ -5,6 +5,7 @@ export const en = {
 		potential: "You only need one app to do that for you.",
 		alpha: "Kudoku will enter its Alpha version.",
 		invite: "Get early access and help shape the product by joining the waitlist!",
+		send: "Type the verification code sent to",
 		policy: "By clicking the button, you agree with our Privacy Policy.",
 		rolling: "Rolling out when it is fun to use",
 		coming: "Coming to Web, Android, and Apple devices.",
@@ -32,7 +33,7 @@ export const en = {
 	},
 	section5: {
 		features: "Kudoku has the features.",
-		Both: "Both familiar and new",
+		Both: "Both familiar and new.",
 		multiAccount: {
 			title: "Multi account connectivity",
 			description:

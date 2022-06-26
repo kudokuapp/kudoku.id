@@ -7,13 +7,15 @@ const CardTools = () => {
 			{tools.map((item, index) => {
 				return (
 					<div className="card-tools flex flex-col justify-between" key={index}>
-						<Image
-							className="h-auto"
-							src={item.imgSrc}
-							width={100}
-							height={100}
-							alt=""
-						/>
+                        <div className="flex flex-row justify-start">
+                            <Image
+                                className="h-auto"
+                                src={item.imgSrc}
+                                width={50}
+                                height={50}
+                                alt=""
+                            />
+                        </div>
 						<h4 className="text-lg text-left font-bold text-white mt-4">
 							{item.title}
 						</h4>

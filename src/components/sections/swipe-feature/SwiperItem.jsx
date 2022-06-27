@@ -14,13 +14,12 @@ function SwiperItem({ imageSrc, imageAlt }) {
 					height={500}
 				/>
 			</div>
-			<div id="large">
+			<div id="large" className="my-4">
 				<Image
 					src={imageSrc}
 					alt={imageAlt}
 					className="swiper-img"
 					draggable={false}
-					height={500}
 				/>
 			</div>
 		</li>

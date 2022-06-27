@@ -8,6 +8,8 @@ import Footer from "../components/footer/Footer";
 import Navbar from "../components/navbar/Navbar";
 import Head from "next/head";
 import Engagement from "../container/engagement/Engagement";
+import Swiper from "../components/sections/swipe-feature/Swiper";
+import items from "../core/mock/swiper";
 
 export default function Index() {
 	return (
@@ -23,7 +25,7 @@ export default function Index() {
 					<RegisterKudoku />
 					<Explanation />
 					<AllFeature />
-					{/* <Swiper items={items} /> */}
+					<Swiper items={items} />
 					<FinansialCheck />
 					<Tools />
 					<Team />

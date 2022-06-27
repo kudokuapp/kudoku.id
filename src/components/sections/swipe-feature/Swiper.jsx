@@ -111,7 +111,7 @@ function Swiper({ items }) {
 									<SwiperItem key={idx} {...item} />
 								))}
 							</ul>
-							<ul className="swiper-indicator mt-8">
+							<ul className="swiper-indicator">
 								{items.map((_item, idx) => (
 									<li
 										key={idx}
@@ -125,14 +125,14 @@ function Swiper({ items }) {
 							</ul>
 						</div>
 						<div
-							className="swiper-container flex flex-row w-full mx-8 h-full py-14"
+							className="swiper-container flex flex-row justify-between w-full mx-8 h-full py-14"
 							id="large"
 						>
 							<ul className="swiper-indicator flex-col w-1/2">
 								{items.map((_item, idx) => (
 									<li
 										key={idx}
-										className={`swiper-indicator-item-large ${
+										className={`swiper-indicator-item-large font-semibold my-4 text-2xl ${
 											currentIdx === idx ? "active" : ""
 										}`}
 										onClick={() => indicatorOnClick(idx)}

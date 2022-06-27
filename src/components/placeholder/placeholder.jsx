@@ -4,6 +4,7 @@ import OtpInput from "react-otp-input";
 import { en } from "../../../public/static/locales/en/common";
 import { Title } from "../sections/finansial-check/FinansialCheck";
 import { SubTitleSection, SubTitleSectionSm, SubTitleSectionWM } from "../text/SubtitleSection";
+import Link from "next/link";
 
 const ifFirstCharIsZero = (phoneNum) => {
 	if (phoneNum.charAt(0) === "0") {
@@ -71,7 +72,7 @@ const Placeholder = ({}) => {
             <SubTitleSectionWM />
           </Title.Provider></>
           : 
-          <Title.Provider value={en.section1.send + ' ' + '+' + phoneNumber}>
+          <Title.Provider value={en.section1.send + ' ' + '+62' + phoneNumber}>
             <SubTitleSection />
           </Title.Provider>
         }
@@ -96,6 +97,7 @@ const Placeholder = ({}) => {
               }}
               placeholder="Your WhatsApp here"
               minLength={10}
+              type="number"
             />
             <button
               className="btn-try rounded-md p-2 min-w-fit"
@@ -110,7 +112,6 @@ const Placeholder = ({}) => {
 							onChange={setCipher}
 							numInputs={6}
 							separator={<span className='separator'></span>}
-              shouldAutoFocus
 							isInputNum={true}
               inputStyle='box'
 						/>
@@ -118,9 +119,7 @@ const Placeholder = ({}) => {
 					</div>
 				</div>
 			</div>
-      <Title.Provider value={en.section1.policy}>
-        <SubTitleSectionSm />
-      </Title.Provider>
+      <h4 className="text-black text-left text-sm">{en.section1.policy} <span className="text-primary"><Link href="/privacy">Privacy Policy</Link></span></h4>
 		</>
 	);
 };

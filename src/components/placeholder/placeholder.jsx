@@ -1,4 +1,4 @@
-import React, { useState, Component } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import OtpInput from "react-otp-input";
 import { en } from "../../../public/static/locales/en/common";
@@ -19,7 +19,12 @@ const Placeholder = ({}) => {
 	const [phoneNumber, setPhoneNumber] = useState("");
 	const [cipher, setCipher] = useState("");
 	const [flip, setFlip] = useState("placeholder");
+	const [border, setSetborder] = useState("border-rose-600");
 	const [isVerify, setisVerify] = useState(true);
+	const [isInvalid, setisInvalid] = useState(false);
+  const [seconds, setSeconds] = React.useState(10);
+  const [miliseconds, setMiliseconds] = React.useState('00:');
+  const [resendTxt, setResendTxt] = React.useState('Didn"t get it? Resend the code in');
 
 	const startVerify = async () => {
 		await axios
@@ -31,7 +36,9 @@ const Placeholder = ({}) => {
 			.then((res) => {
 				console.log(phoneNumber);
 				setFlip("flip-card");
+        setSeconds(10)
         setisVerify(false)
+        setisInvalid(true)
 				return setData(res.data.results);
 			});
 	};
@@ -50,7 +57,10 @@ const Placeholder = ({}) => {
 				console.log(phoneNumber);
 				console.log(res.data.results);
 				// return setData(res.data.results)
-			});
+			})
+      .catch(() => {
+        setSetborder("border-rose-600")
+      });
 	};
 
 	const handleStartVerify = (event) => {
@@ -61,6 +71,21 @@ const Placeholder = ({}) => {
 		event.preventDefault();
 		checkVerify();
 	};
+	const retypeNumber = () => {
+		setFlip('placeholder')
+	};
+  
+
+  React.useEffect(() => {
+    if (seconds > 0) {
+      setTimeout(() => setSeconds(`0${seconds - 1}`), 1000);
+    } else {
+      setSeconds(<button onClick={startVerify}>now</button>);
+      setResendTxt('Didn"t get it? Resend the code');
+      setMiliseconds('')
+    }
+  });
+  
 	return (
 		<>
       {isVerify
@@ -81,7 +106,7 @@ const Placeholder = ({}) => {
         id="placeholder"
 			>
 				<div className="flip-card-inner flex-row justify-between align-middle items-center self-center">
-					<div className="flip-card-front flex flex-row justify-between">
+					<div className="flip-card-front flex flex-row justify-between border-4 border-outline">
             <div className="mr-2 rounded-md p-2 flex flex-row items-center justify-center bg-neutralBackground">
               +62
             </div>
@@ -119,7 +144,24 @@ const Placeholder = ({}) => {
 					</div>
 				</div>
 			</div>
-      <h4 className="text-black text-left text-sm">{en.section1.policy} <span className="text-primary"><Link href="/privacy">Privacy Policy</Link></span></h4>
+      {isInvalid
+        ?
+          <>
+          <h4 className="text-rose-600 text-left text-sm">Invalid code! Please input the right one</h4>
+          </>
+        :
+        <></>
+      }
+      {isVerify
+          ? <>
+          <h4 className="text-black text-left text-sm">{en.section1.policy} <span className="text-primary"><Link href="/privacy">Privacy Policy</Link></span></h4>
+          </>
+          : 
+          <>
+          <h4 className="text-black text-left text-sm">{resendTxt} <span className="text-primary">{miliseconds}{seconds}</span></h4>
+          <h4 className="text-black text-left text-sm">Entering the wrong number? <span className="text-primary"><button type="button" onClick={retypeNumber}>re-type phone number</button></span></h4>
+          </>
+        }
 		</>
 	);
 };

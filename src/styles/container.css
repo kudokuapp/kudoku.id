@@ -3,6 +3,15 @@
 @tailwind utilities;
 
 @layer components {
+	.card-main {
+		@apply w-full h-full lg:px-16 lg:py-14 sm:px-12 sm:py-10 px-8 py-8 lg:rounded-[3.5rem] md:rounded-[2.5rem] sm:rounded-[2.0rem] rounded-[1.5rem];
+		overflow-x: hidden;
+		scroll-snap-type: x mandatory;
+		scroll-behavior: smooth;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	/* ENGAGEMENT CONTAINER SECTION */
 	.engagement__text {
 		@apply text-primary text-center sm:text-4xl text-2xl font-bold;
 	}
@@ -18,14 +27,29 @@
 	.engagement-r__link {
 		@apply cursor-pointer text-onPrimary sm:text-left text-center lg:text-2xl hover:text-errorContainer hover:font-bold text-xl;
 	}
+	/* END */
 
-	.card-main {
-		@apply w-full h-full lg:px-16 lg:py-14 sm:px-12 sm:py-10 px-8 py-8 lg:rounded-[3.5rem] md:rounded-[2.5rem] sm:rounded-[2.0rem] rounded-[1.5rem];
-		overflow-x: hidden;
-		scroll-snap-type: x mandatory;
-		scroll-behavior: smooth;
-		-webkit-overflow-scrolling: touch;
+	/* TEAM CONTAINER SECTION */
+	.team__heading {
+		@apply text-onPrimary text-center sm:text-4xl text-2xl font-bold;
 	}
+
+	.team__subheading {
+		@apply text-background sm:text-2xl text-xl font-[500] text-center;
+	}
+
+	.team-card {
+		@apply bg-onPrimary/20 h-fit w-fit flex md:flex-col flex-row md:justify-between justify-center sm:px-8 sm:py-8 px-8 py-4 sm:rounded-[1.5rem] rounded-[1.0rem] items-center;
+	}
+
+	.team-card__image {
+		@apply sm:w-fit sm:py-6 sm:px-11 w-16 pr-5 rounded-full min-w-min min-h-min;
+	}
+
+	.team-card__text {
+		@apply text-center text-onPrimary sm:text-base text-sm;
+	}
+	/* ENDDD */
 }
 
 .shakeit__link {

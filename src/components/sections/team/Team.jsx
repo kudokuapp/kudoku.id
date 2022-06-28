@@ -6,7 +6,7 @@ import {
 } from "../../text/TitleSection";
 import { Title } from "../finansial-check/FinansialCheck";
 
-const Team = () => {
+const Team2 = () => {
 	return (
 		<>
 			<div className="lg:m-6 flex relative flex-row h-max">
@@ -40,4 +40,4 @@ const Team = () => {
 	);
 };
 
-export default Team;
+export default Team2;

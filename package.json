@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@babel/core": "^7.17.5",
+    "@calcom/embed-react": "^1.0.9",
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
     "@fortawesome/fontawesome-svg-core": "^1.3.0",

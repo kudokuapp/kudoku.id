@@ -3,6 +3,13 @@
 	flex-shrink: 0;
 }
 
+@media screen and (min-width: 1024px) {
+	.swiper-item {
+		width: 80%;
+		flex-shrink: 0;
+	}
+}
+
 .swiper-img {
 	width: 100%;
 	height: auto;

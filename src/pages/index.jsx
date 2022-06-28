@@ -2,13 +2,15 @@ import AllFeature from "../components/sections/all-feature/AllFeature";
 import Explanation from "../components/sections/explanation/Explanation";
 import FinansialCheck from "../components/sections/finansial-check/FinansialCheck";
 import RegisterKudoku from "../components/sections/register/RegisterKudoku";
-import Team2 from "../components/sections/team/Team";
 import Tools from "../components/sections/tools/tools";
-import Footer from "../components/footer/Footer";
-import Navbar from "../components/navbar/Navbar";
+import Swiper from "../components/sections/swipe-feature/Swiper";
+import items from "../core/mock/swiper";
+// Yang bener dari sini nanti
 import Head from "next/head";
-import Engagement from "../container/engagement/Engagement";
+import Navbar from "../components/navbar/Navbar";
 import Team from "../container/team/Team";
+import Engagement from "../container/engagement/Engagement";
+import Footer from "../components/footer/Footer";
 
 export default function Index() {
 	return (
@@ -24,10 +26,9 @@ export default function Index() {
 					<RegisterKudoku />
 					<Explanation />
 					<AllFeature />
-					{/* <Swiper items={items} /> */}
+					<Swiper items={items} />
 					<FinansialCheck />
 					<Tools />
-					<Team2 />
 					<Team />
 					<Engagement />
 					<Footer />

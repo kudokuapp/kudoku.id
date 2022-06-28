@@ -6,7 +6,7 @@ export const en = {
 		alpha: "Kudoku will enter its Alpha version.",
 		invite: "Get early access and help shape the product by joining the waitlist!",
 		send: "Type the verification code sent to",
-		policy: "By clicking the button, you agree with our Privacy Policy.",
+		policy: "By clicking the button, you agree with our",
 		rolling: "Rolling out when it is fun to use",
 		coming: "Coming to Web, Android, and Apple devices.",
 	},

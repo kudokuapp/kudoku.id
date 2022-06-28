@@ -6,7 +6,7 @@ const TitleSectionPrimary = () => {
 			<Title.Consumer>
 				{(titleSection) => {
 					return (
-						<h1 className="text-left text-4xl font-bold">{titleSection}</h1>
+						<h1 className="text-left text-2xl md:text-4xl font-bold">{titleSection}</h1>
 					);
 				}}
 			</Title.Consumer>
@@ -20,7 +20,7 @@ const TitleSectionPrimaryCenter = () => {
 			<Title.Consumer>
 				{(titleSection) => {
 					return (
-						<h1 className="text-center text-4xl font-bold">{titleSection}</h1>
+						<h1 className="text-center text-2xl md:text-4xl font-bold">{titleSection}</h1>
 					);
 				}}
 			</Title.Consumer>
@@ -34,7 +34,7 @@ const TitleSectionSecondary = () => {
 			<Title.Consumer>
 				{(titleSection) => {
 					return (
-						<h1 className="text-left text-4xl font-bold text-secondary">
+						<h1 className="text-left text-2xl md:text-4xl font-bold text-secondary">
 							{titleSection}
 						</h1>
 					);
@@ -50,7 +50,7 @@ const TitleSectionWhite = () => {
 			<Title.Consumer>
 				{(titleSection) => {
 					return (
-						<h1 className="text-left text-4xl font-bold text-white">
+						<h1 className="text-left text-2xl md:text-4xl font-bold text-white">
 							{titleSection}
 						</h1>
 					);
@@ -66,7 +66,7 @@ const TitleSectionWhiteCenter = () => {
 			<Title.Consumer>
 				{(titleSection) => {
 					return (
-						<h1 className="text-center text-4xl font-bold text-white">
+						<h1 className="text-center text-2xl md:text-4xl font-bold text-white">
 							{titleSection}
 						</h1>
 					);
@@ -82,7 +82,7 @@ const TitleSectionBlack = () => {
 			<Title.Consumer>
 				{(titleSection) => {
 					return (
-						<h1 className="text-left text-4xl font-bold text-black">
+						<h1 className="text-left text-2xl md:text-4xl font-bold text-black">
 							{titleSection}
 						</h1>
 					);
@@ -98,7 +98,7 @@ const TitleSectionPrimaryContainer = () => {
 			<Title.Consumer>
 				{(titleSection) => {
 					return (
-						<h1 className="text-left text-4xl font-bold text-primaryContainer">
+						<h1 className="text-left text-2xl md:text-4xl font-bold text-primaryContainer">
 							{titleSection}
 						</h1>
 					);
@@ -114,7 +114,7 @@ const TitleSectionPrimaryOnContainer = () => {
 			<Title.Consumer>
 				{(titleSection) => {
 					return (
-						<h1 className="text-left text-4xl font-bold text-onPrimaryContainer">
+						<h1 className="text-left text-2xl md:text-4xl font-bold text-onPrimaryContainer">
 							{titleSection}
 						</h1>
 					);

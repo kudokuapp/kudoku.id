@@ -9,29 +9,29 @@ const items = [
 	{
 		imageSrc: budgeting,
 		imageAlt:
-			"Put your budget on cruise control. Say goodbye to nasty surprises, know where every rupiah goes and how much you can spend.",
+			"Put your budget on cruise control. Know where every rupiah goes.",
 	},
 	{
 		imageSrc: tracking,
 		imageAlt:
-			"Keep financially fit by setting multiple money-tracking on specific spend categories.",
+			"Keep financially fit by setting multiple money-tracking. ",
 	},
 	{
 		imageSrc: saving,
-		imageAlt: "Build your consistency on saving money.",
+		imageAlt: "Build your consistency on saving money and track your goals.",
 	},
 	{
 		imageSrc: asset,
-		imageAlt: "Keeping attention to all your diversified assets.",
+		imageAlt: "Know when all your upcoming bills and subscriptions.",
 	},
 	{
 		imageSrc: bills,
 		imageAlt:
-			"Imagine knowing when all your upcoming bills and subscriptions were due before you spent all your cash.",
+			"Keep attention to all your diversified assets.",
 	},
 	{
 		imageSrc: mortgage,
-		imageAlt: "Easily track your mortgage.",
+		imageAlt: "Easily track and rearrange your mortgage payment.",
 	},
 ];
 

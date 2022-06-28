@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { getRefValue, useStateRef } from "../../../core/lib/hooks";
 import { getTouchEventData } from "../../../core/lib/dom";
 import SwiperItem from "./SwiperItem";
@@ -6,6 +6,16 @@ import SwiperItem from "./SwiperItem";
 const MIN_SWIPE_REQUIRED = 40;
 
 function Swiper({ items }) {
+	const [mobile, setMobile] = useState(false)
+
+	React.useEffect(() => {
+		if(window.innerWidth < 1024) {
+			setMobile(true)
+		} else {
+			setMobile(false)
+		}
+	})
+
 	const containerRef = useRef(null);
 	const containerWidthRef = useRef(0);
 	const minOffsetXRef = useRef(0);
@@ -96,11 +106,13 @@ function Swiper({ items }) {
 			<div className="slider">
 				<div className="slides">
 					<div id="slide-1">
-						<div
+						{mobile
+						?
+							<>
+							<div
 							className="swiper-container mx-8 h-full py-14"
 							onTouchStart={onTouchStart}
 							onMouseDown={onTouchStart}
-							id="small"
 						>
 							<ul
 								ref={containerRef}
@@ -124,9 +136,11 @@ function Swiper({ items }) {
 								))}
 							</ul>
 						</div>
+						</>
+						:
+						<>
 						<div
 							className="swiper-container flex flex-row justify-between w-full mx-8 h-full py-14"
-							id="large"
 						>
 							<ul className="swiper-indicator flex-col w-1/2">
 								{items.map((_item, idx) => (
@@ -152,6 +166,8 @@ function Swiper({ items }) {
 								))}
 							</ul>
 						</div>
+						</>
+						}
 					</div>
 				</div>
 			</div>

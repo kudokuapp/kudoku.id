@@ -52,6 +52,10 @@ const Placeholder = ({}) => {
 				},
 			})
 			.then((res) => {
+        if(res.error) {
+          setisInvalid(false)
+          setBorder("border-rose-600")
+        }
 				window.location = `/signup?wa=+62${phoneNumber}`;
 			})
       .catch(() => {
@@ -80,7 +84,7 @@ const Placeholder = ({}) => {
         }  
         if(seconds === '00') {
           setSeconds(<button onClick={startVerify}>now</button>);
-          setResendTxt('Didn"t get it? Resend the code');
+          setResendTxt("Didn't get it? Resend the code");
           setMiliseconds('')
         }
       }

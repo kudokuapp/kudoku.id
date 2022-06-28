@@ -37,7 +37,6 @@ const Placeholder = ({}) => {
 				setFlip("flip-card");
         setSeconds(10)
         setisVerify(false)
-        setisInvalid(true)
 				return setData(res.data.results);
 			});
 	};
@@ -55,6 +54,7 @@ const Placeholder = ({}) => {
 				window.location = `/signup?wa=+62${phoneNumber}`;
 			})
       .catch(() => {
+        setisInvalid(true)
         setBorder("border-rose-600")
       });
 	};
@@ -72,16 +72,17 @@ const Placeholder = ({}) => {
 		setFlip('placeholder')
 	};
   
-
-  React.useEffect(() => {
-    if (seconds > 0) {
-      setTimeout(() => setSeconds(`0${seconds - 1}`), 1000);
-    } else {
-      setSeconds(<button onClick={startVerify}>now</button>);
-      setResendTxt('Didn"t get it? Resend the code');
-      setMiliseconds('')
-    }
-  });
+  if(flip === 'flip-card') {
+    React.useEffect(() => {
+      if (seconds > 0) {
+        setTimeout(() => setSeconds(`0${seconds - 1}`), 1000);
+      } else {
+        setSeconds(<button onClick={startVerify}>now</button>);
+        setResendTxt('Didn"t get it? Resend the code');
+        setMiliseconds('')
+      }
+    });
+  }
   
 	return (
 		<>
@@ -128,7 +129,7 @@ const Placeholder = ({}) => {
               Try it first
             </button>
 					</div>
-					<div className={`flip-card-back flex flex-row justify-between ${border}`}>
+					<div className={`flip-card-back flex flex-row justify-between border-4 ${border}`}>
 						<OtpInput
 							value={cipher}
 							onChange={setCipher}

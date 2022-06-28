@@ -21,9 +21,9 @@ const Placeholder = ({}) => {
 	const [flip, setFlip] = useState("placeholder");
 	const [border, setBorder] = useState("border-outline");
 	const [isVerify, setisVerify] = useState(true);
-	const [isInvalid, setisInvalid] = useState(false);
+	const [isInvalid, setisInvalid] = useState(true);
   const [seconds, setSeconds] = React.useState(10);
-  const [miliseconds, setMiliseconds] = React.useState('00:');
+  const [miliseconds, setMiliseconds] = React.useState('00:0');
   const [resendTxt, setResendTxt] = React.useState('Didn"t get it? Resend the code in');
 
 	const startVerify = async () => {
@@ -54,7 +54,7 @@ const Placeholder = ({}) => {
 				window.location = `/signup?wa=+62${phoneNumber}`;
 			})
       .catch(() => {
-        setisInvalid(true)
+        setisInvalid(false)
         setBorder("border-rose-600")
       });
 	};
@@ -74,9 +74,10 @@ const Placeholder = ({}) => {
   
   if(flip === 'flip-card') {
     React.useEffect(() => {
-      if (seconds > 0) {
-        setTimeout(() => setSeconds(`0${seconds - 1}`), 1000);
-      } else {
+      if (seconds === 10) {
+        setTimeout(() => setSeconds(seconds - 1), 1000);
+      }  
+      if(seconds ===0) {
         setSeconds(<button onClick={startVerify}>now</button>);
         setResendTxt('Didn"t get it? Resend the code');
         setMiliseconds('')
@@ -104,7 +105,7 @@ const Placeholder = ({}) => {
         id="placeholder"
 			>
 				<div className="flip-card-inner flex-row justify-between align-middle items-center self-center">
-					<div className={`flip-card-front flex flex-row justify-between border-4 ${border}`}>
+					<div className={`flip-card-front flex flex-row justify-between border-4 border-outline`}>
             <div className="mr-2 rounded-md p-2 flex flex-row items-center justify-center bg-neutralBackground">
               +62
             </div>
@@ -145,10 +146,11 @@ const Placeholder = ({}) => {
       {isInvalid
         ?
           <>
-          <h4 className="text-rose-600 text-left text-sm">Invalid code! Please input the right one</h4>
           </>
         :
-        <></>
+          <>
+          <h4 className="text-rose-600 text-left text-sm">Invalid code! Please input the right one</h4>
+          </>
       }
       {isVerify
           ? <>

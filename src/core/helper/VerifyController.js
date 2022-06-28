@@ -50,7 +50,6 @@ exports.verifyCode = async (req, res) => {
 			code: req.query.cipher,
 		})
 		.then((data) => {
-			console.log(data);
 			res.status(200).send(data);
 
 			const wa = `${data.to}`;

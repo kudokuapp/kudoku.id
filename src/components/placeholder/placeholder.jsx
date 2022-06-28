@@ -19,7 +19,7 @@ const Placeholder = ({}) => {
 	const [phoneNumber, setPhoneNumber] = useState("");
 	const [cipher, setCipher] = useState("");
 	const [flip, setFlip] = useState("placeholder");
-	const [border, setSetborder] = useState("border-rose-600");
+	const [border, setBorder] = useState("border-outline");
 	const [isVerify, setisVerify] = useState(true);
 	const [isInvalid, setisInvalid] = useState(false);
   const [seconds, setSeconds] = React.useState(10);
@@ -34,7 +34,6 @@ const Placeholder = ({}) => {
 				},
 			})
 			.then((res) => {
-				console.log(phoneNumber);
 				setFlip("flip-card");
         setSeconds(10)
         setisVerify(false)
@@ -54,12 +53,9 @@ const Placeholder = ({}) => {
 			})
 			.then((res) => {
 				window.location = `/signup?wa=+62${phoneNumber}`;
-				console.log(phoneNumber);
-				console.log(res.data.results);
-				// return setData(res.data.results)
 			})
       .catch(() => {
-        setSetborder("border-rose-600")
+        setBorder("border-rose-600")
       });
 	};
 
@@ -72,6 +68,7 @@ const Placeholder = ({}) => {
 		checkVerify();
 	};
 	const retypeNumber = () => {
+    setBorder("border-outline")
 		setFlip('placeholder')
 	};
   
@@ -106,7 +103,7 @@ const Placeholder = ({}) => {
         id="placeholder"
 			>
 				<div className="flip-card-inner flex-row justify-between align-middle items-center self-center">
-					<div className="flip-card-front flex flex-row justify-between border-4 border-outline">
+					<div className={`flip-card-front flex flex-row justify-between border-4 ${border}`}>
             <div className="mr-2 rounded-md p-2 flex flex-row items-center justify-center bg-neutralBackground">
               +62
             </div>
@@ -131,7 +128,7 @@ const Placeholder = ({}) => {
               Try it first
             </button>
 					</div>
-					<div className="flip-card-back flex flex-row justify-between">
+					<div className={`flip-card-back flex flex-row justify-between ${border}`}>
 						<OtpInput
 							value={cipher}
 							onChange={setCipher}

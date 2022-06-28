@@ -144,13 +144,7 @@ const Placeholder = ({}) => {
 					</div>
 				</div>
 			</div>
-      {isVerify
-          ? <>
-          <h4 className="text-black text-left text-sm">{en.section1.policy} <span className="text-primary"><Link href="/privacy">Privacy Policy</Link></span></h4>
-          </>
-          : 
-          <>
-          {isInvalid
+      {isInvalid
             ?
               <>
               </>
@@ -159,6 +153,12 @@ const Placeholder = ({}) => {
               <h4 className="text-rose-600 text-left text-sm">Invalid code! Please input the right one</h4>
               </>
           }
+      {isVerify
+          ? <>
+          <h4 className="text-black text-left text-sm">{en.section1.policy} <span className="text-primary"><Link href="/privacy">Privacy Policy</Link></span></h4>
+          </>
+          : 
+          <>
           <h4 className="text-black text-left text-sm">{resendTxt} <span className="text-primary">{miliseconds}{seconds}</span></h4>
           <h4 className="text-black text-left text-sm">Entering the wrong number? <span className="text-primary"><button type="button" onClick={retypeNumber}>re-type phone number</button></span></h4>
           </>

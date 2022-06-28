@@ -150,15 +150,6 @@ const Placeholder = ({}) => {
           </>
           : 
           <>
-          {isInvalid
-            ?
-              <>
-              </>
-            :
-              <>
-              <h4 className="text-rose-600 text-left text-sm">Invalid code! Please input the right one</h4>
-              </>
-          }
           <h4 className="text-black text-left text-sm">{resendTxt} <span className="text-primary">{miliseconds}{seconds}</span></h4>
           <h4 className="text-black text-left text-sm">Entering the wrong number? <span className="text-primary"><button type="button" onClick={retypeNumber}>re-type phone number</button></span></h4>
           </>

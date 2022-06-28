@@ -1,6 +1,5 @@
 import Image from "next/image";
 import data from "./data";
-import { useState } from "react";
 import Cal, { getCalApi } from "@calcom/embed-react";
 import { useEffect } from "react";
 

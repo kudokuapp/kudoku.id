@@ -20,11 +20,11 @@ const Placeholder = ({}) => {
 	const [cipher, setCipher] = useState("");
 	const [flip, setFlip] = useState("placeholder");
 	const [border, setBorder] = useState("border-outline");
-	const [isVerify, setisVerify] = useState(false);
+	const [isVerify, setisVerify] = useState(true);
 	const [isInvalid, setisInvalid] = useState(true);
   const [seconds, setSeconds] = React.useState(10);
   const [miliseconds, setMiliseconds] = React.useState('00:');
-  const [resendTxt, setResendTxt] = React.useState('Didn"t get it? Resend the code in');
+  const [resendTxt, setResendTxt] = React.useState("Didn't get it? Resend the code in");
 
 	const startVerify = async () => {
 		await axios

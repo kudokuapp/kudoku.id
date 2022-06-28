@@ -73,18 +73,18 @@ const Placeholder = ({}) => {
 		setFlip('placeholder')
 	};
   
-  if(flip === 'flip-card') {
-    React.useEffect(() => {
-      if (seconds === 10) {
-        setTimeout(() => setSeconds(seconds - 1), 1000);
-      }  
-      if(seconds ===0) {
-        setSeconds(<button onClick={startVerify}>now</button>);
-        setResendTxt('Didn"t get it? Resend the code');
-        setMiliseconds('')
+  React.useEffect(() => {
+      if(flip === 'flip-card') {
+        if (seconds === 10) {
+          setTimeout(() => setSeconds(seconds - 1), 1000);
+        }  
+        if(seconds ===0) {
+          setSeconds(<button onClick={startVerify}>now</button>);
+          setResendTxt('Didn"t get it? Resend the code');
+          setMiliseconds('')
+        }
       }
-    });
-  }
+  });
   
 	return (
 		<>

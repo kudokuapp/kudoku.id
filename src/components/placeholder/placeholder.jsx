@@ -20,10 +20,10 @@ const Placeholder = ({}) => {
 	const [cipher, setCipher] = useState("");
 	const [flip, setFlip] = useState("placeholder");
 	const [border, setBorder] = useState("border-outline");
-	const [isVerify, setisVerify] = useState(true);
+	const [isVerify, setisVerify] = useState(false);
 	const [isInvalid, setisInvalid] = useState(true);
   const [seconds, setSeconds] = React.useState(10);
-  const [miliseconds, setMiliseconds] = React.useState('00:0');
+  const [miliseconds, setMiliseconds] = React.useState('00:');
   const [resendTxt, setResendTxt] = React.useState('Didn"t get it? Resend the code in');
 
 	const startVerify = async () => {
@@ -74,11 +74,11 @@ const Placeholder = ({}) => {
 	};
   
   React.useEffect(() => {
-      if(flip === 'flip-card') {
-        if (seconds === 10) {
-          setTimeout(() => setSeconds(seconds - 1), 1000);
+      if(!isVerify) {
+        if (seconds > 0) {
+          setTimeout(() => setSeconds(`0${seconds - 1}`), 1000);
         }  
-        if(seconds ===0) {
+        if(seconds === '00') {
           setSeconds(<button onClick={startVerify}>now</button>);
           setResendTxt('Didn"t get it? Resend the code');
           setMiliseconds('')

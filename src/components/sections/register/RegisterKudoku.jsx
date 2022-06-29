@@ -49,7 +49,7 @@ const RegisterKudoku = () => {
 					<div className="slides">
 						<div id="slide-1">
 							<div className="flex lg:flex-row flex-col w-full justify-between mx-8 h-max py-14">
-								<div className="flex flex-col justify-between text-left">
+								<div className="flex flex-col justify-between text-left lg:w-1/2">
 									<div>
 										<Title.Provider value={en.section1.reach}>
 											<TitleSectionPrimary />
@@ -63,7 +63,7 @@ const RegisterKudoku = () => {
 									<RoundedSub />
 								</div>
 
-								<Image src={People} alt="" width={1200} height={800} />
+								<Image src={People} alt="" className="people" />
 
 								{/* <div className="text-xs relative bottom-0 pl-4 text-primary mb-4 -ml-3">
 									<Link href="/">

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Navbar from "../../components/navbar/Navbar";
 import Sidebar from "../../components/sidebar/Sidebar";
-import privacy from "../../../public/images/privacy.png"
+import privacy from "/public/images/privacy.png"
 
 export default function Index() {
 	return (
@@ -12,7 +12,7 @@ export default function Index() {
 			<div className="w-screen sm:w-5/6">
 				<Navbar />
 				<div className="my-8"></div>
-				<Image src={privacy}></Image>
+				<Image src={privacy} className="w-100 h-auto" alt="" />
 			</div>
 		</div>
 	);

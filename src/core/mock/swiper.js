@@ -21,11 +21,11 @@ const items = [
 		imageAlt: "Build your consistency on saving money and track your goals.",
 	},
 	{
-		imageSrc: asset,
+		imageSrc: bills,
 		imageAlt: "Know when all your upcoming bills and subscriptions.",
 	},
 	{
-		imageSrc: bills,
+		imageSrc: asset,
 		imageAlt:
 			"Keep attention to all your diversified assets.",
 	},

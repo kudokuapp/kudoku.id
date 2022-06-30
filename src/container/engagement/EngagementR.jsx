@@ -8,8 +8,7 @@ const twitterLink = `https://twitter.com/intent/tweet?text=${URISafe}%20https%3A
 const waLink = `https://wa.me/send?text=${URISafe}%20https%3A%2F%2Fkudoku.id%3Futm_source%3Dwhatsapp`;
 
 export default function EngagamentR() {
-	const handleAnchor = (event) => {
-		event.preventDefault();
+	const handleAnchor = () => {
 		var reqId = document.getElementById("placeholder");
 		window.scrollTo(0, reqId.offset().top - 85);
 	};
@@ -17,7 +16,7 @@ export default function EngagamentR() {
 	const handleShake = () => {
 		var d = document.getElementById("placeholder");
 		d.classList.add("shakeit__link");
-		setTimeout(() => d.classList.remove("shakeit__link"), 5000);
+		setTimeout(() => d.classList.remove("shakeit__link"), 3000);
 	};
 
 	return (

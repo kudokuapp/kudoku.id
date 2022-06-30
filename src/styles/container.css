@@ -39,7 +39,7 @@
 	}
 
 	.team-card {
-		@apply bg-onPrimary/20 h-fit w-fit flex md:flex-col flex-row md:justify-between justify-center sm:px-8 sm:py-8 px-8 py-4 sm:rounded-[1.5rem] rounded-[1.0rem] items-center;
+		@apply bg-onPrimary/20 h-fit w-fit flex md:flex-col flex-row md:justify-between justify-center sm:px-8 sm:py-8 px-8 py-4 sm:rounded-[1.5rem] rounded-[1.0rem] items-center hover:bg-onPrimary hover:text-onPrimaryContainer text-onPrimary;
 	}
 
 	.team-card__image {
@@ -47,7 +47,7 @@
 	}
 
 	.team-card__text {
-		@apply text-center text-onPrimary sm:text-base text-sm;
+		@apply text-center sm:text-base text-sm;
 	}
 	/* ENDDD */
 }

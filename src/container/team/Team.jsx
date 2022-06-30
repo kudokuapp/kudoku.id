@@ -1,4 +1,6 @@
-import CardTeam from "./CardTeam";
+import Furqon from "./cal/Furqon";
+import Rizqy from "./cal/Rizqy";
+import Aldi from "./cal/Aldi";
 
 export default function Team() {
 	return (
@@ -20,13 +22,15 @@ export default function Team() {
 				</div>
 				<div className="md:mb-16 sm:mb-12 mb-4 text-center text-secondaryContainer text-sm mt-10">
 					<p>
-						Click the card below to book a time with the founder that suits
+						Click the card below to book a time with the founders that suits
 						yours.
 					</p>
 				</div>
 
 				<div className="grid md:grid-cols-3 sm:gap-8 gap-6 justify-items-center">
-					<CardTeam />
+					<Furqon />
+					<Rizqy />
+					<Aldi />
 				</div>
 			</div>
 		</section>

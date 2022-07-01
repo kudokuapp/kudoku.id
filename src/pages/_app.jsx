@@ -87,9 +87,9 @@ function MyApp({ Component, pageProps }) {
 					sizes="16x16"
 					href="/favicon-16x16.png"
 				/>
-				<meta name="msapplication-TileColor" content="#345665" />
+				<meta name="msapplication-TileColor" content="#2C5EA8" />
 				<meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
-				<meta name="theme-color" content="#345665" />
+				<meta name="theme-color" content="#2C5EA8" />
 				<meta name="title" content="Kudoku - Start Your Finance Journey" />
 				<meta
 					name="description"

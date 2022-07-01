@@ -1,13 +1,11 @@
 import Image from "next/image";
 import { Title } from "../../../core/helper/TitleContext";
-import {
-	TitleSectionPrimary
-} from "../../text/TitleSection";
+import { TitleSectionPrimary } from "../../text/TitleSection";
 import { en } from "../../../../public/static/locales/en/common";
 import CardTools from "../../card/card-tools";
 import { SubTitleSectionMdBlack } from "../../text/SubtitleSection";
 
-const Tools = () => {
+const Tools2 = () => {
 	return (
 		<>
 			<div className="lg:m-6 flex relative flex-row h-max">
@@ -38,5 +36,5 @@ const Tools = () => {
 	);
 };
 
-export default Tools;
+export default Tools2;
 export { Title };

@@ -27,7 +27,7 @@ function Calendar() {
 	}, []);
 	return (
 		<Cal
-			calLink="furqon/kudoku"
+			calLink="rizqy-fachri/kudoku"
 			style={{ width: "100%", height: "100%", overflow: "scroll" }}
 		/>
 	);
@@ -54,7 +54,7 @@ const BootstrapDialogTitle = (props) => {
 						position: "absolute",
 						right: 6,
 						top: 2,
-						color: "#FFFFFF",
+						color: "#2C5EA8",
 					}}
 				>
 					<CloseIcon />
@@ -95,11 +95,11 @@ export default function Furqon() {
 				<BootstrapDialogTitle
 					id={`Cal.com ${data.name}`}
 					onClose={handleClose}
-					className="bg-[#313131]"
+					className="bg-[#FFFFFF]"
 				></BootstrapDialogTitle>
 				<DialogContent
 					sx={{ p: 0, m: 0 }}
-					className="bg-[#313131] text-onPrimary"
+					className="bg-[#FFFFFF] text-[#313131]"
 				>
 					<p className="m-4">
 						Want to know more about Kudoku? This is a 30-min 1:1 Google Meet

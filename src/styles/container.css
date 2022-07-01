@@ -4,12 +4,33 @@
 
 @layer components {
 	.card-main {
-		@apply w-full h-full lg:px-16 lg:py-14 sm:px-12 sm:py-10 px-8 py-8 lg:rounded-[3.5rem] md:rounded-[2.5rem] sm:rounded-[2.0rem] rounded-[1.5rem];
+		@apply w-full h-full lg:px-16 lg:py-14 sm:px-12 sm:py-10 px-8 py-8 lg:rounded-[3.5rem] md:rounded-[2.5rem] sm:rounded-[2.0rem] rounded-[1.5rem] shadow;
 		overflow-x: hidden;
 		scroll-snap-type: x mandatory;
 		scroll-behavior: smooth;
 		-webkit-overflow-scrolling: touch;
 	}
+
+	.card-children {
+		@apply flex flex-col justify-between lg:rounded-[2.5rem] md:rounded-[2.0rem] sm:rounded-[1.5rem] rounded-[1.0rem] shadow-md p-6 sm:p-10;
+	}
+	.card-children__primary {
+		@apply card-children bg-primary;
+	}
+
+	/* TOOLS SECTION */
+	.card-children__text {
+		@apply text-left font-bold text-onPrimary text-2xl;
+	}
+
+	.card-children__subtext {
+		@apply text-left font-light text-onPrimary text-base;
+	}
+
+	.card-children-button-disabled {
+		@apply text-primaryContainer bg-onPrimaryContainer opacity-50 flex items-center justify-between w-full px-4 py-2 mt-auto font-light transition-colors rounded-md shadow-lg;
+	}
+	/* ENNNDDDD */
 
 	/* ENGAGEMENT CONTAINER SECTION */
 	.engagement__text {
@@ -39,7 +60,7 @@
 	}
 
 	.team-card {
-		@apply bg-onPrimary/20 h-fit w-fit flex md:flex-col flex-row md:justify-between justify-center sm:px-8 sm:py-8 px-8 py-4 sm:rounded-[1.5rem] rounded-[1.0rem] items-center hover:bg-onPrimary hover:text-onPrimaryContainer text-onPrimary;
+		@apply bg-onPrimary/20 h-fit w-fit flex md:flex-col flex-row md:justify-between justify-center sm:px-8 sm:py-8 px-8 py-4 sm:rounded-[1.5rem] rounded-[1.0rem] items-center hover:bg-onPrimary hover:text-onPrimaryContainer text-onPrimary shadow-md;
 	}
 
 	.team-card__image {

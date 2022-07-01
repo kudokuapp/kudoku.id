@@ -2,12 +2,12 @@ import AllFeature from "../components/sections/all-feature/AllFeature";
 import Explanation from "../components/sections/explanation/Explanation";
 import FinansialCheck from "../components/sections/finansial-check/FinansialCheck";
 import RegisterKudoku from "../components/sections/register/RegisterKudoku";
-import Tools from "../components/sections/tools/tools";
 import Swiper from "../components/sections/swipe-feature/Swiper";
 import items from "../core/mock/swiper";
 // Yang bener dari sini nanti
 import Head from "next/head";
 import Navbar from "../components/navbar/Navbar";
+import Tools from "../container/tools/Tools";
 import Team from "../container/team/Team";
 import Engagement from "../container/engagement/Engagement";
 import Footer from "../components/footer/Footer";

@@ -54,7 +54,7 @@ const RegisterKudoku = () => {
 										<Title.Provider value={en.section1.reach}>
 											<TitleSectionPrimary />
 										</Title.Provider>
-                                        <div className="mt-8"></div>
+										<div className="mt-8"></div>
 										<Title.Provider value={en.section1.potential}>
 											<TitleSectionSecondary />
 										</Title.Provider>
@@ -64,7 +64,6 @@ const RegisterKudoku = () => {
 								</div>
 
 								<Image src={People} alt="" className="people" />
-
 
 								{/* <div className="text-xs relative bottom-0 pl-4 text-primary mb-4 -ml-3">
 									<Link href="/">

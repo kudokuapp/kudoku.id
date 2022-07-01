@@ -10,7 +10,7 @@ export default function Index() {
 			</div>
 			<div className="w-screen sm:w-5/6">
 				<Navbar />
-				<div className=" bg-white p-14 rounded-3xl drop-shadow-md mt-12 mx-6">
+				<div className="bg-white p-14 rounded-3xl drop-shadow-md mt-12 mx-6">
 					<h1 className="text-primary text-6xl font-bold mb-12">Imprint</h1>
 					<h2 className="text-primary text-3xl font-medium mb-12">
 						PT. Kudoku Finansial Indonesia

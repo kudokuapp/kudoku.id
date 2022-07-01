@@ -50,7 +50,7 @@ const SubTitleSectionMdBlack = () => {
 			<Title.Consumer>
 				{(subtitleSection) => {
 					return (
-						<h4 className="text-onPrimaryContainer text-left text-2xl mt-4">
+						<h4 className="text-onPrimaryContainer text-left text-1xl mt-4">
 							{subtitleSection}
 						</h4>
 					);

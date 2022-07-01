@@ -1,6 +1,7 @@
 import People from "../../../../public/static/assets/section1img.svg";
 import Image from "next/image";
 import { Title } from "../finansial-check/FinansialCheck";
+import React, { useState } from "react";
 import {
 	TitleSectionPrimary,
 	TitleSectionSecondary,
@@ -28,6 +29,15 @@ if (!ISSERVER) {
 }
 
 const RegisterKudoku = () => {
+	const [mobile, setMobile] = useState(false)
+
+	React.useEffect(() => {
+		if(window.innerWidth < 1024) {
+			setMobile(true)
+		} else {
+			setMobile(false)
+		}
+	})
 	const changeLanguage = (e, path) => {
 		if (path === "/en") {
 			h4Text = en.section1.reach;
@@ -49,6 +59,26 @@ const RegisterKudoku = () => {
 					<div className="slides">
 						<div id="slide-1">
 							<div className="flex lg:flex-row flex-col w-full justify-between mx-8 h-max py-14">
+							{mobile
+							?
+							<>
+								<Image src={People} alt="" className="people" />
+								<div className="flex flex-col justify-between text-left lg:w-1/2 mt-4">
+									<div>
+										<Title.Provider value={en.section1.reach}>
+											<TitleSectionPrimary />
+										</Title.Provider>
+										<div className="mt-8"></div>
+										<Title.Provider value={en.section1.potential}>
+											<TitleSectionSecondary />
+										</Title.Provider>
+										<Placeholder />
+									</div>
+									<RoundedSub />
+								</div>
+							</>
+							:
+							<>
 								<div className="flex flex-col justify-between text-left lg:w-1/2">
 									<div>
 										<Title.Provider value={en.section1.reach}>
@@ -62,8 +92,9 @@ const RegisterKudoku = () => {
 									</div>
 									<RoundedSub />
 								</div>
-
 								<Image src={People} alt="" className="people" />
+							</>
+							}
 
 								{/* <div className="text-xs relative bottom-0 pl-4 text-primary mb-4 -ml-3">
 									<Link href="/">

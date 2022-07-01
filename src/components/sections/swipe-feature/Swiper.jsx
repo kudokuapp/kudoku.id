@@ -146,7 +146,7 @@ function Swiper({ items }) {
 								{items.map((_item, idx) => (
 									<li
 										key={idx}
-										className={`swiper-indicator-item-large font-semibold my-4 text-2xl ${
+										className={`swiper-indicator-item-large font-semibold my-4 text-2xl md:text-4xl ${
 											currentIdx === idx ? "active" : ""
 										}`}
 										onClick={() => indicatorOnClick(idx)}

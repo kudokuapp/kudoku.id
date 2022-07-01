@@ -16,14 +16,14 @@ const AllFeature = () => {
 						<div id="slide-1">
 							<div className="flex flex-row w-full justify-center align-middleh-max py-14">
 								<div className="flex flex-col w-screen justify-center align-middle mx-8">
-									<h1 className="text-left text-2xl lg:text-4xl text-LIGHT/onPrimaryContainer font-bold">
+									<h1 className="text-left text-2xl md:text-4xl text-LIGHT/onPrimaryContainer font-bold">
 										All in one app.
 										<span className="text-black">
 											<br />
 											So you can focus on achieving your financial independence.
 										</span>
 									</h1>
-									<div className="align-middle self-center md:flex md:flex-wrap md:justify-center grid grid-cols-2 gap-2 mt-4">
+									<div className="align-middle self-center sm:flex sm:flex-wrap sm:justify-center grid grid-cols-2 gap-2 mt-4">
 										<Image className="w-100 h-auto" src={Budgeting} alt="" />
 										<Image className="w-100 h-auto" src={Expense} alt="" />
 										<Image className="w-100 h-auto" src={Saving} alt="" />

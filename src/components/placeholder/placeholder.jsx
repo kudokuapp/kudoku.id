@@ -3,7 +3,7 @@ import axios from "axios";
 import OtpInput from "react-otp-input";
 import { en } from "../../../public/static/locales/en/common";
 import { Title } from "../sections/finansial-check/FinansialCheck";
-import { SubTitleSection, SubTitleSectionSm, SubTitleSectionWM } from "../text/SubtitleSection";
+import { SubTitleSection, SubTitleSectionWM } from "../text/SubtitleSection";
 import Link from "next/link";
 
 const ifFirstCharIsZero = (phoneNum) => {
@@ -75,6 +75,7 @@ const Placeholder = ({}) => {
 	const retypeNumber = () => {
     setBorder("border-outline")
 		setFlip('placeholder')
+    setisVerify(true)
 	};
   
   React.useEffect(() => {

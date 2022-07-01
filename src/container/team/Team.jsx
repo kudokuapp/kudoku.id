@@ -4,7 +4,7 @@ import Aldi from "./cal/Aldi";
 
 export default function Team() {
 	return (
-		<section className="h-max lg:m-6">
+		<section className="h-max lg:m-6 mt-8">
 			<div className="card-main bg-primary">
 				<h5 className="team__heading">Ask us anything about Kudoku</h5>
 				<div className="mt-4">

@@ -5,7 +5,7 @@ import SwiperItem from "./SwiperItem";
 
 const MIN_SWIPE_REQUIRED = 40;
 
-function Swiper({ items }) {
+export default function Swiper({ items }) {
 	const [mobile, setMobile] = useState(false);
 
 	useEffect(() => {
@@ -173,5 +173,3 @@ function Swiper({ items }) {
 		</div>
 	);
 }
-
-export default Swiper;

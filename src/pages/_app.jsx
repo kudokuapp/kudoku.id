@@ -1,10 +1,9 @@
 import "../styles/globals.css";
-import "../styles/Swiper.css";
-import "../styles/Placeholder.css";
 import "../styles/components.css";
 import "../styles/container.css";
+import "../styles/Swiper.css";
+import "../styles/Placeholder.css";
 import Head from "next/head";
-// import { appWithTranslation } from 'next-i18next'
 
 function MyApp({ Component, pageProps }) {
 	return (

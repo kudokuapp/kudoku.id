@@ -1,8 +1,6 @@
 import "../styles/globals.css";
-import "../styles/slides.css";
 import "../styles/Swiper.css";
-import "../styles/Swiperitem.css";
-import "../styles/placeholder.css";
+import "../styles/Placeholder.css";
 import "../styles/components.css";
 import "../styles/container.css";
 import Head from "next/head";

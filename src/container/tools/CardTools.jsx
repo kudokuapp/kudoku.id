@@ -31,7 +31,7 @@ export default function CardTools() {
 									viewBox="0 0 20 20"
 									fill="none"
 									xmlns="http://www.w3.org/2000/svg"
-									className="transition-all transform opacity-50 group-hover:opacity-100 group-hover:translate-x-1"
+									className="opacity-50 group-hover:opacity-100"
 								>
 									<path
 										d="M17.5 9.99996L2.5 9.99996M11.6667 4.16663L17.5 9.99996L11.6667 4.16663ZM17.5 9.99996L11.6667 15.8333L17.5 9.99996Z"

@@ -108,55 +108,45 @@ function Swiper({ items }) {
 					<div id="slide-1">
 						{mobile ? (
 							<>
-								<div
-									className="swiper-container mx-8 h-full py-14"
-									onTouchStart={onTouchStart}
-									onMouseDown={onTouchStart}
-								>
-									<ul
-										ref={containerRef}
-										className={`swiper-list ${isSwiping ? "is-swiping" : ""}`}
-										style={{ transform: `translate3d(${offsetX}px, 0, 0)` }}
-									>
-										{items.map((item, idx) => (
-											<SwiperItem key={idx} {...item} />
-										))}
-									</ul>
-									<ul className="swiper-indicator">
-										{items.map((_item, idx) => (
-											<li
-												key={idx}
-												className={`swiper-indicator-item ${
-													currentIdx === idx ? "active" : ""
-												}`}
-												onClick={() => indicatorOnClick(idx)}
-												data-testid="indicator"
-											/>
-										))}
-									</ul>
-								</div>
-							</>
-						) : (
-							<>
-								<div className="swiper-container flex flex-row justify-between w-full mx-8 h-full py-14">
-									<ul className="swiper-indicator flex-col w-1/2">
-										{items.map((_item, idx) => (
-											<li
-												key={idx}
-												className={`swiper-indicator-item-large font-semibold my-4 text-2xl md:text-4xl ${
-													currentIdx === idx ? "active" : ""
-												}`}
-												onClick={() => indicatorOnClick(idx)}
-												data-testid="indicator"
-											>
-												{_item.imageAlt}
-											</li>
-										))}
-									</ul>
-									<ul
-										ref={containerRef}
-										className={`swiper-list-large ${
-											isSwiping ? "is-swiping" : ""
+							<div
+							className="swiper-container mx-8 h-full py-14"
+							onTouchStart={onTouchStart}
+							onMouseDown={onTouchStart}
+						>
+							<ul
+								ref={containerRef}
+								className={`swiper-list ${isSwiping ? "is-swiping" : ""}`}
+								style={{ transform: `translate3d(${offsetX}px, 0, 0)` }}
+							>
+								{items.map((item, idx) => (
+									<SwiperItem key={idx} {...item} />
+								))}
+							</ul>
+							<ul className="swiper-indicator">
+								{items.map((_item, idx) => (
+									<li
+										key={idx}
+										className={`swiper-indicator-item ${
+											currentIdx === idx ? "active" : ""
+										}`}
+										onClick={() => indicatorOnClick(idx)}
+										data-testid="indicator"
+									/>
+								))}
+							</ul>
+						</div>
+						</>
+						:
+						<>
+						<div
+							className="swiper-container flex flex-row justify-between w-full mx-8 h-full py-14"
+						>
+							<ul className="swiper-indicator flex-col w-1/2">
+								{items.map((_item, idx) => (
+									<li
+										key={idx}
+										className={`swiper-indicator-item-large font-semibold my-4 text-2xl md:text-4xl ${
+											currentIdx === idx ? "active" : ""
 										}`}
 										style={{ transform: `translate3d(0, ${offsetX}px, 0)` }}
 									>

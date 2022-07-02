@@ -2,7 +2,7 @@ import "../styles/globals.css";
 import "../styles/components.css";
 import "../styles/container.css";
 import "../styles/Swiper.css";
-import "../styles/Placeholder.css";
+import "../styles/placeholder.css";
 import Head from "next/head";
 
 function MyApp({ Component, pageProps }) {

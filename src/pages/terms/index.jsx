@@ -18,7 +18,7 @@ export default function Index() {
 						Last updated: 28 of March 2022
 					</h2>
 
-					<section className="mb-12">
+					{/* <section className="mb-12">
 						<h6 className="text-primary text-2xl mb-2">Introduction</h6>
 						<p className="mb-4">
 							Welcome to PT. KUDOKU FINANSIAL INDONESIA (“Company”, “we”, “our”,
@@ -737,7 +737,7 @@ export default function Index() {
 							support:
 						</p>
 						<Link href="mailto:business@kudoku.id">business@kudoku.id</Link>
-					</section>
+					</section> */}
 				</div>
 			</div>
 		</div>

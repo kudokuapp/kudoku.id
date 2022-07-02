@@ -4,7 +4,7 @@ import socialmedia from "./socialmedia";
 
 export default function EngagementL() {
 	return (
-		<section className="card-main bg-onPrimary md:col-span-2 lg:px-16 lg:py-14 sm:px-12 sm:py-10 px-8 py-8">
+		<section className="card-main bg-onPrimary md:col-span-2 lg:px-16 lg:py-14 sm:px-12 sm:py-10 px-8 py-8 h-max">
 			<h2 className="engagement__text text-primary">Proudly built in Public</h2>
 			<h3 className="engagament__text-secondary sm:mx-16 mx-4">
 				Follow our journey building Kudoku in public. We regularly share

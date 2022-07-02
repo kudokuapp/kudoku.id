@@ -20,7 +20,7 @@ export default function EngagamentR() {
 	};
 
 	return (
-		<section className="card-main bg-primary lg:px-16 lg:py-14 sm:px-12 sm:py-10 px-8 py-8">
+		<section className="card-main bg-primary lg:px-16 lg:py-14 sm:px-12 sm:py-10 px-8 py-8 h-max">
 			<h4 className="engagament__text-rightone text-onPrimary">
 				Feels like helping us?
 			</h4>

@@ -425,7 +425,7 @@ export default function Index() {
 							{" "}
 							If you are a resident of the European Union (EU) and European
 							Economic Area (EEA), you have certain data protection rights,
-							covered by GDPR. – See more at
+							covered by GDPR. - See more at
 							https://eur-lex.europa.eu/eli/reg/2016/679/oj{" "}
 						</p>
 						<p className="mb-4">

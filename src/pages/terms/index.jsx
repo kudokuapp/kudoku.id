@@ -269,18 +269,18 @@ export default function Index() {
 							</li>
 							<li className="mb-4">
 								(f) To engage in any other conduct that restricts or inhibits
-								anyone’s use or enjoyment of Service, or which, as determined by
-								us, may harm or offend Company or users of Service or expose
-								them to liability.
+								anyone&apos;s use or enjoyment of Service, or which, as
+								determined by us, may harm or offend Company or users of Service
+								or expose them to liability.
 							</li>
 						</ol>
 						<p className="mb-4">Additionally, you agree not to:</p>
 						<ol>
 							<li className="mb-4">
 								(a) Use Service in any manner that could disable, overburden,
-								damage, or impair Service or interfere with any other party’s
-								use of Service, including their ability to engage in real time
-								activities through Service.
+								damage, or impair Service or interfere with any other
+								party&apos;s use of Service, including their ability to engage
+								in real time activities through Service.
 							</li>
 							<li className="mb-4">
 								(b) Use any robot, spider, or other automatic device, process,

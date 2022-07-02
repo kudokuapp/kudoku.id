@@ -14,7 +14,7 @@ export default function Swiper({ items }) {
 		} else {
 			setMobile(false);
 		}
-	});
+	}, []);
 
 	const containerRef = useRef(null);
 	const containerWidthRef = useRef(0);

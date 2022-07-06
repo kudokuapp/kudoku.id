@@ -158,7 +158,7 @@ export default function Swiper({ items }) {
 										className={`swiper-list-large ${
 											isSwiping ? "is-swiping" : ""
 										}`}
-										style={{ transform: `translate3d(0, ${offsetX}px, 0)` }}
+										style={{ transform: `translate3d(0, ${offsetX + (offsetX/2.5)}px, 0)` }}
 									>
 										{items.map((item, idx) => (
 											<SwiperItem key={idx} {...item} />

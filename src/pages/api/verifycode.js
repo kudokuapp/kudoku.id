@@ -57,6 +57,10 @@ export default function handler(req, res) {
 						}
 					}
 				);
+				window.location = `/signup?wa=+62${phoneNumber}`;
 			}
-		});
+		})
+		.catch((error) => {
+			console.log(error.response)
+		})
 }

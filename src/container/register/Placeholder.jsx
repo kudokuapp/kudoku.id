@@ -55,7 +55,6 @@ export default function Placeholder({}) {
 					setisInvalid(false);
 					setBorder("border-rose-600");
 				}
-				window.location = `/signup?wa=+62${phoneNumber}`;
 			})
 			.catch(() => {
 				setisInvalid(false);

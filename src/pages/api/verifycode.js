@@ -45,6 +45,7 @@ export default function handler(req, res) {
 			const date = `${today.getFullYear()}-${
 				today.getMonth() + 1
 			}-${today.getDate()}`;
+			window.location = `/signup?wa=+62${phoneNumber}`;
 
 			if (data.valid === true) {
 				//Push wa to database here
@@ -57,7 +58,6 @@ export default function handler(req, res) {
 						}
 					}
 				);
-				window.location = `/signup?wa=+62${phoneNumber}`;
 			}
 		})
 		.catch((error) => {

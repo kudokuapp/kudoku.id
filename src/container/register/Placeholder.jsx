@@ -51,15 +51,11 @@ export default function Placeholder({}) {
 				},
 			})
 			.then((res) => {
-				if (res.error) {
+				if (res.status === 500) {
 					setisInvalid(false);
 					setBorder("border-rose-600");
 				}
 			})
-			.catch(() => {
-				setisInvalid(false);
-				setBorder("border-rose-600");
-			});
 	};
 
 	const handleStartVerify = (event) => {
@@ -75,18 +71,25 @@ export default function Placeholder({}) {
 		setFlip("placeholder");
 	};
 
-	useEffect(() => {
-		if (!isVerify) {
-			if (seconds > 0) {
-				setTimeout(() => setSeconds(`0${seconds - 1}`), 1000);
+	useEffect(
+		() => {
+			let timer1;
+			if (!isVerify) {
+				if (seconds > 0) {
+					timer1 = setTimeout(() => setSeconds(`0${seconds - 1}`), 1000);
+				}
+				if (seconds === "00") {
+					setSeconds(<button onClick={startVerify}>now</button>);
+					setResendTxt("Didn't get it? Resend the code");
+					setMiliseconds("");
+				}
 			}
-			if (seconds === "00") {
-				setSeconds(<button onClick={startVerify}>now</button>);
-				setResendTxt("Didn't get it? Resend the code");
-				setMiliseconds("");
-			}
-		}
-	}, []);
+			return () => {
+			clearTimeout(timer1);
+			};
+		},
+		[seconds]
+	);
 
 	return (
 		<div>

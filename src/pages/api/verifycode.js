@@ -61,6 +61,9 @@ export default function handler(req, res) {
 			}
 		})
 		.catch((error) => {
-			console.log(error.response)
+			logger.error(error);
+			return res
+			.status(500)
+			.send({ success: false });
 		})
 }

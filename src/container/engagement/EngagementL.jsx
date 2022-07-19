@@ -10,23 +10,22 @@ export default function EngagementL() {
         Follow our journey building Kudoku in public. We regularly share progress, successes and
         failures so you can learn with us!
       </h3>
-      <div className="flex flex-row justify-between sm:mt-16 mt-10">
+      <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 lg:gap-y-10 md:gap-y-2 gap-y-6 md:gap-x-8 gap-x-6 justify-items-center sm:mt-16 mt-10">
         {socialmedia.map((item, index) => {
           return (
-            <button key={index} className="cursor-pointer w-fit h-fit">
-              <Link href={item.link} key={index} passHref>
-                <a target="_blank" rel="noopener noreferrer">
-                  <Image
-                    src={item.imgSrc}
-                    width={40}
-                    height={40}
-                    alt={item.alt}
-                    key={index}
-                    className="hover:fill-secondary"
-                  />
-                </a>
-              </Link>
-            </button>
+            <Link href={item.link} key={index} passHref>
+              <a target="_blank" rel="noopener noreferrer">
+                <button
+                  key={index}
+                  className="cursor-pointer flex items-center w-fit h-fit px-2 py-1 rounded-lg shadow-md hover:bg-primaryContainer"
+                >
+                  <Image src={item.imgSrc} width={40} layout="fixed" alt={item.alt} key={index} />
+                  <p className="ml-2" key={index}>
+                    {item.name}
+                  </p>
+                </button>
+              </a>
+            </Link>
           );
         })}
       </div>

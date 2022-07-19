@@ -20,7 +20,7 @@ export default function EngagamentR() {
   };
 
   return (
-    <section className="card-main bg-primary lg:px-16 lg:py-14 sm:px-10 sm:py-10 px-6 py-8 h-fill">
+    <section className="card-main bg-primary lg:px-16 lg:py-14 sm:px-10 sm:py-10 px-6 py-8 self-stretch">
       <h4 className="engagament__text-rightone text-onPrimary">Feels like helping us?</h4>
       <h5 className="engagament__text-rightone text-onPrimaryContainer">
         Here are some ways you can

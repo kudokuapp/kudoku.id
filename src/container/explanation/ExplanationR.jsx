@@ -1,6 +1,6 @@
 export default function ExplanationR() {
   return (
-    <div className="card-main bg-surface bg-opacity-60 md:col-span-1 h-fill">
+    <div className="card-main bg-surface bg-opacity-60 md:col-span-1 self-strech">
       <div className="spoiler-alert-top">
         <svg
           className="svg-inline--fa fa-exclamation-triangle fa-w-18 mr-4 font-normal"

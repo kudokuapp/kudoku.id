@@ -107,7 +107,7 @@ function MyApp({ Component, pageProps }) {
 				/>
 				<meta
 					property="og:image"
-					content="https://www.kudoku.id/images/meta.png"
+					content="https://kudoku.id/images/meta.png"
 				/>
 				<meta name="twitter:card" content="photo" />
 				<meta name="twitter:site" content="@kudokuapp" />
@@ -122,7 +122,7 @@ function MyApp({ Component, pageProps }) {
 				/>
 				<meta
 					name="twitter:image:src"
-					content="https://www.kudoku.id/images/meta.png"
+					content="https://kudoku.id/images/meta.png"
 				/>
 				<meta itemProp="name" content="Kudoku - Start Your Finance Journey" />
 				<meta
@@ -131,7 +131,7 @@ function MyApp({ Component, pageProps }) {
 				/>
 				<meta
 					itemProp="image"
-					content="https://www.kudoku.id/images/meta.png"
+					content="https://kudoku.id/images/meta.png"
 				/>
 				<meta name="mobile-web-app-capable" content="yes" />
 				<meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />

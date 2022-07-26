@@ -8,6 +8,7 @@ const Pool = pg.Pool;
 const { ACCOUNT_SID: account_sid, AUTH_TOKEN: auth_token } = process.env;
 
 const client = twilio(account_sid, auth_token);
+const locale = "en";
 
 const {
 	DB_USERNAME: dbUser,
@@ -35,19 +36,18 @@ export default function handler(req, res) {
 		.verificationChecks.create({
 			to: `+62${req.query.ver}`,
 			code: req.query.cipher,
+			locale: locale
 		})
 		.then((data) => {
-			console.log(data);
-			res.status(200).send(data);
-
+			res.send(data);
 			const wa = `${data.to}`;
 			const today = new Date();
 			const date = `${today.getFullYear()}-${
 				today.getMonth() + 1
 			}-${today.getDate()}`;
-			window.location = `/signup?wa=+62${phoneNumber}`;
-
-			if (data.valid === true) {
+			
+			if (data.data.valid) {
+				res.status(200).send(data);
 				//Push wa to database here
 				pool.query(
 					"INSERT INTO users_wa (whatsapp, registerDate) VALUES ($1, $2)",
@@ -61,9 +61,8 @@ export default function handler(req, res) {
 			}
 		})
 		.catch((error) => {
+			console.log(error)
 			logger.error(error);
-			return res
-			.status(500)
-			.send({ success: false });
+			res.send(error);
 		})
 }

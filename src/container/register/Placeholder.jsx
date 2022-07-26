@@ -14,9 +14,11 @@ const ifFirstCharIsZero = (phoneNum) => {
 export default function Placeholder({}) {
 	const [data, setData] = useState();
 	const [phoneNumber, setPhoneNumber] = useState("");
+	const [err_msg, seterr_msg] = useState("");
 	const [cipher, setCipher] = useState("");
 	const [flip, setFlip] = useState("placeholder");
 	const [border, setBorder] = useState("border-outline");
+	const [borderOnfocus, setBorderOnfocus] = useState("border-outline");
 	const [isVerify, setisVerify] = useState(true);
 	const [isInvalid, setisInvalid] = useState(true);
 	const [seconds, setSeconds] = useState(10);
@@ -26,7 +28,13 @@ export default function Placeholder({}) {
 	);
 
 	const startVerify = async () => {
-		await axios
+		if(phoneNumber === ""){
+			setisInvalid(false);
+			seterr_msg("Phone number is empty!")
+			setBorderOnfocus("border-rose-600")
+		}
+		if(phoneNumber !== ""){
+			await axios
 			.get("/api/getcode", {
 				params: {
 					ver: phoneNumber,
@@ -37,8 +45,28 @@ export default function Placeholder({}) {
 				setBorder("border-outline");
 				setSeconds(10);
 				setisVerify(false);
+				useEffect(
+					() => {
+						let timer1;
+						if (isVerify === false) {
+							if (seconds > 0) {
+								timer1 = setTimeout(() => setSeconds(`0${seconds - 1}`), 1000);
+							}
+							if (seconds === "00") {
+								setSeconds(<button onClick={startVerify}>now</button>);
+								setResendTxt("Didn't get it? Resend the code");
+								setMiliseconds("");
+							}
+						}
+						return () => {
+						clearTimeout(timer1);
+						};
+					},
+					[seconds]
+				);
 				return setData(res.data.results);
 			});
+		}
 	};
 
 	const checkVerify = async () => {
@@ -50,11 +78,20 @@ export default function Placeholder({}) {
 					cipher: cipher,
 				},
 			})
-			.then((res) => {
-				if (res.status === 500) {
-					setisInvalid(false);
-					setBorder("border-rose-600");
+			.then((data) => {
+				if(data.data.valid) {
+					window.location = `/signup?wa=+62${phoneNumber}`;
 				}
+				if(!data.data.valid){
+					setisInvalid(false);
+					setBorder("border-rose-600")
+					seterr_msg("Invalid code! Please input the right one")
+				}
+				// console.log(data)
+				// if (res.status === 500) {
+				// 	setisInvalid(false);
+				// 	setBorder("border-rose-600");
+				// }
 			})
 	};
 
@@ -70,26 +107,6 @@ export default function Placeholder({}) {
 		setBorder("border-outline");
 		setFlip("placeholder");
 	};
-
-	useEffect(
-		() => {
-			let timer1;
-			if (!isVerify) {
-				if (seconds > 0) {
-					timer1 = setTimeout(() => setSeconds(`0${seconds - 1}`), 1000);
-				}
-				if (seconds === "00") {
-					setSeconds(<button onClick={startVerify}>now</button>);
-					setResendTxt("Didn't get it? Resend the code");
-					setMiliseconds("");
-				}
-			}
-			return () => {
-			clearTimeout(timer1);
-			};
-		},
-		[seconds]
-	);
 
 	return (
 		<div>
@@ -109,7 +126,7 @@ export default function Placeholder({}) {
 			>
 				<div className="flip-card-inner flex-row justify-between align-middle items-center self-center">
 					<div
-						className={`flip-card-front flex flex-row justify-between border-4 border-outline`}
+						className={`flip-card-front flex flex-row justify-between border-4 ${borderOnfocus}`}
 					>
 						<div className="mr-2 rounded-md p-2 flex flex-row items-center justify-center bg-neutralBackground">
 							+62
@@ -160,7 +177,7 @@ export default function Placeholder({}) {
 			) : (
 				<>
 					<h4 className="text-rose-600 text-left text-sm">
-						Invalid code! Please input the right one
+						{err_msg}
 					</h4>
 				</>
 			)}

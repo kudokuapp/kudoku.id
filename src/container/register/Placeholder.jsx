@@ -53,7 +53,7 @@ export default function Placeholder({}) {
   const checkVerify = async () => {
     phoneNumber = ifFirstCharIsZero(phoneNumber);
     await axios
-      .get('/api/_verifycode', {
+      .get('/api/verifycode', {
         params: {
           ver: phoneNumber,
           cipher: cipher,

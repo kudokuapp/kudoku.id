@@ -1,7 +1,6 @@
 import pg from 'pg';
 import 'dotenv/config';
 import twilio from 'twilio';
-// import fs from 'fs';
 import { readFile } from 'fs';
 
 const Pool = pg.Pool;
@@ -27,10 +26,7 @@ const pool = new Pool({
   database: dbDatabase,
   ssl: {
     rejectUnauthorized: true,
-    ca: readFile('./_ca-certificate.crt', 'utf-8', (data, err) => {
-      console.log(data);
-      console.error(err);
-    }),
+    ca: readFile('./_ca-certificate.crt', 'utf-8'),
   },
 });
 

@@ -46,7 +46,7 @@ export default function Placeholder({}) {
           setisInvalid(true);
           return setData(res.data.results);
         })
-        .catch((e) => console.error(e));
+        .catch((e) => console.error(e.response.data));
     }
   };
 
@@ -74,7 +74,7 @@ export default function Placeholder({}) {
         // 	setBorder("border-rose-600");
         // }
       })
-      .catch((e) => console.error(e));
+      .catch((e) => console.error(e.response.data));
   };
 
   const handleStartVerify = (event) => {

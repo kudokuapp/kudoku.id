@@ -26,7 +26,7 @@ const pool = new Pool({
   database: dbDatabase,
   ssl: {
     rejectUnauthorized: true,
-    ca: fs.readFileSync('../../../ca-certificate.crt').toString(),
+    ca: fs.readFileSync('./ca-certificate.crt').toString(),
   },
 });
 

@@ -45,25 +45,7 @@ export default function Placeholder({}) {
 				setBorder("border-outline");
 				setSeconds(10);
 				setisVerify(false);
-				useEffect(
-					() => {
-						let timer1;
-						if (isVerify === false) {
-							if (seconds > 0) {
-								timer1 = setTimeout(() => setSeconds(`0${seconds - 1}`), 1000);
-							}
-							if (seconds === "00") {
-								setSeconds(<button onClick={startVerify}>now</button>);
-								setResendTxt("Didn't get it? Resend the code");
-								setMiliseconds("");
-							}
-						}
-						return () => {
-						clearTimeout(timer1);
-						};
-					},
-					[seconds]
-				);
+				setisInvalid(true)
 				return setData(res.data.results);
 			});
 		}
@@ -101,12 +83,30 @@ export default function Placeholder({}) {
 	};
 	const handleCheckVerify = (event) => {
 		event.preventDefault();
-		checkVerify();
+		if(cipher !== ""){
+			checkVerify();
+		}
 	};
 	const retypeNumber = () => {
 		setBorder("border-outline");
+		setBorderOnfocus("border-outline");
 		setFlip("placeholder");
+		setisVerify(true);
+		setisInvalid(true);
+		setCipher("");
+		seterr_msg("");
+		setPhoneNumber("");
 	};
+
+	let timer1;
+	if (seconds > 0) {
+		timer1 = setTimeout(() => setSeconds(`0${seconds - 1}`), 1000);
+	}
+	if (seconds === "00") {
+		setSeconds(<button onClick={startVerify}>now</button>);
+		setResendTxt("Didn't get it? Resend the code");
+		setMiliseconds("");
+	}
 
 	return (
 		<div>
@@ -137,6 +137,11 @@ export default function Placeholder({}) {
 									event.preventDefault();
 								}
 							}}
+							onFocus={() => {
+								if(isInvalid === true){
+									setBorderOnfocus("border-primary")
+								}
+							}}
 							value={phoneNumber}
 							onChange={(e) => {
 								setPhoneNumber(e.target.value);
@@ -154,8 +159,14 @@ export default function Placeholder({}) {
 					</div>
 					<div
 						className={`flip-card-back flex flex-row justify-between border-4 ${border}`}
+						onFocus={() => {
+							if(isInvalid === true){
+								setBorder("border-primary")
+							}
+						}}
 					>
 						<OtpInput
+							className="otp-input"
 							value={cipher}
 							onChange={setCipher}
 							numInputs={6}
@@ -195,7 +206,6 @@ export default function Placeholder({}) {
 					<h4 className="text-black text-left text-sm">
 						{resendTxt}{" "}
 						<span className="text-primary">
-							{miliseconds}
 							{seconds}
 						</span>
 					</h4>

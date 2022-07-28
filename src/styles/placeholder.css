@@ -40,11 +40,9 @@
   justify-content: center;
 }
 
-.flip-card-front:focus-within {
-    border: 4px solid #345995;
-}
-.flip-card-back:focus-within {
-    border: 4px solid #345995;
+
+.flip-card-front > input:focus::placeholder {
+    opacity: 0.5;
 }
 
 .flip-card-front {

@@ -26,7 +26,9 @@ const pool = new Pool({
   database: dbDatabase,
   ssl: {
     rejectUnauthorized: true,
-    ca: readFile('./_ca-certificate.crt', 'utf-8'),
+    ca: readFile('./_ca-certificate.crt', 'utf-8', (err, data) => {
+      console.error(err);
+    }),
   },
 });
 

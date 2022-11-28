@@ -1,9 +1,10 @@
 'use client';
 import Client from './client';
 import '$styles/globals.css';
+import { useSearchParams } from 'next/navigation';
 
 export default function Page() {
-  const { searchParams } = new URL('https://kudoku.id');
+  const searchParams = useSearchParams();
   const kudosref = searchParams.get('kudosref') ?? null;
 
   const ref = kudosref ? kudosref.match(/\d+/g) : null;

@@ -1,5 +1,6 @@
 'use client';
 import { Widget } from '@typeform/embed-react';
+import { useSearchParams } from 'next/navigation';
 
 const Typeform = ({ wa }: { wa: any }) => {
   return (
@@ -15,19 +16,15 @@ const Typeform = ({ wa }: { wa: any }) => {
   );
 };
 
-export default function Page({
-  // eslint-disable-next-line no-unused-vars
-  params,
-  searchParams,
-}: {
-  params: { slug: string };
-  searchParams: { wa: string };
-}) {
+export default function Page() {
+  const searchParams = useSearchParams();
+  const wa = searchParams.get('wa');
+
   return (
     <>
       <title>Daftar jadi Kudos</title>
       <div className="flex flex-col h-screen w-full font-inter mt-2">
-        <Typeform wa={searchParams.wa} />
+        <Typeform wa={wa} />
       </div>
     </>
   );

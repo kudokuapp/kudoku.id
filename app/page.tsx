@@ -3,11 +3,13 @@ import Client from './client';
 import '$styles/globals.css';
 
 export default function Page({
+  params,
   searchParams,
 }: {
+  params?: { kudosref: string };
   searchParams?: { kudosref: string };
 }) {
-  console.log(searchParams?.kudosref);
+  console.log(params?.kudosref);
   const kudosref = searchParams?.kudosref ?? null;
   const ref = kudosref ? kudosref.match(/\d+/g) : null;
 

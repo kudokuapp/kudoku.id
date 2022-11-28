@@ -7,10 +7,9 @@ export default function Page({
 }: {
   searchParams?: { kudosref: string };
 }) {
+  console.log(searchParams?.kudosref);
   const kudosref = searchParams?.kudosref ?? null;
   const ref = kudosref ? kudosref.match(/\d+/g) : null;
-
-  console.log(kudosref);
 
   const refStr = kudosref ? kudosref.match(/[a-zA-Z]+/g) : null;
 

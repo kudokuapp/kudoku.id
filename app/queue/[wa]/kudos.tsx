@@ -241,7 +241,7 @@ export default function Kudos({ data }: { data: KudosData }) {
               </div>
               <div className="w-full flex justify-end gap-4 mt-4">
                 {edit && (
-                  <div>
+                  <div className="flex gap-4">
                     <button
                       onClick={() => {
                         setEdit(false);
@@ -281,7 +281,7 @@ export default function Kudos({ data }: { data: KudosData }) {
         {progress === 3 && (
           <div>
             <BalikButton onClick={() => setProgress(1)} />
-            <div>
+            <div className="mb-8">
               <p className="m-0 text-onPrimaryContainer text-lg">
                 Pilih mau ngobrol sama Founders yang mana
               </p>
@@ -302,7 +302,7 @@ export default function Kudos({ data }: { data: KudosData }) {
         {progress === 4 && (
           <div>
             <BalikButton onClick={() => setProgress(1)} />
-            <div className="flex flex-col gap-4 max-w-[600px]">
+            <div className="flex flex-col gap-4 max-w-[600px] mb-8">
               <p className="text-onPrimaryContainer m-0 text-lg">
                 Kudoku adalah sebuah perusahaan startup baru yang masih keciiiil
                 banget. Sebagai perusahaan, kita gapunya tim banyak dan yang
@@ -368,7 +368,7 @@ const BalikButton = ({ onClick }: { onClick: () => void }) => {
   return (
     <button
       type="button"
-      className="bg-secondary py-1 px-2 rounded-md shadow-xl text-onPrimary font-[500] flex gap-1 w-fit items-center"
+      className="bg-secondary py-1 px-2 rounded-md shadow-xl text-onPrimary font-[500] flex gap-1 w-fit items-center mb-12"
       onClick={onClick}
     >
       <FontAwesomeIcon icon={faArrowLeft} />

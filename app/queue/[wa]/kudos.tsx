@@ -158,7 +158,7 @@ export default function Kudos({ data }: { data: KudosData }) {
 
         {/* Edit form di progress 2 */}
         {progress === 2 && (
-          <>
+          <div>
             <BalikButton onClick={() => setProgress(1)} />
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
               <div className="flex sm:flex-nowrap flex-wrap justify-between gap-2">
@@ -241,7 +241,7 @@ export default function Kudos({ data }: { data: KudosData }) {
               </div>
               <div className="w-full flex justify-end gap-4 mt-4">
                 {edit && (
-                  <>
+                  <div>
                     <button
                       onClick={() => {
                         setEdit(false);
@@ -259,7 +259,7 @@ export default function Kudos({ data }: { data: KudosData }) {
                     >
                       Submit
                     </button>
-                  </>
+                  </div>
                 )}
               </div>
             </form>
@@ -274,12 +274,12 @@ export default function Kudos({ data }: { data: KudosData }) {
                 </button>
               </div>
             )}
-          </>
+          </div>
         )}
 
         {/* Booking dengan founder */}
         {progress === 3 && (
-          <>
+          <div>
             <BalikButton onClick={() => setProgress(1)} />
             <div>
               <p className="m-0 text-onPrimaryContainer text-lg">
@@ -295,12 +295,12 @@ export default function Kudos({ data }: { data: KudosData }) {
                 return <CalCom founders={value} user={data} key={index} />;
               })}
             </div>
-          </>
+          </div>
         )}
 
         {/* Share link */}
         {progress === 4 && (
-          <>
+          <div>
             <BalikButton onClick={() => setProgress(1)} />
             <div className="flex flex-col gap-4 max-w-[600px]">
               <p className="text-onPrimaryContainer m-0 text-lg">
@@ -353,7 +353,7 @@ export default function Kudos({ data }: { data: KudosData }) {
                 </button>
               </Link>
             </div>
-          </>
+          </div>
         )}
       </div>
     </section>

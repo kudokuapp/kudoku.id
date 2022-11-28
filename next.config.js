@@ -11,9 +11,9 @@ const nextConfig = {
 
   // This is dangerous, please see
   // https://github.com/vercel/next.js/issues/41884
-  typescript: {
-    ignoreBuildErrors: true,
-  },
+  // typescript: {
+  //   ignoreBuildErrors: true,
+  // },
 };
 
 module.exports = nextConfig;

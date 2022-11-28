@@ -2,15 +2,10 @@
 import Client from './client';
 import '$styles/globals.css';
 
-export default function Page({
-  params,
-  searchParams,
-}: {
-  params?: { kudosref: string };
-  searchParams?: { kudosref: string };
-}) {
-  console.log(params?.kudosref);
-  const kudosref = searchParams?.kudosref ?? null;
+export default function Page() {
+  const { searchParams } = new URL('https://kudoku.id');
+  const kudosref = searchParams.get('kudosref') ?? null;
+
   const ref = kudosref ? kudosref.match(/\d+/g) : null;
 
   const refStr = kudosref ? kudosref.match(/[a-zA-Z]+/g) : null;

@@ -1,0 +1,23 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "sqltools.connections": [
+    {
+      "pgOptions": {
+        "ssl": {
+          "ca": "/Users/fdwilogo/Downloads/Repositories/kudoku/Webhook/ca-certificate.crt",
+          "rejectUnauthorized": true,
+          "requestCert": true
+        }
+      },
+      "previewLimit": 50,
+      "server": "kudoku-early-user-do-user-9612437-0.b.db.ondigitalocean.com",
+      "port": 25060,
+      "driver": "PostgreSQL",
+      "name": "kudos",
+      "database": "defaultdb",
+      "username": "doadmin",
+      "password": "AVNS_shiNfBj92xKgyRw"
+    }
+  ]
+}

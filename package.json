@@ -18,9 +18,26 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@calcom/embed-react": "^1.0.9",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@fortawesome/fontawesome-svg-core": "^6.2.1",
+    "@fortawesome/free-solid-svg-icons": "^6.2.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@headlessui/react": "^1.7.4",
+    "@mui/material": "^5.10.15",
+    "@notionhq/client": "^2.2.2",
+    "@typeform/embed-react": "^2.4.0",
+    "@vercel/og": "^0.0.21",
+    "axios": "^1.2.0",
+    "framer-motion": "^7.6.12",
     "next": "13.0.5",
+    "pg": "^8.8.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-hot-toast": "^2.4.0",
+    "react-otp-input": "^2.4.0",
+    "twilio": "^3.83.3"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.3.0",
@@ -28,7 +45,9 @@
     "@mdx-js/loader": "^2.1.5",
     "@mdx-js/react": "^2.1.5",
     "@next/mdx": "^13.0.5",
+    "@types/bcrypt": "^5.0.0",
     "@types/node": "18.11.9",
+    "@types/pg": "^8.6.5",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.9",
     "autoprefixer": "^10.4.13",

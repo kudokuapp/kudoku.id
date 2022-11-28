@@ -1,9 +1,15 @@
-import './globals.css'
+import '$styles/globals.css';
+import '$styles/animations.css';
+import Link from 'next/link';
+import Image from 'next/image';
+import Logo from '$public/Logo/variant2.svg';
+import Logo2 from '$public/Logo/primary.svg';
+import ToastClient from './toastclient';
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
@@ -12,7 +18,144 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>{children}</body>
+      <body>
+        <ToastClient />
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
-  )
+  );
+}
+
+function Navbar() {
+  return (
+    <nav className="flex justify-between flex-nowrap items-center my-0 mx-auto pt-10 sm:pb-2 sm:pl-10 sm:pr-16 px-4 w-full">
+      <div className="items-center max-w-[10rem] sm:flex hidden cursor-pointer select-none">
+        <Link href="/" className="no-underline" passHref>
+          <Image src={Logo} alt="Kudoku Logo" />
+        </Link>
+      </div>
+      <div className="items-center max-w-[3rem] sm:hidden flex cursor-pointer select-none">
+        <Link href="/" className="no-underline" passHref>
+          <Image src={Logo2} alt="Kudoku Logo" />
+        </Link>
+      </div>
+      <div className="flex items-center sm:gap-8 gap-4">
+        <Link
+          className="font-bold hover:opacity-75 sm:text-xl text-lg select-none no-underline text-onPrimaryContainer hover:text-onPrimaryContainer"
+          href="https://kudoku.notion.site/Documentation-4517cf83711546ed8a58f3b98f63ff0b"
+        >
+          Docs
+        </Link>
+        <Link
+          href="https://app.kudoku.id/"
+          target="_blank"
+          className="no-underline"
+        >
+          <button className="bg-gradient-to-br from-primary to-secondary sm:text-xl text-lg select-none flex items-center cursor-pointer text-onPrimary px-2.5 py-1 sm:rounded-xl rounded-lg gap-2 hover:opacity-75">
+            <span className="font-[500]">Masuk</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12">
+              <path
+                d="M 1 6 L 11 6"
+                fill="transparent"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                strokeLinecap="round"
+              ></path>
+              <path
+                d="M 7 10 L 11 6 L 7 2"
+                fill="transparent"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                strokeLinecap="round"
+              ></path>
+            </svg>
+          </button>
+        </Link>
+      </div>
+    </nav>
+  );
+}
+
+function Footer() {
+  const arrTop = [
+    {
+      name: 'Changelog',
+      url: 'https://kudoku.notion.site/9c775a1cb1454635836c612b8b570e76?v=93a095a3a4d24e6281c35a0fe12fd11e',
+    },
+    { name: 'Security', url: '/security', right: true },
+    { name: 'BGST', url: 'https://bgst.kudoku.id' },
+  ];
+
+  const arrBottom = [
+    {
+      name: 'Imprint',
+      url: '/imprint',
+    },
+    {
+      name: 'Ketentuan Layanan',
+      url: 'https://kudoku.notion.site/Ketentuan-Layanan-ce1af59c2768440781538c9a4e606fc4',
+    },
+    {
+      name: 'Kebijakan Privasi',
+      url: 'https://kudoku.notion.site/Kebijakan-Privasi-8685c4789f7c4aff9b0fe933fe62c2ef',
+    },
+    {
+      name: 'Manifesto',
+      url: 'https://kudoku.notion.site/Manifesto-af777ccb94c24aa8becf134f684520c0',
+    },
+  ];
+
+  return (
+    <footer className="max-w-[1400px] mx-auto sm:px-8 px-4 mt-16 pb-20 sm:pb-28">
+      <section>
+        <ul className="list-none mb-0 grid sm:grid-cols-2 grid-cols-1 w-full h-fit">
+          {arrTop.map((value, index) => {
+            return (
+              <li
+                key={index}
+                className={`${value.right ? 'sm:text-right' : ''}`}
+              >
+                <Link
+                  href={value.url}
+                  target="_self"
+                  className="text-onPrimaryContainer hover:text-primary no-underline"
+                  passHref
+                >
+                  <button className="sm:text-4xl text-2xl font-bold w-max h-max transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-200 mb-6">
+                    {value.name}
+                  </button>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+      <section className="md:flex justify-between items-end sm:mt-14 mt-6 flex-wrap gap-10">
+        <ul className="flex flex-wrap sm:gap-6 gap-4 list-none md:mb-0 mb-12">
+          {arrBottom.map((value, index) => {
+            return (
+              <li key={index}>
+                <button className="w-max h-max text-sm sm:text-base transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-200">
+                  <Link
+                    href={value.url}
+                    passHref
+                    target="_self"
+                    rel="noopener noreferrer"
+                    className="no-underline text-onPrimaryContainer hover:text-primary"
+                  >
+                    {value.name}
+                  </Link>
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+        <p className="text-onPrimaryContainer sm:mt-0 mt-4">
+          {new Date().getFullYear()} PT. Kudoku Finansial Indonesia
+        </p>
+      </section>
+    </footer>
+  );
 }

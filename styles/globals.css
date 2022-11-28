@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'TTInterfaces';
+  src: url('../public/fonts/TTInterfaces/TTInterfaces-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TTInterfaces';
+  src: url('../public/fonts/TTInterfaces/TTInterfaces-Medium.ttf');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TTInterfaces';
+  src: url('../public/fonts/TTInterfaces/TTInterfaces-Light.ttf');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TTInterfaces';
+  src: url('../public/fonts/TTInterfaces/TTInterfaces-ExtraLight.ttf');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TTInterfaces';
+  src: url('../public/fonts/TTInterfaces/TTInterfaces-Bold.ttf');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TTInterfaces';
+  src: url('../public/fonts/TTInterfaces/TTInterfaces-Black.ttf');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@layer base {
+  h1 {
+    @apply md:text-4xl text-3xl font-bold my-4 text-primary;
+  }
+
+  h2 {
+    @apply md:text-3xl text-2xl font-bold my-4 text-onPrimaryContainer;
+  }
+
+  h3 {
+    @apply md:text-2xl text-xl font-bold my-4 text-tertiary;
+  }
+
+  p {
+    @apply text-base font-normal mb-4 last:mb-0 text-justify text-black;
+  }
+
+  p + h1,
+  p + h2,
+  p + h3 {
+    @apply mt-10;
+  }
+
+  blockquote {
+    @apply relative border-l-4 pl-4 sm:pl-6 border-tertiary my-4;
+  }
+
+  blockquote > p {
+    @apply text-lg text-left text-black;
+  }
+
+  ol {
+    @apply list-decimal list-inside marker:text-primary marker:font-bold mb-4;
+  }
+
+  ol > li {
+    @apply text-black text-base text-justify;
+  }
+
+  ul {
+    @apply list-disc list-inside marker:text-primary mb-4;
+  }
+
+  ul > li {
+    @apply text-black text-base text-justify;
+  }
+
+  code {
+    @apply font-mono bg-onSurfaceVariant text-orange-300 px-1 py-0.5 rounded-md border-[1px] border-white mb-4;
+  }
+
+  hr {
+    @apply text-primary border-[1px] border-primary my-4;
+  }
+
+  li {
+    @apply my-1;
+  }
+
+  a {
+    @apply text-blue-500 underline;
+  }
+}
+
+@layer components {
+  .animation-popup {
+    @apply transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-200;
+  }
+
+  .mdx-main {
+    @apply max-w-[800px] mx-auto md:px-0 px-4 my-14;
+  }
+
+  .card-main {
+    @apply w-full h-full lg:rounded-[3.5rem] md:rounded-[2.5rem] sm:rounded-[2.0rem] rounded-[1.5rem] shadow;
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0 auto;
+  background-color: #e1e1e1;
+  scroll-behavior: smooth;
+  font-family: 'TTInterfaces', 'UniversalSans', 'system-ui', '-apple-system',
+    'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial,
+    'Noto Sans', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.gradient-text {
+  background-image: linear-gradient(90deg, #2c5ea8, #9e3c60);
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#2c5ea8),
+    to(#9e3c60)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-new {
+  background-image: linear-gradient(90deg, #2c5ea8, #348a95);
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#2c5ea8),
+    to(#348a95)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

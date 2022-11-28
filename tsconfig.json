@@ -17,8 +17,10 @@
     "baseUrl": ".",
     "paths": {
       "$lib/*": ["lib/*"],
+      "$utils/*": ["utils/*"],
       "$context/*": ["context/*"],
-      "$styles/*": ["styles/*"]
+      "$styles/*": ["styles/*"],
+      "$public/*": ["public/*"]
     },
     "plugins": [
       {

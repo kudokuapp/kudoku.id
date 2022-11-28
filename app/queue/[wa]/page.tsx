@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { redirect } from 'next/navigation';
+// import { redirect } from 'next/navigation';
 import Kudos from './kudos';
 
 async function fetchUser(whatsapp: string) {
@@ -35,7 +35,7 @@ export default async function Page({ params }: any) {
           <Kudos data={kudos} />
         </>
       ) : (
-        redirect('/')
+        <></>
       )}
     </>
   );

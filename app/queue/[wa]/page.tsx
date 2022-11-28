@@ -27,13 +27,11 @@ export default async function Page({ params }: any) {
 
   const kudos = await fetchUser(`+${wa}`);
 
-  const title = `Kudos No. ${kudos ? kudos.id : ''}`;
-
   return (
     <>
+      <title>Halo Kudos!</title>
       {kudos ? (
         <>
-          <title>{title}</title>
           <Kudos data={kudos} />
         </>
       ) : (

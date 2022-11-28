@@ -13,10 +13,9 @@ export default function Page() {
 
   const imgURL =
     ref && refStr
-      ? `https://kudoku.id/api/og?firstName=${refStr[0].replace(
-          /(^\w{1})|(\s+\w{1})/g,
-          (letter) => letter.toUpperCase()
-        )}&kudosNo=${ref[0]}`
+      ? `https://kudoku.id/api/og?firstName=${refStr[0][0]}${refStr[0]
+          .slice(1)
+          .toLowerCase()}&kudosNo=${ref[0]}`
       : 'https://kudoku.id/meta.png';
 
   return (

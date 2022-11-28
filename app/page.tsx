@@ -3,15 +3,14 @@ import Client from './client';
 import '$styles/globals.css';
 
 export default function Page({
-  // eslint-disable-next-line no-unused-vars
-  params,
   searchParams,
 }: {
-  params: { slug: string };
   searchParams?: { kudosref: string };
 }) {
   const kudosref = searchParams?.kudosref ?? null;
   const ref = kudosref ? kudosref.match(/\d+/g) : null;
+
+  console.log(kudosref);
 
   const refStr = kudosref ? kudosref.match(/[a-zA-Z]+/g) : null;
 

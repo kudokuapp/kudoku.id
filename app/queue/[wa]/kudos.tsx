@@ -106,7 +106,7 @@ export default function Kudos({ data }: { data: KudosData }) {
     data.id
   }${firstname.toUpperCase()}${data.whatsapp.slice(data.whatsapp.length - 4)}`;
 
-  const textWA = `Eh, lo udah cek Kudoku belum? Ini menurut gua aplikasinya keren banget sih. Jadi aplikasi ini ngebikin gua bisa nge-track seluruh aspek finansial gua. Lo gua undang buat jadi Kudos ${SHARELINK}.`;
+  const textWA = `Eh, lo udah cek Kudoku belum? Ini menurut gua aplikasi buat ngebantu atur keuangan yang keren banget sih. Ngelacak transaksi, investasi, tabungan, sampe ngitung utang, semuanya bisa lo lakuin disini. Lo gua undang buat jadi Kudos ${SHARELINK}.`;
   const waLink = `https://wa.me/send?text=${encodeURIComponent(textWA)}`;
 
   const textTwitter = `Eh, lo udah cek @kudokuapp belum? Ini menurut gua aplikasinya keren banget sih. Pake Kudoku, gua bisa nge-track pemasukan, pengeluaran, investasi, tabungan sampe utang gua. Lo gua undang buat jadi Kudos ${SHARELINK}.`;
@@ -151,7 +151,7 @@ export default function Kudos({ data }: { data: KudosData }) {
               className="bg-tertiary px-4 py-2 text-onPrimary font-[500] rounded-md m-0 text-xl"
               onClick={() => setProgress(4)}
             >
-              Share Kudoku ke tongkrongan lo
+              Share Kudoku ke temen lo
             </button>
           </div>
         )}
@@ -283,7 +283,7 @@ export default function Kudos({ data }: { data: KudosData }) {
             <BalikButton onClick={() => setProgress(1)} />
             <div className="mb-8">
               <p className="m-0 text-onPrimaryContainer text-lg">
-                Pilih mau ngobrol sama Founders yang mana
+                Pilih mau ngobrol sama Founders yang mana. Semua asik kok.
               </p>
               <p className="m-0 text-onPrimaryContainer text-lg">
                 Kalo udah tau, langsung aja gas. Nanti kita meeting via Google
@@ -304,19 +304,22 @@ export default function Kudos({ data }: { data: KudosData }) {
             <BalikButton onClick={() => setProgress(1)} />
             <div className="flex flex-col gap-4 max-w-[600px] mb-8">
               <p className="text-onPrimaryContainer m-0 text-lg">
-                Kudoku adalah sebuah perusahaan startup baru yang masih keciiiil
-                banget. Sebagai perusahaan, kita gapunya tim banyak dan yang
-                pasti gapunya duit yang banyak.
+                Kudoku adalah perusahaan startup baru yang masih keciiiil
+                banget. Sebagai perusahaan, ukuran tim kami kecil dan yang pasti
+                gapunya duit yang banyak.
               </p>
               <p className="text-onPrimaryContainer m-0 text-lg">
-                Hal yang paling kita <i>value the most</i> adalah kamu, user
-                kita (kudos). Jadi kita bener-bener <i>appreciate</i> banget
-                kalo misalnya lo bantuin kita untuk dapetin kudos.
+                Hal yang paling kami <i>value the most</i> adalah lo, sebagai
+                calon pengguna Kudoku (Kudos). Jadi kami bener-bener{' '}
+                <i>appreciate</i> banget keinginan lo untuk mendaftar Kudoku.
+                Dan juga, lo bisa bantuin kita untuk tawarin temen-temen lo yang
+                lain untuk menjadi Kudos.
               </p>
               <p className="text-onPrimaryContainer m-0 text-lg text-left">
-                Kudoku udah buat link yang bisa lo share kemana-mana:{' '}
+                Kudoku udah buat link khusus yang bisa lo share kemana-mana:{' '}
                 <span className="font-[500] text-primary">{SHARELINK}</span>.
-                Atau lo langsung aja pilih mau share kemana dibawah.
+                Atau lo bisa langsung pilih mau share lewat mana dengan klik
+                tombol di bawah.
               </p>
             </div>
             <div className="flex flex-col gap-4">
@@ -325,12 +328,12 @@ export default function Kudos({ data }: { data: KudosData }) {
                 onPointerDown={() => {
                   toast.promise(navigator.clipboard.writeText(SHARELINK), {
                     loading: 'Loading...',
-                    success: 'Sukses copy link',
+                    success: 'Link berhasil disalin',
                     error: 'Gagal copy link',
                   });
                 }}
               >
-                Copy link ke clipboard
+                Salin link
               </button>
 
               <Link

@@ -2,8 +2,11 @@
 import Client from './client';
 import '$styles/globals.css';
 import { useSearchParams } from 'next/navigation';
+import TimeAgo from 'javascript-time-ago';
+import id from 'javascript-time-ago/locale/id.json';
 
 export default function Page() {
+  TimeAgo.addDefaultLocale(id);
   const searchParams = useSearchParams();
   const kudosref = searchParams.get('kudosref') ?? null;
 

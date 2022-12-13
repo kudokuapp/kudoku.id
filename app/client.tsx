@@ -12,6 +12,7 @@ import Furqon from '$public/Founders/Furqon.png';
 import Aldi from '$public/Founders/Aldi.png';
 import Rizqy from '$public/Founders/Rizqy.png';
 import { Kanban } from '$lib/Kanban';
+import { TwitterCard } from '$lib/Twitter';
 
 export default function Client({ kudosref }: { kudosref: string | null }) {
   const [firstName, setFirstName] = useState('...');
@@ -51,6 +52,7 @@ export default function Client({ kudosref }: { kudosref: string | null }) {
       <Mockup />
       <Manifesto />
       <Roadmap />
+      <TwitterCard />
     </main>
   );
 }

@@ -239,6 +239,7 @@ function Div({ onScroll, children }: { onScroll: any; children: any }) {
     };
     return (
         <>
+        <h2 className='text-primary hidden sm:block'>Kudoku on Twitter</h2>
         <div className='flex flex-col sm:flex-row bg-primary sm:bg-transparent p-4 sm:p-0 rounded-xl sm:rounded-none w-full'>
             <h2 className='text-white block sm:hidden'>Kudoku on Twitter</h2>
             {renderNewCard()}

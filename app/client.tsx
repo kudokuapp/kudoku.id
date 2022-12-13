@@ -13,6 +13,7 @@ import Aldi from '$public/Founders/Aldi.png';
 import Rizqy from '$public/Founders/Rizqy.png';
 import { Kanban } from '$lib/Kanban';
 import { TwitterCard } from '$lib/Twitter';
+import { AuthContextProvider } from '../pages/api/twitter/AuthContext';
 
 export default function Client({ kudosref }: { kudosref: string | null }) {
   const [firstName, setFirstName] = useState('...');
@@ -42,6 +43,7 @@ export default function Client({ kudosref }: { kudosref: string | null }) {
   }, [kudosref]);
   return (
     <main className="flex flex-col h-full w-full max-w-[1400px] mx-auto lg:px-0 px-[3vmin]">
+      <AuthContextProvider>
       <Hero parentId={parentId ? parentId : null}>
         {kudosref && (
           <p className="gradient-text-new text-2xl text-center mt-8">
@@ -53,6 +55,7 @@ export default function Client({ kudosref }: { kudosref: string | null }) {
       <Manifesto />
       <Roadmap />
       <TwitterCard />
+      </AuthContextProvider>
     </main>
   );
 }

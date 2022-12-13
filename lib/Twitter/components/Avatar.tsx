@@ -112,14 +112,14 @@ export const Avatar = (props: {
 
     const renderButton = () => {
             return (
-                <div className="relative">
+                <div className="relative w-full min-w-[300px] max-w-[300px] sm:max-w-[400px]">
                     <button
                         onClick={() => setIsOpen(true)}
                         style={{ overflow: 'hidden' }}
                     >
                         <div className="flex justify-between items-start p-2 h-40">
                             <div className="flex flex-col">
-                                <div className="flex justify-between items-start">
+                                <div className="flex justify-between items-center w-full min-w-[284px] max-w-[284px] sm:max-w-[400px]">
                                     <Link legacyBehavior href={`https://twitter.com/${props.twitterHandle}`} passHref>
                                         <a
                                             target="_blank"
@@ -150,10 +150,16 @@ export const Avatar = (props: {
                                     </div>
                                 </div>
                                 <div>
-                                    <div className="my-4 bg-background p-2 rounded-xl h-16 flex flex-col align-middle justify-center">
-                                        <p className="text-base text-onPrimaryContainer/80 font-normal w-[340px]">
+                                    <div className="my-4 bg-background p-2 rounded-xl h-16 flex flex-col align-middle justify-center w-full min-w-[284px] max-w-[284px] sm:max-w-[400px]">
+                                        <p className="text-base text-onPrimaryContainer/80 hidden sm:block font-normal w-[340px]">
                                             {props.comment.substring(0, 70)}
                                             {props.comment.length > 70 ? <span className='text-primary'>...read more</span> : <></>
+
+                                            }
+                                        </p>
+                                        <p className="text-base text-onPrimaryContainer/80 block sm:hidden font-normal w-[270px]">
+                                            {props.comment.substring(0, 50)}
+                                            {props.comment.length > 50 ? <span className='text-primary'>...read more</span> : <></>
 
                                             }
                                         </p>
@@ -224,7 +230,7 @@ export const Avatar = (props: {
                             comment={props.comment}
                             twitterHandle={props.twitterHandle}
                         />
-                        <div className="relative flex flex-col items-end pl-[30px] justify-center w-full min-w-[300px] max-w-[400px] gap-4">
+                        <div className="relative flex flex-col items-end pl-[30px] justify-center w-full min-w-[284px] max-w-[400px] gap-4">
                             {props.replies.length > 0 &&
                                 props.replies.map((comment) => {
                                     return (

@@ -4,7 +4,7 @@ import type { UserInfo } from 'firebase/auth';
 import { auth } from '$utils/firebase';
 import { ReactElement, JSXElementConstructor, ReactFragment, ReactPortal } from 'react';
 import axios from 'axios';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 interface ContextType {
     user: UserInfo | undefined;
@@ -54,7 +54,7 @@ export const AuthContextProvider = ({
             localStorage.setItem('twitterToken', credential.accessToken);
             localStorage.setItem('twitterSecret', credential.secret);
         } catch (e) {
-            router.reload();
+            router.refresh();
             console.error(e);
         }
     };

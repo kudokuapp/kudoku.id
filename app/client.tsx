@@ -12,6 +12,8 @@ import Furqon from '$public/Founders/Furqon.png';
 import Aldi from '$public/Founders/Aldi.png';
 import Rizqy from '$public/Founders/Rizqy.png';
 import { Kanban } from '$lib/Kanban';
+import { TwitterCard } from '$lib/Twitter';
+import { AuthContextProvider } from '../pages/api/twitter/AuthContext';
 
 export default function Client({ kudosref }: { kudosref: string | null }) {
   const [firstName, setFirstName] = useState('...');
@@ -41,6 +43,7 @@ export default function Client({ kudosref }: { kudosref: string | null }) {
   }, [kudosref]);
   return (
     <main className="flex flex-col h-full w-full max-w-[1400px] mx-auto lg:px-0 px-[3vmin]">
+      <AuthContextProvider>
       <Hero parentId={parentId ? parentId : null}>
         {kudosref && (
           <p className="gradient-text-new text-2xl text-center mt-8">
@@ -51,6 +54,8 @@ export default function Client({ kudosref }: { kudosref: string | null }) {
       <Mockup />
       <Manifesto />
       <Roadmap />
+      <TwitterCard />
+      </AuthContextProvider>
     </main>
   );
 }
@@ -114,7 +119,7 @@ function Hero({
           <h2 className="text-center font-[500] text-xl sm:text-3xl text-onPrimaryContainer my-0 mt-4 px-4">
             Kenalin Kudoku,{' '}
             <span className="font-bold">aplikasi pengelola keuangan</span> yang
-            fiturnya paling mantep.
+            gak bikin lo pusing.
           </h2>
           {children}
           <div className="sm:my-16 my-8 w-full">
@@ -123,7 +128,8 @@ function Hero({
               buttonText={buttonText}
               parentId={parentId}
             />
-            <p className="text-onPrimaryContainer text-center mt-8 font-[500]">
+
+            <p className="text-onPrimaryContainer text-center mt-5 font-[500]">
               Udah jadi kudos?{' '}
               <button
                 className="font-bold w-fit h-fit transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-200 text-primary"
@@ -318,7 +324,7 @@ function Roadmap() {
           Roadmap
         </h2>
         <p className="text-onPrimaryContainer text-xl font-[300]">
-          Liat yang buat aplikasi lagi ngerjain apa
+          Semua yang founders Kudoku kerjain, ada disini!
         </p>
       </div>
       <Kanban

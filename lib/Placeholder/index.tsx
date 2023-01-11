@@ -217,6 +217,12 @@ export const Placeholder = ({
     <div
       className="max-w-[500px] mx-auto text-left select-none w-full h-fit"
       id="placeholder"
+      style={{
+      position: "absolute",
+      float: "left",
+      left: "50%",
+      top: "50%",
+      transform: "translate(-50%, -50%)"}}
     >
       {renderPlaceholder()}
     </div>

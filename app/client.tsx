@@ -28,7 +28,25 @@ export default function Client({ kudosref }: { kudosref: string | null }) {
   const [lastName, setLastName] = useState('...');
   const [id, setId] = useState('...');
   const [parentId, setParentId] = useState(null);
+  const [modal, setModal] = useState(false);
+  const [buttonText, setButtonText] = useState('Daftar');
+  const c = document.getElementById('placeholderContainer');
+  const [data, setData] = useState(null);
 
+  useEffect(() => {
+    (async function () {
+      const url = new URL(
+        '/api/postgres/getkudosnumber',
+        process.env.NODE_ENV === 'production'
+          ? 'https://kudoku.id'
+          : 'http://localhost:3000'
+      );
+      const response = await axios.get(url.href);
+
+      setData(response.data);
+    })();
+  }, []);
+  
   useEffect(() => {
     if (kudosref) {
       const url = new URL(
@@ -71,6 +89,38 @@ export default function Client({ kudosref }: { kudosref: string | null }) {
           <ScrollBasedAnimation />
         </Suspense>
       </Canvas>
+      <div className='hidden' id='placeholderContainer' style={{background: "linear-gradient(90deg, #2c5ea8, #9e3c60)",
+        position: "absolute",
+        float: "left",
+        left: "50%",
+        top: "50%",
+        transform: "translate(-50%, -50%)",
+        zIndex: "100",
+        width: "40%",
+        height: "40%",
+        borderRadius: "12px"
+        }}>
+          <button className='absolute font-bold right-0 rounded-tr-md bg-white px-2'
+          onClick={() => {
+            c?.classList.add("hidden")
+            document.documentElement.style.overflow = 'auto'
+          }}>
+            X
+          </button>
+          <Placeholder
+            type={'normal'}
+            buttonText={buttonText}
+            parentId={parentId}
+          />
+          <div className="text-center font-[500] sm:text-lg text-base flex gap-1.5 justify-center mt-6">
+              <h2 className='text-onPrimary'>Kamu akan jadi</h2>
+              <Tooltip text="Kudos adalah panggilan untuk user Kudoku">
+                <h2 className="bg-gradient-to-r from-primary to-secondary rounded-md text-onPrimary px-1 py-0.25 mb-0">
+                  Kudos No. {data}
+                </h2>
+              </Tooltip>
+          </div>
+        </div>
       </AuthContextProvider>
     </main>
   );
@@ -126,16 +176,15 @@ function Html() {
   }, []);
   return (
     <div
+    className='-ml-6 sm:-ml-0'
       style={{
-        fontFamily: 'sans-serif',
-        fontSize: 'min(12vw, 86px)',
         lineHeight: 0.75,
       }}>
       <div>
-        <h4 className="bg-gradient-to-r text-sm from-primary to-secondary rounded-md text-onPrimary px-1 py-0.25 mb-0 w-fit"
+        <h4 className="bg-gradient-to-r text-xl from-primary to-secondary rounded-xl text-onPrimary px-1.5 py-0.5 mb-0 w-fit"
         style={{
           position: 'relative',
-          top: '50vh',
+          top: '30vh',
           left: '50vw',
           transform: 'translateX(-50%)',
           margin: 0,
@@ -144,7 +193,7 @@ function Html() {
         </h4>
         <h1 style={{
           position: 'relative',
-          top: '50vh',
+          top: '32vh',
           left: '50vw',
           transform: 'translateX(-50%)',
           margin: 0,
@@ -153,61 +202,46 @@ function Html() {
         </h1>
         <h2 style={{
           position: 'relative',
-          top: '50vh',
+          top: '32vh',
           left: '50vw',
           transform: 'translateX(-50%)',
           margin: 0,
         }} className="text-center font-[500] text-xl sm:text-3xl text-onPrimaryContainer my-0 mt-4">
           Kenalin Kudoku,{' '}
-          <span className="font-bold">aplikasi pengelola keuangan</span><br/> yang
+          <span className="font-bold">aplikasi pengelola keuangan</span> yang
           gak bikin lo pusing.
         </h2>
-        <h1
-        className="gradient-text-new font-bold sm:leading-snug leading-snug text-center my-4"
+        <h3
+        className="text-onPrimaryContainer font-normal sm:leading-snug leading-snug text-center my-4"
           style={{
             position: 'relative',
-            top: '50vh',
+            top: '35vh',
             left: '50vw',
             transform: 'translateX(-50%)',
             margin: 0,
           }}>
-          Scroll disini buat ikut nyobain
-        </h1>  
+          Scroll ke bawah buat daftar nyobain appnya.
+        </h3>  
       </div>
-      <h1
+      <div
         style={{
           position: 'relative',
-          top: '140vh',
+          top: '80vh',
           left: '50vw',
           transform: 'translateX(-50%)',
           color: '#f4b677',
           margin: 0,
         }}>
-        <div className="text-center font-[500] sm:text-lg text-base flex gap-1.5 justify-center">
-            <h2>Kamu akan jadi</h2>
-            <Tooltip text="Kudos adalah panggilan untuk user Kudoku">
-              <h2 className="bg-gradient-to-r from-primary to-secondary rounded-md text-onPrimary px-1 py-0.25 mb-0">
-                Kudos No. {data}
-              </h2>
-            </Tooltip>
-          </div>
-      </h1>
-      <div
-        style={{
-          position: 'relative',
-          top: '200vh',
-          left: '50vw',
-          transform: 'translateX(-50%)',
-          color: '#673ab7',
-          margin: 0,
-        }}>
-        <h2 className="text-onPrimaryContainer text-center mt-5 font-[500]">
-          Atau udah jadi kudos?{' '}
+
+        <h3 className="text-onPrimaryContainer text-center mt-5 font-[500]">
+          udah jadi kudos?{' '}
           <button
             className="font-bold w-fit h-fit transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-200 text-primary"
             onClick={() => {
               const d = document.getElementById('placeholder');
-              d?.classList.add('shakeit__link');
+              const c = document.getElementById('placeholderContainer');
+              // d?.classList.add('shakeit__link');
+              c?.classList.remove('hidden');
               setTimeout(() => d?.classList.remove('shakeit__link'), 3000);
               setButtonText('Cek');
               setModal(true)
@@ -216,7 +250,17 @@ function Html() {
           >
             Cek antrian disini
           </button>
-        </h2>
+        </h3>
+      </div>
+      <div
+        style={{
+          position: 'relative',
+          top: '120vh',
+          left: '50vw',
+          transform: 'translateX(-50%)',
+          color: '#673ab7',
+          margin: 0,
+        }}>
 
         <Manifesto />
       </div>
@@ -334,11 +378,11 @@ function Hero({
       }}>
         X
       </button>
-      <Placeholder
+      {/* <Placeholder
         type={'normal'}
         buttonText={buttonText}
         parentId={parentId}
-      />
+      /> */}
       <div className="text-left font-[500] sm:text-lg text-base flex gap-1.5 justify-start" style={{
       position: "absolute",
       float: "left",
@@ -410,7 +454,7 @@ function Hero({
           </button>
         </Link>
       </div>
-      <div className='absolute' style={{width: "100%", height: "100%", left: "20%"}}>
+      {/* <div className='absolute' style={{width: "100%", height: "100%", left: "20%"}}>
         <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 35] }}>
           <ambientLight />
           <directionalLight color="red" intensity={10} />
@@ -419,7 +463,7 @@ function Hero({
             <ScrollBasedAnimation />
           </Suspense>
         </Canvas>
-      </div>
+      </div> */}
 
     </section>
     </>
@@ -527,11 +571,11 @@ function Manifesto() {
 
   return (
     <section className="max-w-[800px] px-2 w-fit mx-auto mb-20 mt-28 lg:z-0 sm:z-50 bg-background">
-      <h2 className="gradient-text-new font-bold text-4xl mb-8">
+      <h2 className="gradient-text-new font-bold text-2xl ml-1 sm:text-4xl mb-8">
         Kami punya impian untuk membuat aplikasi pengelola keuangan yang
         terbaik.
       </h2>
-      <p className="mb-6 last:mb-0 sm:text-xl text-lg text-justify text-black font-normal">
+      <p className="mb-6 last:mb-0 sm:text-xl text-sm ml-1 text-justify text-black font-normal">
         Mengelola keuangan pribadi itu ribet-ribet gampang. Ribet karena banyak
         hal yang harus kita pikirin, gampang karena udah banyak tools yang bisa
         ngebantu kita, mulai dari <i>spreadsheets</i> sampai{' '}
@@ -540,7 +584,7 @@ function Manifesto() {
         Masih banyak orang yang ujung-ujungnya berhenti ngatur duit karena malah
         pusing sendiri.
       </p>
-      <p className="mb-6 last:mb-0 sm:text-xl text-lg text-justify text-black font-normal">
+      <p className="mb-6 last:mb-0 sm:text-xl text-sm ml-1 text-justify text-black font-normal">
         Itulah kenapa kami bertiga mencoba membuat Kudoku. Kudoku adalah satu
         aplikasi yang ngebantu lo mengkontrol seluruh transaksi, tagihan, asset,
         hutang, dan masih banyak lagi.{' '}
@@ -552,12 +596,12 @@ function Manifesto() {
         kondisi keuangan lo sekarang dan pergi ke level finansial yang
         selanjutnya.
       </p>
-      <p className="mb-6 last:mb-0 sm:text-xl text-lg text-justify text-black font-normal">
+      <p className="mb-6 last:mb-0 sm:text-xl text-sm ml-1 text-justify text-black font-normal">
         Lo gak bakal pusing lagi ngontrol duit lo, dan perjalanan lo untuk
         mencari-cari aplikasi finansial mana yang paling cocok buat lo, akan
         berhenti disini.
       </p>
-      <p className="mb-6 last:mb-0 sm:text-xl text-lg text-justify text-black font-normal">
+      <p className="mb-6 last:mb-0 sm:text-xl text-sm ml-1 text-justify text-black font-normal">
         Kalau lo tertarik dengan alasan lebih lengkap kami ngebuat Kudoku, lo
         bisa baca lengkap manifesto Kudoku.
       </p>

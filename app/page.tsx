@@ -27,7 +27,7 @@ export default function Page() {
       <meta property="og:image" content={imgURL} />
       <meta name="twitter:image:src" content={imgURL} />
       <meta itemProp="image" content={imgURL} />
-      <main className="flex flex-col h-full w-full max-w-[1400px] mx-auto lg:px-0 px-[3vmin]">
+      <main className="flex flex-col h-full w-full max-h-[90vh] overflow-y-hidden mx-auto lg:px-0 px-[3vmin]">
         <Client kudosref={kudosref} />
       </main>
     </>

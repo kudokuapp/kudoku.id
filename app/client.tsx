@@ -1,28 +1,34 @@
 'use client';
 
 import '$styles/globals.css';
-import { useState, useEffect, useRef, Suspense, useMemo } from 'react';
+import {
+  useState,
+  useEffect,
+  // useRef,
+  Suspense,
+  // useMemo,
+  useLayoutEffect,
+} from 'react';
 import { Placeholder } from '$lib/Placeholder';
 import { Tooltip } from '$lib/Tooltip';
 import Link from 'next/link';
 import axios from 'axios';
 import Image from 'next/image';
-import mockup from '$public/mockup.png';
+// import mockup from '$public/mockup.png';
 import Furqon from '$public/Founders/Furqon.png';
 import Aldi from '$public/Founders/Aldi.png';
 import Rizqy from '$public/Founders/Rizqy.png';
-import { Kanban } from '$lib/Kanban';
-import { TwitterCard } from '$lib/Twitter';
-import * as THREE from 'three'
+// import { Kanban } from '$lib/Kanban';
+// import { TwitterCard } from '$lib/Twitter';
+import * as THREE from 'three';
 import { AuthContextProvider } from '../pages/api/twitter/AuthContext';
 import { useFrame, useThree } from '@react-three/fiber';
-import { Canvas } from '@react-three/fiber'
-import { Scroll, ScrollControls } from '@react-three/drei'
-import { Point, Points } from '@react-three/drei'
-import Models from "./model/Models"
+import { Canvas } from '@react-three/fiber';
+import { Scroll, ScrollControls } from '@react-three/drei';
+import { Point, Points } from '@react-three/drei';
+import Models from './model/Models';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
-
 
 export default function Client({ kudosref }: { kudosref: string | null }) {
   const [firstName, setFirstName] = useState('...');
@@ -34,7 +40,7 @@ export default function Client({ kudosref }: { kudosref: string | null }) {
   const c = document.getElementById('placeholderContainer');
   const [data, setData] = useState(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     (async function () {
       const url = new URL(
         '/api/postgres/getkudosnumber',
@@ -47,7 +53,7 @@ export default function Client({ kudosref }: { kudosref: string | null }) {
       setData(response.data);
     })();
   }, []);
-  
+
   useEffect(() => {
     if (kudosref) {
       const url = new URL(
@@ -69,9 +75,9 @@ export default function Client({ kudosref }: { kudosref: string | null }) {
     }
   }, [kudosref]);
   return (
-    <main className="flex flex-col h-screen w-full max-w-[1400px] mx-auto lg:px-0 px-[3vmin]">
+    <main className="flex flex-col h-screen w-full mx-auto">
       <AuthContextProvider>
-      {/* <Hero parentId={parentId ? parentId : null}>
+        {/* <Hero parentId={parentId ? parentId : null}>
         {kudosref && (
           <p className="gradient-text-new text-2xl text-center mt-8">
             Kamu diundang jadi Kudos sama {firstName} {lastName} Kudos No. {id}
@@ -82,36 +88,44 @@ export default function Client({ kudosref }: { kudosref: string | null }) {
       <Manifesto />
       <Roadmap />
       <TwitterCard /> */}
-      <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 35] }}>
-        <ambientLight />
-        <directionalLight color="red" intensity={10} />
-        {/* <Scene /> */}
-        <Models pose={1} />
-        <Suspense fallback={null}>
-          <ScrollBasedAnimation />
-        </Suspense>
-      </Canvas>
-      <div className='hidden' id='placeholderContainer' style={{background: "linear-gradient(90deg, #2c5ea8d5, #9e3c60d6)",
-        position: "absolute",
-        float: "left",
-        left: "50%",
-        top: "50%",
-        transform: "translate(-50%, -50%)",
-        zIndex: "100",
-        width: "100%",
-        height: "100%",
-        }}>
-          <button className='absolute font-bold text-xl right-10 top-10 rounded-full px-3 py-1 bg-white w-fit'
-          onClick={() => {
-            c?.classList.add("hidden")
-            document.documentElement.style.overflow = 'auto'
-          }}>
+        <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 35] }}>
+          <ambientLight />
+          <directionalLight color="red" intensity={10} />
+          {/* <Scene /> */}
+          <Models pose={1} />
+          <Suspense fallback={null}>
+            <ScrollBasedAnimation />
+          </Suspense>
+        </Canvas>
+        <div
+          className="hidden"
+          id="placeholderContainer"
+          style={{
+            background: 'linear-gradient(90deg, #2c5ea8d5, #9e3c60d6)',
+            position: 'absolute',
+            float: 'left',
+            left: '50%',
+            top: '50%',
+            transform: 'translate(-50%, -50%)',
+            zIndex: '100',
+            width: '100%',
+            height: '100%',
+          }}
+        >
+          <button
+            className="absolute font-bold text-xl right-10 top-10 rounded-full px-3 py-1 bg-white w-fit"
+            onClick={() => {
+              c?.classList.add('hidden');
+              document.documentElement.style.overflow = 'auto';
+            }}
+          >
             Tutup X
           </button>
           <Hero parentId={parentId ? parentId : null}>
             {kudosref && (
               <p className="gradient-text-new text-2xl text-center mt-8">
-                Kamu diundang jadi Kudos sama {firstName} {lastName} Kudos No. {id}
+                Kamu diundang jadi Kudos sama {firstName} {lastName} Kudos No.{' '}
+                {id}
               </p>
             )}
           </Hero>
@@ -122,9 +136,9 @@ export default function Client({ kudosref }: { kudosref: string | null }) {
 }
 
 function Html() {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState(0);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     (async function () {
       const url = new URL(
         '/api/postgres/getkudosnumber',
@@ -134,118 +148,74 @@ function Html() {
       );
       const response = await axios.get(url.href);
 
-      setData(response.data);
+      setData(Number(response.data) - 1);
     })();
   }, []);
   return (
-    <div
-    className='-ml-6 sm:-ml-0'
-      style={{
-        lineHeight: 0.75,
-      }}>
-      <div>
-        <h4 className="bg-onPrimaryContainer rounded-2xl border-primary border-solid border-2 text-onPrimary px-4 py-3 mb-0 w-fit"
-        style={{
-          position: 'relative',
-          top: '30vh',
-          left: '50vw',
-          transform: 'translateX(-50%)',
-          margin: 0,
-        }}>
-          Lagi uji coba versi Beta
-        </h4>
-        <h1 style={{
-          position: 'relative',
-          top: '32vh',
-          left: '50vw',
-          transform: 'translateX(-50%)',
-          margin: 0,
-        }} className="gradient-text-new text-4xl sm:text-6xl font-bold sm:leading-snug leading-snug text-center my-0">
+    <div className="w-full max-w-[1000px] h-fit flex flex-col gap-60 mx-auto my-40">
+      <div className="w-fit h-fit flex flex-col gap-2">
+        <div className="w-full flex items-center justify-center">
+          <h4 className="rounded-lg shadow-[0px_0px_10px_#2C5EA8] border-[1px] border-primary bg-onPrimaryContainer text-white px-4 py-1 font-medium text-sm my-4 select-none">
+            Lagi uji coba versi Beta
+          </h4>
+        </div>
+        <h1 className="gradient-text-new text-4xl sm:text-6xl font-bold sm:leading-snug leading-snug text-center my-0">
           Stop cari aplikasi lain.
         </h1>
-        <h2 style={{
-          position: 'relative',
-          top: '32vh',
-          left: '50vw',
-          transform: 'translateX(-50%)',
-          margin: 0,
-        }} className="text-center font-[500] text-xl sm:text-3xl text-white my-0 mt-4">
+        <h2 className="text-center font-[500] text-xl sm:text-3xl text-white my-0 mt-4">
           Kenalin Kudoku,{' '}
           <span className="font-bold">aplikasi pengelola keuangan</span> yang
           gak bikin lo pusing.
         </h2>
-        <div
-        className="text-white font-normal sm:leading-snug leading-snug text-center my-4"
-          style={{
-            position: 'relative',
-            top: '35vh',
-            left: '50vw',
-            transform: 'translateX(-50%)',
-            margin: 0,
-          }}>
+        <div className="text-white font-normal sm:leading-snug leading-snug text-center my-4">
           <button
-            className="font-bold bg-gradient-to-r from-primary to-secondary rounded-lg text-onPrimary mt-4 px-2 py-2 mb-0 w-fit h-fit transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-200 "
+            className="font-medium bg-gradient-to-r from-primary to-secondary rounded-lg text-onPrimary mt-4 px-6 py-1.5 w-fit h-fit transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-200 shadow-lg"
             onClick={() => {
               const d = document.getElementById('placeholder');
               const c = document.getElementById('placeholderContainer');
               // d?.classList.add('shakeit__link');
               c?.classList.remove('hidden');
-              document.documentElement.style.overflow = 'hidden'
+              document.documentElement.style.overflow = 'hidden';
             }}
           >
             Klik disini untuk join waitlist
           </button>
-        </div>  
-        <div style={{
-            position: 'relative',
-            top: '55vh',
-            left: '50vw',
-            transform: 'translateX(-50%)',
-            margin: 0,
-        }}>
-          <div className='flex gap-4 align-middle justify-center items-center w-100'>
-            <h4
-            className="text-white font-normal sm:leading-snug leading-snug text-center my-4">
-              Scroll ke bawah buat cari tau lebih lanjut. 
-            </h4>  
-            <FontAwesomeIcon className='bg-gradient-to-b p-2 text-white from-primary to-secondary rounded-lg' icon={faArrowDown} />
-          </div>
+        </div>
+        <div className="flex gap-2 justify-center items-center w-100 select-none">
+          <h4 className="text-white font-normal leading-snug text-center my-4">
+            Scroll ke bawah buat cari tau lebih lanjut
+          </h4>
+          <FontAwesomeIcon className="text-white" icon={faArrowDown} />
         </div>
       </div>
-      <div
-        style={{
-          position: 'relative',
-          top: '80vh',
-          left: '50vw',
-          transform: 'translateX(-50%)',
-          color: '#f4b677',
-          margin: 0,
-        }}>
-
+      <div>
         <h3 className="text-white text-center mt-5 font-[500]">
-            Udah <span className='bg-gradient-to-r from-primary to-secondary'>{data}</span> yang join. Waitlist Kudoku nambah terus setiap harinya.<br/>Pastiin lo ga ketinggalan. Sekarang Kudoku lagi diuji coba versi Beta.
+          Udah{' '}
+          <span className="bg-gradient-to-r from-primary to-secondary px-2 py-0 rounded-md shadow-lg">
+            {data}
+          </span>{' '}
+          Kudos yang join. Waitlist Kudoku nambah terus setiap harinya.
+          <br />
+          Pastiin lo ga ketinggalan. Sekarang Kudoku lagi diuji coba versi Beta.
         </h3>
       </div>
-      <div
-        style={{
-          position: 'relative',
-          top: '100vh',
-          left: '50vw',
-          transform: 'translateX(-50%)',
-          color: '#673ab7',
-          margin: 0,
-        }}>
 
-        <Manifesto />
-      </div>
+      <Manifesto />
     </div>
-  )
-};
+  );
+}
 
-const particleColors = ['#673ab7', '#f4b677', 'orange', 'blue', '#8bc34a', 'purple']
+const particleColors = [
+  '#673ab7',
+  '#f4b677',
+  'orange',
+  'blue',
+  '#8bc34a',
+  'purple',
+];
 
 function Particles({ size = 5000 }) {
-  const { width, height } = useThree((state) => state.viewport)
+  const { width, height } = useThree((state) => state.viewport);
   return (
     <Points limit={size}>
       <pointsMaterial size={0.05} vertexColors />
@@ -257,19 +227,39 @@ function Particles({ size = 5000 }) {
             0.5 * height + Math.random() ** 0.25 * height * -3,
             (0.5 - Math.random()) * 25,
           ]}
-          color={particleColors[Math.floor(Math.random() * (particleColors.length - 1))]}
+          color={
+            particleColors[
+              Math.floor(Math.random() * (particleColors.length - 1))
+            ]
+          }
         />
       ))}
     </Points>
-  )
+  );
 }
 function ScrollBasedAnimation() {
   useFrame(({ mouse, camera }) => {
-    camera.position.x = THREE.MathUtils.lerp(camera.position.x, mouse.x * 0.5, 0.03)
-    camera.position.y = THREE.MathUtils.lerp(camera.position.y, mouse.y * 0.8, 0.01)
-    camera.position.z = THREE.MathUtils.lerp(camera.position.z, Math.max(4, Math.abs(mouse.x * mouse.y * 8)), 0.01)
-    camera.rotation.y = THREE.MathUtils.lerp(camera.rotation.y, mouse.x * -Math.PI * 0.025, 0.001)
-  })
+    camera.position.x = THREE.MathUtils.lerp(
+      camera.position.x,
+      mouse.x * 0.5,
+      0.03
+    );
+    camera.position.y = THREE.MathUtils.lerp(
+      camera.position.y,
+      mouse.y * 0.8,
+      0.01
+    );
+    camera.position.z = THREE.MathUtils.lerp(
+      camera.position.z,
+      Math.max(4, Math.abs(mouse.x * mouse.y * 8)),
+      0.01
+    );
+    camera.rotation.y = THREE.MathUtils.lerp(
+      camera.rotation.y,
+      mouse.x * -Math.PI * 0.025,
+      0.001
+    );
+  });
 
   return (
     <ScrollControls pages={3}>
@@ -277,20 +267,25 @@ function ScrollBasedAnimation() {
         <Objects />
         <Particles />
       </Scroll>
-      <Scroll html>
+      {/* @ts-ignore */}
+      <Scroll html style={{ width: '100%' }}>
         <Html />
       </Scroll>
     </ScrollControls>
-  )
+  );
 }
 function Objects() {
-  const { height, width } = useThree((state) => state.viewport)
+  const { height, width } = useThree((state) => state.viewport);
   return (
     <>
       <pointLight color="blue" position={[8, -25, 5]} intensity={20} />
-      <pointLight color="red" position={[0, -height * 2.25, 5]} intensity={10} />
+      <pointLight
+        color="red"
+        position={[0, -height * 2.25, 5]}
+        intensity={10}
+      />
     </>
-  )
+  );
 }
 
 function Hero({
@@ -334,14 +329,16 @@ function Hero({
               parentId={parentId}
             />
 
-            <div style={{
-            position: "absolute",
-            float: "left",
-            left: "50%",
-            top: "63%",
-            width: "100%",
-            transform: "translate(-50%, -50%)"
-            }}>
+            <div
+              style={{
+                position: 'absolute',
+                float: 'left',
+                left: '50%',
+                top: '63%',
+                width: '100%',
+                transform: 'translate(-50%, -50%)',
+              }}
+            >
               <p className="text-white mt-10 sm:mt-0 text-center font-[500]">
                 Udah jadi kudos?{' '}
                 <button
@@ -349,7 +346,10 @@ function Hero({
                   onClick={() => {
                     const d = document.getElementById('placeholder');
                     d?.classList.add('shakeit__link');
-                    setTimeout(() => d?.classList.remove('shakeit__link'), 3000);
+                    setTimeout(
+                      () => d?.classList.remove('shakeit__link'),
+                      3000
+                    );
                     setButtonText('Cek');
                   }}
                 >
@@ -357,7 +357,7 @@ function Hero({
                 </button>
               </p>
               <div className="text-center font-[500] sm:text-lg text-base flex gap-1.5 justify-center">
-                <p className='text-onPrimary'>Kamu akan jadi</p>
+                <p className="text-onPrimary">Kamu akan jadi</p>
                 <Tooltip text="Kudos adalah panggilan untuk user Kudoku">
                   <p className="bg-gradient-to-r from-primary to-secondary rounded-md text-onPrimary px-1 py-0.25 mb-0">
                     Kudos No. {data}
@@ -438,13 +438,13 @@ function Hero({
   );
 }
 
-function Mockup() {
-  return (
-    <div className="overflow-hidden min-w-[800px] mb-16 mx-auto lg:z-0 sm:z-50">
-      <Image src={mockup} alt="" width={2012} quality={100} draggable={false} />
-    </div>
-  );
-}
+// function Mockup() {
+//   return (
+//     <div className="overflow-hidden min-w-[800px] mb-16 mx-auto lg:z-0 sm:z-50">
+//       <Image src={mockup} alt="" width={2012} quality={100} draggable={false} />
+//     </div>
+//   );
+// }
 
 function Manifesto() {
   const founders = [
@@ -579,39 +579,39 @@ function Manifesto() {
   );
 }
 
-function Roadmap() {
-  const [dataInProgress, setDataInProgress] = useState([]);
-  const [dataPlanning, setDataPlanning] = useState([]);
-  const [dataUnderReview, setDataUnderReview] = useState([]);
-  useEffect(() => {
-    (async () => {
-      const url = new URL(
-        '/api/notion/getroadmap',
-        process.env.NODE_ENV === 'production'
-          ? 'https://kudoku.id'
-          : 'http://localhost:3000'
-      );
-      const response = await axios.get(url.href);
-      setDataPlanning(response.data.dataPlanning);
-      setDataInProgress(response.data.dataInProgress);
-      setDataUnderReview(response.data.dataUnderReview);
-    })();
-  }, []);
-  return (
-    <>
-      <div className="mt-20 mb-4 flex flex-col gap-4">
-        <h2 className="text-white sm:text-4xl text-2xl font-bold m-0">
-          Roadmap
-        </h2>
-        <p className="text-white text-xl font-[300]">
-          Semua yang founders Kudoku kerjain, ada disini!
-        </p>
-      </div>
-      <Kanban
-        dataInProgress={dataInProgress}
-        dataPlanning={dataPlanning}
-        dataUnderReview={dataUnderReview}
-      />
-    </>
-  );
-}
+// function Roadmap() {
+//   const [dataInProgress, setDataInProgress] = useState([]);
+//   const [dataPlanning, setDataPlanning] = useState([]);
+//   const [dataUnderReview, setDataUnderReview] = useState([]);
+//   useEffect(() => {
+//     (async () => {
+//       const url = new URL(
+//         '/api/notion/getroadmap',
+//         process.env.NODE_ENV === 'production'
+//           ? 'https://kudoku.id'
+//           : 'http://localhost:3000'
+//       );
+//       const response = await axios.get(url.href);
+//       setDataPlanning(response.data.dataPlanning);
+//       setDataInProgress(response.data.dataInProgress);
+//       setDataUnderReview(response.data.dataUnderReview);
+//     })();
+//   }, []);
+//   return (
+//     <>
+//       <div className="mt-20 mb-4 flex flex-col gap-4">
+//         <h2 className="text-white sm:text-4xl text-2xl font-bold m-0">
+//           Roadmap
+//         </h2>
+//         <p className="text-white text-xl font-[300]">
+//           Semua yang founders Kudoku kerjain, ada disini!
+//         </p>
+//       </div>
+//       <Kanban
+//         dataInProgress={dataInProgress}
+//         dataPlanning={dataPlanning}
+//         dataUnderReview={dataUnderReview}
+//       />
+//     </>
+//   );
+// }

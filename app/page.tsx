@@ -2,11 +2,11 @@
 import Client from './client';
 import '$styles/globals.css';
 import { useSearchParams } from 'next/navigation';
-import TimeAgo from 'javascript-time-ago';
-import id from 'javascript-time-ago/locale/id.json';
+// import TimeAgo from 'javascript-time-ago';
+// import id from 'javascript-time-ago/locale/id.json';
 
 export default function Page() {
-  TimeAgo.addDefaultLocale(id);
+  // TimeAgo.addDefaultLocale(id);
   const searchParams = useSearchParams();
   const kudosref = searchParams.get('kudosref') ?? null;
 
@@ -27,7 +27,7 @@ export default function Page() {
       <meta property="og:image" content={imgURL} />
       <meta name="twitter:image:src" content={imgURL} />
       <meta itemProp="image" content={imgURL} />
-      <main className="flex flex-col h-full w-full max-h-[90vh] overflow-y-hidden mx-auto lg:px-0 px-[3vmin]">
+      <main className="flex flex-col h-full w-full overflow-y-hidden mx-auto lg:px-0 px-[3vmin]">
         <Client kudosref={kudosref} />
       </main>
     </>

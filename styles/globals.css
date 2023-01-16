@@ -196,3 +196,31 @@ body {
   color: transparent;
   -webkit-text-fill-color: transparent;
 }
+
+.h_ios {
+  /* equivalent to 100dvh in major browsers */
+  height: calc(
+    100vh - env(safe-area-inset-bottom, 0) - env(safe-area-inset-top, 0)
+  );
+}
+
+@supports (-webkit-touch-callout: none) {
+  .h_ios {
+    /* for ios safari 15, safe-area-inset-bottom is 0, so a special fix apply here */
+    height: -webkit-fill-available;
+  }
+}
+
+.h_ios__draggable {
+  /* equivalent to 100dvh in major browsers */
+  height: calc(
+    100vh - env(safe-area-inset-bottom, 0) - env(safe-area-inset-top, 0)
+  );
+}
+
+@supports (-webkit-touch-callout: none) {
+  .h_ios__draggable {
+    /* for ios safari 15, safe-area-inset-bottom is 0, so a special fix apply here */
+    height: -webkit-fill-available;
+  }
+}

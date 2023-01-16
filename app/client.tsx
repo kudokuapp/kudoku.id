@@ -152,7 +152,7 @@ function Html() {
     })();
   }, []);
   return (
-    <div className="w-full max-w-[1000px] h-fit flex flex-col gap-60 mx-auto my-40">
+    <div className="w-full max-w-[1000px] h-fit flex flex-col gap-60 mx-auto py-40">
       <div className="w-fit h-fit flex flex-col gap-2">
         <div className="w-full flex items-center justify-center">
           <h4 className="rounded-lg shadow-[0px_0px_10px_#2C5EA8] border-[1px] border-primary bg-onPrimaryContainer text-white px-4 py-1 font-medium text-sm my-4 select-none">

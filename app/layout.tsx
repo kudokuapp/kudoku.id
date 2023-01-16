@@ -18,7 +18,10 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>
+      <body
+        className="overflow-y-hidden"
+        style={{ height: '-webkit-fill-available' }}
+      >
         <ToastClient />
         <Navbar />
         {children}
@@ -30,7 +33,7 @@ export default function RootLayout({
 
 function Navbar() {
   return (
-    <nav className="flex justify-between flex-nowrap items-center my-0 mx-auto pt-10 sm:pb-2 sm:pl-10 sm:pr-16 px-4 w-full">
+    <nav className="flex justify-between flex-nowrap items-center my-0 mx-auto sm:pt-10 pt-2 pb-2 sm:pl-10 sm:pr-16 px-4 w-full">
       <div className="items-center max-w-[10rem] sm:flex hidden cursor-pointer select-none">
         <Link href="/" className="no-underline" passHref>
           <Image src={Logo} alt="Kudoku Logo" />

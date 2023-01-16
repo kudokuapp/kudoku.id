@@ -43,7 +43,7 @@ function Navbar() {
       </div>
       <div className="flex items-center sm:gap-8 gap-4">
         <Link
-          className="font-bold hover:opacity-75 sm:text-xl text-lg select-none no-underline text-onPrimaryContainer hover:text-onPrimaryContainer"
+          className="font-bold hover:opacity-75 sm:text-xl text-lg select-none no-underline text-white hover:text-white"
           href="https://kudoku.notion.site/Documentation-4517cf83711546ed8a58f3b98f63ff0b"
         >
           Docs
@@ -120,7 +120,7 @@ function Footer() {
                 <Link
                   href={value.url}
                   target="_self"
-                  className="text-onPrimaryContainer hover:text-primary no-underline"
+                  className="text-white hover:text-primary no-underline"
                   passHref
                 >
                   <button className="sm:text-4xl text-2xl font-bold w-max h-max transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-200 mb-6">
@@ -143,7 +143,7 @@ function Footer() {
                     passHref
                     target="_self"
                     rel="noopener noreferrer"
-                    className="no-underline text-onPrimaryContainer hover:text-primary"
+                    className="no-underline text-white hover:text-primary"
                   >
                     {value.name}
                   </Link>
@@ -152,7 +152,7 @@ function Footer() {
             );
           })}
         </ul>
-        <p className="text-onPrimaryContainer sm:mt-0 mt-4">
+        <p className="text-white sm:mt-0 mt-4">
           {new Date().getFullYear()} PT. Kudoku Finansial Indonesia
         </p>
       </section>

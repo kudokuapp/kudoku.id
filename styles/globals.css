@@ -130,7 +130,7 @@ html,
 body {
   padding: 0;
   margin: 0 auto;
-  background-color: #e1e1e1;
+  background-color: #000;
   scroll-behavior: smooth;
   font-family: 'TTInterfaces', 'UniversalSans', 'system-ui', '-apple-system',
     'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial,

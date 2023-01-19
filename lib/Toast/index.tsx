@@ -2,7 +2,7 @@
 
 import { Toaster } from 'react-hot-toast';
 
-export default function ToastClient() {
+export default function Toast() {
   return (
     <>
       <Toaster />

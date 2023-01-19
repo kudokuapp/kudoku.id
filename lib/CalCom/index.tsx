@@ -1,4 +1,5 @@
 'use client';
+
 import Cal from '@calcom/embed-react';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

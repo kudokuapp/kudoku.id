@@ -25,7 +25,7 @@ interface KudosData {
   invited: boolean;
 }
 
-export default function Kudos({ data }: { data: KudosData }) {
+export default function Client({ data }: { data: KudosData }) {
   const [progress, setProgress] = useState(1);
   const [firstname, setFirstname] = useState(`${data.firstname}`);
   const [lastname, setLastname] = useState(`${data.lastname}`);

@@ -118,6 +118,8 @@ export default function Head() {
       <meta name="mobile-web-app-capable" content="yes" />
       <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
       <meta name="next-head-count" content="35" />
+
+      <title>Kudoku - Gampang Ngatur Duit</title>
     </>
   );
 }

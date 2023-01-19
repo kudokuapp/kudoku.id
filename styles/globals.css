@@ -143,20 +143,6 @@ body {
   box-sizing: border-box;
 }
 
-.gradient-text {
-  background-image: linear-gradient(90deg, #2c5ea8, #9e3c60);
-  background-image: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    from(#2c5ea8),
-    to(#9e3c60)
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 .gradient-text-new {
   background-image: linear-gradient(90deg, #2c5ea8, #348a95);
   background-image: -webkit-gradient(
@@ -182,7 +168,7 @@ body {
   scrollbar-width: none; /* Firefox */
 }
 
-.gradient-text {
+.gradient-text-bgst {
   background-image: linear-gradient(90deg, #2c5ea8, #348a95);
   background-image: -webkit-gradient(
     linear,
@@ -197,30 +183,7 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-.h_ios {
-  /* equivalent to 100dvh in major browsers */
-  height: calc(
-    100vh - env(safe-area-inset-bottom, 0) - env(safe-area-inset-top, 0)
-  );
-}
-
-@supports (-webkit-touch-callout: none) {
-  .h_ios {
-    /* for ios safari 15, safe-area-inset-bottom is 0, so a special fix apply here */
-    height: -webkit-fill-available;
-  }
-}
-
-.h_ios__draggable {
-  /* equivalent to 100dvh in major browsers */
-  height: calc(
-    100vh - env(safe-area-inset-bottom, 0) - env(safe-area-inset-top, 0)
-  );
-}
-
-@supports (-webkit-touch-callout: none) {
-  .h_ios__draggable {
-    /* for ios safari 15, safe-area-inset-bottom is 0, so a special fix apply here */
-    height: -webkit-fill-available;
-  }
+.gradient-button {
+  background-color: #fbab7e;
+  background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
 }

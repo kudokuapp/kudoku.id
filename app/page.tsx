@@ -23,7 +23,6 @@ export default function Page() {
 
   return (
     <>
-      <title>Kudoku - Gampang Ngatur Duit</title>
       <meta property="og:image" content={imgURL} />
       <meta name="twitter:image:src" content={imgURL} />
       <meta itemProp="image" content={imgURL} />

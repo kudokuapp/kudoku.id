@@ -1,0 +1,19 @@
+.container {
+  @apply p-2 border-4 w-full h-full rounded-xl shadow-md relative flex justify-center items-center gap-2 mt-6;
+}
+
+.plus62 {
+  @apply select-none px-1 py-0.5 rounded-md shadow;
+}
+
+.plus62__text {
+  @apply font-bold text-base;
+}
+
+.input {
+  @apply bg-transparent focus:outline-none text-xl w-full h-full font-bold placeholder:opacity-50;
+}
+
+.label {
+  @apply absolute font-bold text-xl select-none;
+}

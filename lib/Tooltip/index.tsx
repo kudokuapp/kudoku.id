@@ -1,3 +1,5 @@
+'use client';
+
 import {
   createRef,
   JSXElementConstructor,
@@ -47,12 +49,12 @@ export const Tooltip = (props: {
       onMouseLeave={handleMouseLeave}
     >
       <div
-        className="absolute whitespace-no-wrap bg-onBackground/75 text-onPrimary text-xs px-1.5 py-2 rounded-lg flex items-center transition-all duration-150 min-w-[150px]"
+        className="absolute whitespace-no-wrap bg-onPrimary text-onBackground text-xs px-1.5 py-2 rounded-lg flex items-center transition-all duration-150 min-w-[150px]"
         style={{ top: '100%', opacity: 0 }}
         ref={tipRef}
       >
         <div
-          className="bg-onBackground h-3 w-3 absolute"
+          className="bg-onPrimary h-3 w-3 absolute"
           style={{ top: '-6px', transform: 'rotate(45deg)' }}
         />
         {props.text}

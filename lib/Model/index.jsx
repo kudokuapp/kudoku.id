@@ -12,7 +12,7 @@ import { a, useSpring } from "@react-spring/three"
 import { SkeletonUtils } from "three-stdlib"
 import { useFrame } from "@react-three/fiber"
 
-export default function Model({ pose, ...props }: { pose:any }) {
+export default function Model({ pose, ...props }) {
   // Fetch model and a separate texture
   const { scene, animations } = useGLTF("/earth/dancing_stormtrooper.glb")
   const texture = useTexture("/earth/Stormtrooper_D.jpg")

@@ -71,7 +71,7 @@ export default function Client({ kudosref }: { kudosref: string | null }) {
         <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 35] }}>
           <ambientLight />
           <directionalLight color="red" intensity={10} />
-          <Model pose={1} />
+          <Model pose={0} />
           <Suspense fallback={null}>
             <ScrollBasedAnimation />
           </Suspense>

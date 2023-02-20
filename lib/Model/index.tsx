@@ -5,24 +5,22 @@ all actions and sets up a THREE.AnimationMixer for it so that you don't have to.
 All of the assets actions, action-names and clips are available in its output. 
 */
 
-// @ts-nocheck
+import React, { useEffect, useState, useMemo, useRef } from "react"
+import { useGLTF, useTexture, useCursor, useAnimations } from "@react-three/drei"
+import { useGraph } from "@react-three/fiber"
+import { a, useSpring } from "@react-spring/three"
+import { SkeletonUtils } from "three-stdlib"
+import { useFrame } from "@react-three/fiber"
 
-import { useEffect, useState, useMemo } from 'react';
-import {
-  useGLTF,
-  useTexture,
-  useCursor,
-  useAnimations,
-} from '@react-three/drei';
-import { useGraph } from '@react-three/fiber';
-import { a, useSpring } from '@react-spring/three';
-import { SkeletonUtils } from 'three-stdlib';
-
-export default function Model({ pose, ...props }) {
+export default function Model({ pose, ...props }: { pose:any }) {
   // Fetch model and a separate texture
-  const { scene, animations } = useGLTF('/earth/stacy.glb');
-  const texture = useTexture('/earth/Stormtrooper_D.jpg');
-  const textureCircle = useTexture('/earth/Material.jpeg');
+  const { scene, animations } = useGLTF("/earth/dancing_stormtrooper.glb")
+  const texture = useTexture("/earth/Stormtrooper_D.jpg")
+  const textureCircle = useTexture("/earth/discoball.jpeg")
+  const discoRef = useRef()
+  useFrame(() => {
+    discoRef.current.rotation.z += 0.01;
+  });
 
   // Skinned meshes cannot be re-used in threejs without cloning them
   const clone = useMemo(() => SkeletonUtils.clone(scene), [scene]);
@@ -30,16 +28,16 @@ export default function Model({ pose, ...props }) {
   const { nodes } = useGraph(clone);
 
   // Extract animation actions
-  const { ref, actions, names } = useAnimations(animations);
-
+  const { ref, actions, names } = useAnimations(animations)
+  
   // Hover and animation-index states
-  const [hovered, setHovered] = useState(false);
-  const [index, setIndex] = useState(pose);
+  const [hovered, setHovered] = useState(false)
+  const [index, setIndex] = useState(pose)
+  console.log(nodes)
+  // console.log(actions)
+  // console.log(animations)
   // Animate the selection halo
-  const { color, scale } = useSpring({
-    scale: hovered ? [1.15, 1.15, 1] : [1, 1, 1],
-    color: hovered ? 'hotpink' : 'aquamarine',
-  });
+  const { color, scale } = useSpring({ scale: hovered ? [1, 1, 0.9] : [0.8, 0.8, 0.8], color: hovered ? "hotpink" : "aquamarine" })
   // Change cursor on hover-state
   useCursor(hovered);
 
@@ -48,32 +46,42 @@ export default function Model({ pose, ...props }) {
     // Reset and fade in animation after an index has been changed
     actions[names[index]].reset().fadeIn(0.5).play();
     // In the clean-up phase, fade it out
-    return () => actions[names[index]].fadeOut(0.5);
-  }, [index, actions, names]);
-
+    return () => actions[names[index]].fadeOut(0.5)
+  }, [index, actions, names])
+  useEffect(() => {
+    if (!hovered) {
+        setInterval(() => {
+          setHovered(true) // state 'secs' are dependent on this render, free variable in this closure 
+      }, 2000)
+    } else {
+        setInterval(() => {
+            setHovered(false) // state 'secs' are dependent on this render, free variable in this closure 
+        }, 2000)
+    }
+    return () => hovered;
+}, [hovered])
   return (
     <group ref={ref} {...props} dispose={null}>
       <group
-        onPointerOver={() => setHovered(true)}
+        onPointerOver={() => {setHovered(true), setIndex((index + 1) % names.length)}}
         onPointerOut={() => setHovered(false)}
         onClick={() => setIndex((index + 1) % names.length)}
-        rotation={[Math.PI / 1.6, 0, 0]}
-        scale={[0.01, 0.01, 0.01]}
-      >
-        <primitive object={nodes.mixamorigHips} />
+        rotation={[Math.PI / 8, 0, 0]}
+        position={[0.5, 0.3, -1]}
+        scale={[0.6, 0.6, 0.6]}>
+        <primitive object={nodes.mixamorigHips_02} />
         <skinnedMesh
           castShadow
-          receiveShadow
-          geometry={nodes.stacy.geometry}
-          skeleton={nodes.stacy.skeleton}
+          geometry={nodes.Object_7.geometry}
+          skeleton={nodes.Object_7.skeleton}
           rotation={[-Math.PI / 2, 0, 0]}
           scale={[100, 100, 100]}
         >
           <meshStandardMaterial map={texture} map-flipY={false} skinning />
         </skinnedMesh>
       </group>
-      <a.mesh receiveShadow position={[0, 1, -1]} scale={scale}>
-        <circleBufferGeometry args={[0.6, 64]} />
+      <a.mesh ref={discoRef} receiveShadow position={[-0.5, 4, -2]} rotation-x={2} scale={scale}>
+        <torusBufferGeometry args={[0.1, 0.4]} />
         <a.meshStandardMaterial map={textureCircle} color={color} />
       </a.mesh>
     </group>

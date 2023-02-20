@@ -13,7 +13,6 @@ import OtpInput from 'react-otp-input';
 import axios from 'axios';
 import { motion } from 'framer-motion';
 import { Tooltip } from '$lib/Tooltip';
-import { useRouter } from 'next/navigation';
 
 export default function Modal({
   isOpen,
@@ -22,7 +21,6 @@ export default function Modal({
   isOpen: boolean;
   closeModal: () => void;
 }) {
-  const router = useRouter();
 
   const [input, setInput] = useState('');
   const [otpWa, setOtpWa] = useState('');

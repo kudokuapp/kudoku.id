@@ -34,6 +34,6 @@
     "**/*.tsx",
     "**/*.mdx",
     ".next/types/**/*.ts"
-  ],
+, "lib/Model/index.tsx"  ],
   "exclude": ["node_modules"]
 }

@@ -10,6 +10,9 @@ import Image from 'next/image';
 import Furqon from '$public/Founders/Furqon.png';
 import Aldi from '$public/Founders/Aldi.png';
 import Rizqy from '$public/Founders/Rizqy.png';
+import Midtrans from '$public/Manifesto/nextlvl.png';
+import Seribu from '$public/Manifesto/1000.png';
+import FounderIns from '$public/Manifesto/founder.png';
 import * as THREE from 'three';
 import { AuthContextProvider } from '../pages/api/twitter/AuthContext';
 import { useFrame, useThree } from '@react-three/fiber';
@@ -68,7 +71,7 @@ export default function Client({ kudosref }: { kudosref: string | null }) {
   return (
     <main className="flex flex-col h-screen w-full mx-auto">
       <AuthContextProvider>
-        <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 35] }}>
+        <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 35] }} >
           <ambientLight />
           <directionalLight color="red" intensity={10} />
           <Model pose={0} />
@@ -231,7 +234,7 @@ function ScrollBasedAnimation() {
   });
 
   return (
-    <ScrollControls pages={3}>
+    <ScrollControls pages={3} damping={0.5}>
       <Scroll>
         <Objects />
         <Particles />
@@ -373,36 +376,40 @@ function Manifesto() {
         Kami punya impian untuk membuat aplikasi pengelola keuangan yang
         terbaik.
       </h2>
-      <p className="mb-6 last:mb-0 sm:text-xl text-sm ml-1 text-justify text-white font-normal">
-        Mengelola keuangan pribadi itu ribet-ribet gampang. Ribet karena banyak
-        hal yang harus kita pikirin, gampang karena udah banyak tools yang bisa
-        ngebantu kita, mulai dari <i>spreadsheets</i> sampai{' '}
-        <i>Personal Financial Management app</i> (PFM). Tapi, <i>tools</i> yang
-        udah tersedia untuk membantu kita belum bisa bekerja secara maksimal.
-        Masih banyak orang yang ujung-ujungnya berhenti ngatur duit karena malah
-        pusing sendiri.
-      </p>
-      <p className="mb-6 last:mb-0 sm:text-xl text-sm ml-1 text-justify text-white font-normal">
-        Itulah kenapa kami bertiga mencoba membuat Kudoku. Kudoku adalah satu
-        aplikasi yang ngebantu lo mengkontrol seluruh transaksi, tagihan, asset,
-        hutang, dan masih banyak lagi.{' '}
-        <i>
-          It&apos;s gonna be the best personal financial management app that
-          you&apos;ll ever use
-        </i>
-        . Ibarat teropong finansial, Kudoku bakal bisa ngebantu lo ngertiin
-        kondisi keuangan lo sekarang dan pergi ke level finansial yang
-        selanjutnya.
-      </p>
-      <p className="mb-6 last:mb-0 sm:text-xl text-sm ml-1 text-justify text-white font-normal">
-        Lo gak bakal pusing lagi ngontrol duit lo, dan perjalanan lo untuk
-        mencari-cari aplikasi finansial mana yang paling cocok buat lo, akan
-        berhenti disini.
-      </p>
-      <p className="mb-6 last:mb-0 sm:text-xl text-sm ml-1 text-justify text-white font-normal">
-        Kalau lo tertarik dengan alasan lebih lengkap kami ngebuat Kudoku, lo
-        bisa baca lengkap manifesto Kudoku.
-      </p>
+      <div className='bg-onPrimaryContainer bg-opacity-75 p-4 rounded-xl mb-4'>
+      
+        <p className="mb-6 last:mb-0 sm:text-xl text-sm ml-1 text-justify text-white font-normal">
+          Mengelola keuangan pribadi itu ribet-ribet gampang. Ribet karena banyak
+          hal yang harus kita pikirin, gampang karena udah banyak tools yang bisa
+          ngebantu kita, mulai dari <i>spreadsheets</i> sampai{' '}
+          <i>Personal Financial Management app</i> (PFM). Tapi, <i>tools</i> yang
+          udah tersedia untuk membantu kita belum bisa bekerja secara maksimal.
+          Masih banyak orang yang ujung-ujungnya berhenti ngatur duit karena malah
+          pusing sendiri.
+        </p>
+        <p className="mb-6 last:mb-0 sm:text-xl text-sm ml-1 text-justify text-white font-normal">
+          Itulah kenapa kami bertiga mencoba membuat Kudoku. Kudoku adalah satu
+          aplikasi yang ngebantu lo mengkontrol seluruh transaksi, tagihan, asset,
+          hutang, dan masih banyak lagi.{' '}
+          <i>
+            It&apos;s gonna be the best personal financial management app that
+            you&apos;ll ever use
+          </i>
+          . Ibarat teropong finansial, Kudoku bakal bisa ngebantu lo ngertiin
+          kondisi keuangan lo sekarang dan pergi ke level finansial yang
+          selanjutnya.
+        </p>
+        <p className="mb-6 last:mb-0 sm:text-xl text-sm ml-1 text-justify text-white font-normal">
+          Lo gak bakal pusing lagi ngontrol duit lo, dan perjalanan lo untuk
+          mencari-cari aplikasi finansial mana yang paling cocok buat lo, akan
+          berhenti disini.
+        </p>
+        <p className="mb-6 last:mb-0 sm:text-xl text-sm ml-1 text-justify text-white font-normal">
+          Kalau lo tertarik dengan alasan lebih lengkap kami ngebuat Kudoku, lo
+          bisa baca lengkap manifesto Kudoku.
+        </p>
+
+      </div>
 
       <Link
         href="https://kudoku.notion.site/Manifesto-af777ccb94c24aa8becf134f684520c0"
@@ -437,7 +444,7 @@ function Manifesto() {
               passHref
               target="_blank"
               rel="noopener noreferrer"
-              className="no-underline"
+              className="no-underline bg-onPrimaryContainer bg-opacity-75 px-4 py-2 rounded-xl"
             >
               <button
                 key={index}
@@ -470,6 +477,56 @@ function Manifesto() {
             </Link>
           );
         })}
+      </div>
+
+      <div className='mt-8'>
+        <h2 className="gradient-text-new font-bold text-2xl ml-1 sm:text-4xl mb-8">
+          Recognized by
+        </h2>
+        <div className='flex w-full flex-wrap justify-between mt-8 gap-4'>
+          <div
+            className="bg-onPrimaryContainer bg-opacity-75 px-6 py-6 rounded-xl"
+            style={{
+              position: 'relative',
+              width: '140px',
+              height: '80px',
+            }}
+          >
+            <Image
+              objectFit="contain"
+              src={Midtrans}
+              alt="Next Lvl Midtrans"
+            />
+          </div>
+          <div
+            className="bg-onPrimaryContainer bg-opacity-75 px-6 py-6 rounded-xl"
+            style={{
+              position: 'relative',
+              width: '140px',
+              height: '80px',
+            }}
+          >
+            <Image
+              objectFit="contain"
+              src={Seribu}
+              alt="Next Lvl Midtrans"
+            />
+          </div>
+          <div
+            className="bg-onPrimaryContainer bg-opacity-75 py-4 px-12 rounded-xl"
+            style={{
+              position: 'relative',
+              width: '140px',
+              height: '80px',
+            }}
+          >
+            <Image
+              objectFit="contain"
+              src={FounderIns}
+              alt="Next Lvl Midtrans"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );

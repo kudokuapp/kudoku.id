@@ -168,6 +168,12 @@ body {
   scrollbar-width: none; /* Firefox */
 }
 
+::-webkit-scrollbar {
+  display: none;
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}
+
 .gradient-text-bgst {
   background-image: linear-gradient(90deg, #2c5ea8, #348a95);
   background-image: -webkit-gradient(

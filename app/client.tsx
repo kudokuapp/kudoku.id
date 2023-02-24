@@ -71,7 +71,7 @@ export default function Client({ kudosref }: { kudosref: string | null }) {
   return (
     <main className="flex flex-col h-screen w-full mx-auto">
       <AuthContextProvider>
-        <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 35] }} >
+        <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 35] }}>
           <ambientLight />
           <directionalLight color="red" intensity={10} />
           <Model pose={0} />
@@ -376,21 +376,20 @@ function Manifesto() {
         Kami punya impian untuk membuat aplikasi pengelola keuangan yang
         terbaik.
       </h2>
-      <div className='bg-onPrimaryContainer bg-opacity-75 p-4 rounded-xl mb-4'>
-      
+      <div className="bg-onPrimaryContainer bg-opacity-75 p-4 rounded-xl mb-4">
         <p className="mb-6 last:mb-0 sm:text-xl text-sm ml-1 text-justify text-white font-normal">
-          Mengelola keuangan pribadi itu ribet-ribet gampang. Ribet karena banyak
-          hal yang harus kita pikirin, gampang karena udah banyak tools yang bisa
-          ngebantu kita, mulai dari <i>spreadsheets</i> sampai{' '}
-          <i>Personal Financial Management app</i> (PFM). Tapi, <i>tools</i> yang
-          udah tersedia untuk membantu kita belum bisa bekerja secara maksimal.
-          Masih banyak orang yang ujung-ujungnya berhenti ngatur duit karena malah
-          pusing sendiri.
+          Mengelola keuangan pribadi itu ribet-ribet gampang. Ribet karena
+          banyak hal yang harus kita pikirin, gampang karena udah banyak tools
+          yang bisa ngebantu kita, mulai dari <i>spreadsheets</i> sampai{' '}
+          <i>Personal Financial Management app</i> (PFM). Tapi, <i>tools</i>{' '}
+          yang udah tersedia untuk membantu kita belum bisa bekerja secara
+          maksimal. Masih banyak orang yang ujung-ujungnya berhenti ngatur duit
+          karena malah pusing sendiri.
         </p>
         <p className="mb-6 last:mb-0 sm:text-xl text-sm ml-1 text-justify text-white font-normal">
           Itulah kenapa kami bertiga mencoba membuat Kudoku. Kudoku adalah satu
-          aplikasi yang ngebantu lo mengkontrol seluruh transaksi, tagihan, asset,
-          hutang, dan masih banyak lagi.{' '}
+          aplikasi yang ngebantu lo mengkontrol seluruh transaksi, tagihan,
+          asset, hutang, dan masih banyak lagi.{' '}
           <i>
             It&apos;s gonna be the best personal financial management app that
             you&apos;ll ever use
@@ -408,7 +407,6 @@ function Manifesto() {
           Kalau lo tertarik dengan alasan lebih lengkap kami ngebuat Kudoku, lo
           bisa baca lengkap manifesto Kudoku.
         </p>
-
       </div>
 
       <Link
@@ -479,53 +477,77 @@ function Manifesto() {
         })}
       </div>
 
-      <div className='mt-8'>
+      <div className="mt-8">
         <h2 className="gradient-text-new font-bold text-2xl ml-1 sm:text-4xl mb-8">
           Recognized by
         </h2>
-        <div className='flex w-full flex-wrap justify-between mt-8 gap-4'>
-          <div
-            className="bg-onPrimaryContainer bg-opacity-75 px-6 py-6 rounded-xl"
-            style={{
-              position: 'relative',
-              width: '140px',
-              height: '80px',
-            }}
+
+        <div className="flex w-full flex-wrap justify-between mt-8 gap-4">
+          <Link
+            href="https://midtrans.com/nextlvl"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="no-underline"
           >
-            <Image
-              objectFit="contain"
-              src={Midtrans}
-              alt="Next Lvl Midtrans"
-            />
-          </div>
-          <div
-            className="bg-onPrimaryContainer bg-opacity-75 px-6 py-6 rounded-xl"
-            style={{
-              position: 'relative',
-              width: '140px',
-              height: '80px',
-            }}
+            <div
+              className="bg-onPrimaryContainer bg-opacity-75 px-6 py-6 rounded-xl"
+              style={{
+                position: 'relative',
+                width: '140px',
+                height: '80px',
+              }}
+            >
+              <Image
+                objectFit="contain"
+                src={Midtrans}
+                alt="Next Lvl Midtrans"
+              />
+            </div>
+          </Link>
+
+          <Link
+            href="https://1000startupdigital.id/hatch/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="no-underline"
           >
-            <Image
-              objectFit="contain"
-              src={Seribu}
-              alt="Next Lvl Midtrans"
-            />
-          </div>
-          <div
-            className="bg-onPrimaryContainer bg-opacity-75 py-4 px-12 rounded-xl"
-            style={{
-              position: 'relative',
-              width: '140px',
-              height: '80px',
-            }}
+            <div
+              className="bg-onPrimaryContainer bg-opacity-75 px-6 py-6 rounded-xl"
+              style={{
+                position: 'relative',
+                width: '140px',
+                height: '80px',
+              }}
+            >
+              <Image
+                objectFit="contain"
+                src={Seribu}
+                alt="Seribu startup digital"
+              />
+            </div>
+          </Link>
+
+          <Link
+            href="https://fi.co/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="no-underline"
           >
-            <Image
-              objectFit="contain"
-              src={FounderIns}
-              alt="Next Lvl Midtrans"
-            />
-          </div>
+            <div
+              className="bg-onPrimaryContainer bg-opacity-75 py-4 px-12 rounded-xl"
+              style={{
+                position: 'relative',
+                width: '140px',
+                height: '80px',
+              }}
+            >
+              <Image
+                objectFit="contain"
+                src={FounderIns}
+                alt="Founder Institute"
+              />
+            </div>
+          </Link>
         </div>
       </div>
     </section>

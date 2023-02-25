@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Logo from '$public/Logo/variant2.svg';
 import Logo2 from '$public/Logo/primary.svg';
 import Toast from '$lib/Toast';
+import Script from 'next/script';
 
 export default function RootLayout({
   children,
@@ -18,6 +19,23 @@ export default function RootLayout({
         <Toast />
         <Navbar />
         {children}
+        <div>
+          <Script
+            src="https://www.googletagmanager.com/gtag/js?id=G-DNM26NZJJP"
+            strategy="afterInteractive"
+          />
+          <Script id="google-analytics" strategy="afterInteractive">
+            {`
+            
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'G-DNM26NZJJP');
+              
+            `}
+          </Script>
+        </div>
       </body>
     </html>
   );

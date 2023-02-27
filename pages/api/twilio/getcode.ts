@@ -2,8 +2,8 @@ import twilio from 'twilio';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 const client = twilio(
-  process.env.ACCOUNT_SID as string,
-  process.env.AUTH_TOKEN as string
+  process.env.TWILIO_ACCCOUNT_SID as string,
+  process.env.TWILIO_AUTH_TOKEN as string
 );
 
 const LOCALE = 'id';
@@ -12,19 +12,22 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  if (req.method !== 'POST')
+    res.status(500).json({ error: 'Only POST method allowed' });
+
+  const { type, receiver } = req.body;
+
   try {
     const response = await client.verify
-      .services(process.env.VERIFY_SERVICE_SID as string)
+      .services(process.env.TWILIO_SERVICE_SID as string)
       .verifications.create({
-        to: `+62${req.query.ver}`,
-        channel: 'sms',
+        to: receiver,
+        channel: type,
         locale: LOCALE,
       });
-
-    const result = await response.toJSON();
-
-    res.status(200).send(result);
-  } catch (e) {
-    res.status(500).send({ success: false });
+    res.status(200).json(response);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Server error, check console' });
   }
 }

@@ -5,14 +5,14 @@ import { Fragment, useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClose } from '@fortawesome/free-solid-svg-icons';
 import ProgressButton from '$lib/ProgressButton';
-import WaInput from '$lib/WaInput';
 import Link from 'next/link';
 import toast, { Toaster } from 'react-hot-toast';
-import cleanNum from '$utils/helper/cleanNum';
 import OtpInput from 'react-otp-input';
 import axios from 'axios';
 import { motion } from 'framer-motion';
 import { Tooltip } from '$lib/Tooltip';
+import TextInput from '$lib/TextInput';
+import { useRouter } from 'next/router';
 
 export default function Modal({
   isOpen,
@@ -21,9 +21,9 @@ export default function Modal({
   isOpen: boolean;
   closeModal: () => void;
 }) {
-
+  // const router = useRouter();
   const [input, setInput] = useState('');
-  const [otpWa, setOtpWa] = useState('');
+  const [otp, setOtp] = useState('');
   const [progress, setProgress] = useState('initial');
   const [kudosNo, setKudosNo] = useState(0);
 
@@ -42,10 +42,16 @@ export default function Modal({
   }, []);
 
   const getCode = async () => {
-    await axios.get('/api/twilio/getcode', {
-      params: {
-        ver: cleanNum(input),
-      },
+    await axios.post('/api/twilio/getcode', {
+      type: 'email',
+      receiver: input,
+    });
+  };
+
+  const checkOtp = async () => {
+    await axios.post('/api/twilio/verifycode', {
+      code: otp,
+      receiver: input,
     });
   };
 
@@ -53,8 +59,8 @@ export default function Modal({
     return new Promise((resolve, reject) => {
       (async () => {
         try {
-          await axios.post('/api/postgres/checkkudos', {
-            whatsapp: `+62${cleanNum(input)}`,
+          await axios.post('/api/postgres/checkkudosbyemail', {
+            email: input,
           });
           reject('Udah jadi kudos');
         } catch (e) {
@@ -101,18 +107,19 @@ export default function Modal({
         return (
           <>
             <div className="flex flex-col gap-3 mt-8">
-              <WaInput
+              <TextInput
+                placeholder="Email"
+                id="email"
+                value={input}
                 onChange={(e) => {
                   setInput(e.target.value);
                 }}
-                id="whatsapp"
-                placeholder="WhatsApp"
-                value={input}
+                required={true}
               />
 
               <p className="text-justify text-xs text-onPrimary">
-                Dengan mengisi nomor WhatsApp dan meng-klik tombol lanjut, kamu
-                menyadari bahwa kamu telah membaca, mengerti, dan setuju dengan{' '}
+                Dengan mengisi email dan meng-klik tombol lanjut, kamu menyadari
+                bahwa kamu telah membaca, mengerti, dan setuju dengan{' '}
                 <Link
                   href="https://kudoku.id/terms"
                   target="_blank"
@@ -135,12 +142,14 @@ export default function Modal({
             <ProgressButton
               text="Lanjut"
               disabled={
-                !input || !(input.length > 8) || !/^08\d|^8\d/g.test(input)
+                !input ||
+                !(input.length > 3) ||
+                !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input)
               }
               onClick={() => {
                 toast
                   .promise(getCode(), {
-                    loading: 'Loading kirim OTP...',
+                    loading: 'Kirim OTP...',
                     success: 'Sukses kirim OTP',
                     error: 'Error kirim OTP',
                   })
@@ -168,16 +177,16 @@ export default function Modal({
               animate={{ opacity: 1 }}
             >
               <h4 className="text-2xl font-medium text-onPrimaryContainerDark">
-                Kudoku udah kirim sms ke{' '}
-                <span className="text-primaryDark">+62{cleanNum(input)}</span>.
+                Kudoku udah kirim kode OTP ke{' '}
+                <span className="text-primaryDark">{input}</span>.
               </h4>
               <p className="text-onPrimaryContainerDark">
                 Masukkan kode otpnya dibawah yaa!
               </p>
               <OtpInput
                 placeholder="123123"
-                value={otpWa}
-                onChange={setOtpWa}
+                value={otp}
+                onChange={setOtp}
                 numInputs={6}
                 isInputNum={true}
                 containerStyle={
@@ -198,20 +207,38 @@ export default function Modal({
 
             <ProgressButton
               text="Cek"
-              disabled={!otpWa || !(otpWa.length > 5)}
+              disabled={!otp || !(otp.length > 5)}
               onClick={() => {
                 toast
-                  .promise(checkKudos(), {
-                    loading: 'Loading...',
+                  .promise(checkOtp(), {
+                    loading: 'Verifikasi OTP...',
                     success: 'OTP terverifikasi!',
-                    error: 'Kamu sudah jadi Kudos',
+                    error: 'OTP salah!',
                   })
                   .then(
                     () => {
                       // ON FULFILLED
+
+                      toast
+                        .promise(checkKudos(), {
+                          loading: 'Loading...',
+                          success: 'Kamu belum jadi Kudos!',
+                          error: 'Kamu sudah jadi Kudos!',
+                        })
+                        .then(
+                          () => {
+                            // ON FULFILLED
+                            // router.push('/daftar');
+                          },
+                          () => {
+                            // ON REJECTED
+                            // router.push('/queue')
+                          }
+                        );
                     },
                     () => {
                       // ON REJECTED
+                      setOtp('');
                     }
                   );
               }}

@@ -1,5 +1,4 @@
 'use client';
-
 import { Dialog, Transition } from '@headlessui/react';
 import { Fragment, useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,7 +11,7 @@ import axios from 'axios';
 import { motion } from 'framer-motion';
 import { Tooltip } from '$lib/Tooltip';
 import TextInput from '$lib/TextInput';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 export default function Modal({
   isOpen,
@@ -21,11 +20,12 @@ export default function Modal({
   isOpen: boolean;
   closeModal: () => void;
 }) {
-  // const router = useRouter();
+  const router = useRouter();
   const [input, setInput] = useState('');
   const [otp, setOtp] = useState('');
   const [progress, setProgress] = useState('initial');
   const [kudosNo, setKudosNo] = useState(0);
+  const [err, setErr] = useState('');
 
   useEffect(() => {
     (async function () {
@@ -228,11 +228,11 @@ export default function Modal({
                         .then(
                           () => {
                             // ON FULFILLED
-                            // router.push('/daftar');
+                            router.push('/daftar');
                           },
                           () => {
                             // ON REJECTED
-                            // router.push('/queue')
+                            router.push('/queue')
                           }
                         );
                     },

@@ -23,6 +23,7 @@ import Model from '$lib/Model';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import LoginButton from '$lib/LoginButton';
+import Modal from '$lib/LoginButton/Modal';
 
 export default function Client({ kudosref }: { kudosref: string | null }) {
   const [firstName, setFirstName] = useState('...');
@@ -33,6 +34,15 @@ export default function Client({ kudosref }: { kudosref: string | null }) {
   const [buttonText, setButtonText] = useState('Daftar');
   const c = document.getElementById('placeholderContainer');
   const [data, setData] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  function openModal() {
+    setIsOpen(true);
+  }
 
   useLayoutEffect(() => {
     (async function () {
@@ -76,9 +86,12 @@ export default function Client({ kudosref }: { kudosref: string | null }) {
           <directionalLight color="red" intensity={10} />
           <Model pose={0} />
           <Suspense fallback={null}>
-            <ScrollBasedAnimation />
+            <ScrollBasedAnimation openModal={openModal} />
           </Suspense>
         </Canvas>
+        <div className="text-white font-normal sm:leading-snug leading-snug text-center my-4">
+          <Modal isOpen={isOpen} closeModal={closeModal} />
+        </div>
         <div
           className="hidden"
           id="placeholderContainer"
@@ -117,9 +130,8 @@ export default function Client({ kudosref }: { kudosref: string | null }) {
   );
 }
 
-function Html() {
+function Html({openModal}: {openModal:any;}) {
   const [data, setData] = useState(0);
-  const [open, setOpen] = useState(false);
 
   useLayoutEffect(() => {
     (async function () {
@@ -150,7 +162,14 @@ function Html() {
           <span className="font-bold">aplikasi pengelola keuangan</span> yang
           gak bikin lo pusing.
         </h2>
-        <LoginButton />
+        <div className="text-white font-normal sm:leading-snug leading-snug text-center my-4">
+          <button
+            className="font-medium gradient-button rounded-lg text-onPrimaryContainer mt-4 px-6 py-1.5 w-fit h-fit transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-200 shadow-lg"
+            onClick={openModal}
+          >
+            Klik disini untuk <strong>join waitlist</strong>
+          </button>
+        </div>
         <div className="flex gap-2 justify-center items-center w-100 select-none">
           <h4 className="text-white font-normal leading-snug text-center my-4">
             Scroll ke bawah buat cari tau lebih lanjut
@@ -209,7 +228,19 @@ function Particles({ size = 5000 }) {
   );
 }
 
-function ScrollBasedAnimation() {
+function ScrollBasedAnimation({openModal}: {openModal:any}) {
+  const [page, setPage] = useState(0);
+  useEffect(() => {
+    if (window.innerWidth <= 360) {
+      setPage(5)
+    }
+    if (window.innerWidth > 360 && window.innerWidth <= 640) {
+      setPage(4)
+    }
+    if (window.innerWidth > 640) {
+      setPage(3)
+    }
+  }, []);
   useFrame(({ mouse, camera }) => {
     camera.position.x = THREE.MathUtils.lerp(
       camera.position.x,
@@ -234,14 +265,14 @@ function ScrollBasedAnimation() {
   });
 
   return (
-    <ScrollControls pages={3} damping={0.5}>
+    <ScrollControls pages={page} damping={0.5}>
       <Scroll>
         <Objects />
         <Particles />
       </Scroll>
       {/* @ts-ignore */}
       <Scroll html style={{ width: '100%' }}>
-        <Html />
+        <Html openModal={openModal} />
       </Scroll>
     </ScrollControls>
   );

@@ -228,11 +228,11 @@ export default function Modal({
                         .then(
                           () => {
                             // ON FULFILLED
-                            router.push('/daftar');
+                            router.push(`/daftar?email=${input}`);
                           },
                           () => {
                             // ON REJECTED
-                            router.push('/queue')
+                            router.push(`/queue/${input}`);
                           }
                         );
                     },

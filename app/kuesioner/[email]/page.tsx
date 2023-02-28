@@ -1,7 +1,7 @@
 import axios from 'axios';
 import Typeform from './client';
 
-async function fetchUser(whatsapp: string) {
+async function fetchUser(email: string) {
   let result: any;
   const host =
     process.env.NODE_ENV === 'production'
@@ -11,7 +11,7 @@ async function fetchUser(whatsapp: string) {
   const url = new URL('/api/postgres/checkkudos', host);
   try {
     const { data } = await axios.post(url.href, {
-      whatsapp,
+      email,
     });
     result = data;
   } catch (e) {
@@ -22,19 +22,19 @@ async function fetchUser(whatsapp: string) {
 }
 
 export default async function Page({ params }: any) {
-  const { wa } = params;
+  const { email } = params;
 
-  const kudos = await fetchUser(`+${wa}`);
+  const kudos = await fetchUser(email);
 
   return (
     <>
       <title>Isi kuesioner Kudoku</title>
       <div className="flex flex-col h-screen w-full font-inter mt-2">
         <Typeform
-          wa={wa}
+          wa={kudos.whatsapp}
           firstname={kudos.firstname}
           lastname={kudos.lastname}
-          email={kudos.email}
+          email={email}
           kudosno={kudos.id.toString()}
         />
       </div>

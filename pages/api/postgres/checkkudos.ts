@@ -5,10 +5,10 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const { whatsapp } = req.body;
+  const { email } = req.body;
 
   try {
-    const response: any = await dbQuery(whatsapp);
+    const response: any = await dbQuery(email);
 
     res.status(200).json(response);
   } catch (e) {
@@ -16,10 +16,10 @@ export default async function handler(
   }
 }
 
-async function dbQuery(whatsapp: string) {
-  const query = 'SELECT * FROM users_final WHERE whatsapp=$1';
+async function dbQuery(email: string) {
+  const query = 'SELECT * FROM users_final WHERE email=$1';
 
-  const arr = [whatsapp];
+  const arr = [email];
 
   return new Promise(function (resolve, reject) {
     pool.query(query, arr, (err, res) => {

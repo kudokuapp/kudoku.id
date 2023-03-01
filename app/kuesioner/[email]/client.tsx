@@ -31,7 +31,7 @@ export default function Typeform({
       }}
       className="my-form"
       onSubmit={() => {
-        router.push(`/queue/${wa}`);
+        router.push(`/queue/${email}`);
       }}
     />
   );

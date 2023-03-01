@@ -37,7 +37,9 @@ export default function Page() {
         <Typeform
           email={email}
           handleSubmit={() => {
-            router.push(`/kuesioner/${email}`);
+            setTimeout(() => {
+              router.push(`/kuesioner/${email}`);
+            }, 2500);
           }}
         />
       </div>

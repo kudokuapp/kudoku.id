@@ -22,7 +22,9 @@ async function fetchUser(email: string) {
 }
 
 export default async function Page({ params }: any) {
-  const { email } = params;
+  const { email: emailURI } = params;
+
+  const email = decodeURIComponent(emailURI);
 
   const kudos = await fetchUser(email);
 

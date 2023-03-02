@@ -43,7 +43,7 @@ export default function Model({ pose, ...props }) {
   // console.log(animations)
   // Animate the selection halo
   const { color, scale } = useSpring({
-    scale: hovered ? [1, 1, 0.9] : [0.8, 0.8, 0.8],
+    scale: hovered ? [4, 4, 3] : [4, 4, 4],
     color: hovered ? 'hotpink' : 'aquamarine',
   });
   // Change cursor on hover-state
@@ -77,8 +77,8 @@ export default function Model({ pose, ...props }) {
         onPointerOut={() => setHovered(false)}
         onClick={() => setIndex((index + 1) % names.length)}
         rotation={[Math.PI / 8, 0, 0]}
-        position={[0.5, 0.3, -1]}
-        scale={[0.6, 0.6, 0.6]}
+        position={[4.5, 0.3, -1]}
+        scale={[4, 4, 4]}
       >
         <primitive object={nodes.mixamorigHips_02} />
         <skinnedMesh
@@ -94,7 +94,7 @@ export default function Model({ pose, ...props }) {
       <a.mesh
         ref={discoRef}
         receiveShadow
-        position={[-0.5, 4, -2]}
+        position={[2, 20, -2]}
         rotation-x={2}
         scale={scale}
       >

@@ -79,14 +79,28 @@ export default function Client({ kudosref }: { kudosref: string | null }) {
     }
   }, [kudosref]);
   return (
-    <main className="flex flex-col h-screen w-full mx-auto">
+    <main className="flex flex-col h-screen w-full mx-auto relative">
       <AuthContextProvider>
-        <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 35] }}>
+        <Html openModal={openModal} />  
+        <Canvas dpr={[10, 2]} camera={{ position: [0, 0, 35] }}>
           <ambientLight />
-          <directionalLight color="red" intensity={10} />
+          <directionalLight color="white" intensity={10} />
           <Model pose={0} />
-          <Suspense fallback={null}>
-            <ScrollBasedAnimation openModal={openModal} />
+          <Objects />
+        </Canvas>
+        <Canvas
+        dpr={[10, 2]} camera={{ position: [0, 0, 35] }}
+        style={{
+          position: 'absolute',
+          float: 'left',
+          left: '50%',
+          top: '30%',
+          transform: 'translate(-50%, -50%)',
+          width: '100%',
+          height: '250%',
+        }}>
+          <Suspense fallback={false}>
+            <ScrollBasedAnimation />
           </Suspense>
         </Canvas>
         <div className="text-white font-normal sm:leading-snug leading-snug text-center my-4">
@@ -147,7 +161,18 @@ function Html({openModal}: {openModal:any;}) {
     })();
   }, []);
   return (
-    <div className="w-full max-w-[1000px] h-fit flex flex-col gap-60 mx-auto py-40">
+    <div className="w-full max-w-[1000px] h-fit flex flex-col gap-20 mx-auto py-40 absolute"
+      style={{
+        position: 'absolute',
+        float: 'left',
+        left: '50%',
+        top: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: '100%',
+        height: '100%',
+        zIndex: '10'
+      }}
+    >
       <div className="w-fit h-fit flex flex-col gap-2">
         <div className="w-full flex items-center justify-center">
           <h4 className="rounded-lg shadow-[0px_0px_10px_#2C5EA8] border-[1px] border-primary bg-onPrimaryContainer text-white px-4 py-1 font-medium text-sm my-4 select-none">
@@ -194,8 +219,7 @@ function Html({openModal}: {openModal:any;}) {
   );
 }
 
-function Particles({ size = 5000 }) {
-  const { width, height } = useThree((state) => state.viewport);
+function Particles({ size = 1000 }) {
 
   const particleColors = [
     '#673ab7',
@@ -213,8 +237,8 @@ function Particles({ size = 5000 }) {
         <Point
           key={i}
           position={[
-            (0.5 - Math.random()) * width * 2,
-            0.5 * height + Math.random() ** 0.25 * height * -3,
+            (0.5 - Math.random()) * 6 * 2,
+            0.5 * 6 + Math.random() ** 0.25 * 6 * -3,
             (0.5 - Math.random()) * 25,
           ]}
           color={
@@ -228,19 +252,7 @@ function Particles({ size = 5000 }) {
   );
 }
 
-function ScrollBasedAnimation({openModal}: {openModal:any}) {
-  const [page, setPage] = useState(0);
-  useEffect(() => {
-    if (window.innerWidth <= 360) {
-      setPage(5)
-    }
-    if (window.innerWidth > 360 && window.innerWidth <= 640) {
-      setPage(4)
-    }
-    if (window.innerWidth > 640) {
-      setPage(3)
-    }
-  }, []);
+function ScrollBasedAnimation() {
   useFrame(({ mouse, camera }) => {
     camera.position.x = THREE.MathUtils.lerp(
       camera.position.x,
@@ -249,7 +261,7 @@ function ScrollBasedAnimation({openModal}: {openModal:any}) {
     );
     camera.position.y = THREE.MathUtils.lerp(
       camera.position.y,
-      mouse.y * 0.8,
+      mouse.y / 4,
       0.01
     );
     camera.position.z = THREE.MathUtils.lerp(
@@ -265,16 +277,16 @@ function ScrollBasedAnimation({openModal}: {openModal:any}) {
   });
 
   return (
-    <ScrollControls pages={page} damping={0.5}>
-      <Scroll>
-        <Objects />
-        <Particles />
-      </Scroll>
-      {/* @ts-ignore */}
-      <Scroll html style={{ width: '100%' }}>
-        <Html openModal={openModal} />
-      </Scroll>
-    </ScrollControls>
+    <Particles />
+    // <ScrollControls pages={page} damping={0.5}>
+    //   <Scroll>
+    //     <Objects />
+    //   </Scroll>
+    //   {/* @ts-ignore */}
+    //   <Scroll html style={{ width: '100%' }}>
+    //     <Html openModal={openModal} />
+    //   </Scroll>
+    // </ScrollControls>
   );
 }
 
@@ -402,7 +414,7 @@ function Manifesto() {
   ];
 
   return (
-    <section className="max-w-[800px] px-2 w-fit mx-auto mb-20 mt-28 lg:z-0 sm:z-50">
+    <section className="max-w-[800px] px-2 w-fit mx-auto mb-20 mt-8 lg:z-0 sm:z-50">
       <h2 className="gradient-text-new font-bold text-2xl ml-1 sm:text-4xl mb-8">
         Kami punya impian untuk membuat aplikasi pengelola keuangan yang
         terbaik.
@@ -508,7 +520,7 @@ function Manifesto() {
         })}
       </div>
 
-      <div className="mt-8">
+      <div className="my-8">
         <h2 className="gradient-text-new font-bold text-2xl ml-1 sm:text-4xl mb-8">
           Recognized by
         </h2>

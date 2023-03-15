@@ -81,7 +81,7 @@ export default function Client({ kudosref }: { kudosref: string | null }) {
   return (
     <main className="flex flex-col h-screen w-full mx-auto relative">
       <AuthContextProvider>
-        <Html openModal={openModal} />  
+        <Html openModal={openModal} />
         <Canvas dpr={[10, 2]} camera={{ position: [0, 0, 35] }}>
           <ambientLight />
           <directionalLight color="white" intensity={10} />
@@ -89,16 +89,18 @@ export default function Client({ kudosref }: { kudosref: string | null }) {
           <Objects />
         </Canvas>
         <Canvas
-        dpr={[10, 2]} camera={{ position: [0, 0, 35] }}
-        style={{
-          position: 'absolute',
-          float: 'left',
-          left: '50%',
-          top: '30%',
-          transform: 'translate(-50%, -50%)',
-          width: '100%',
-          height: '250%',
-        }}>
+          dpr={[10, 2]}
+          camera={{ position: [0, 0, 35] }}
+          style={{
+            position: 'absolute',
+            float: 'left',
+            left: '50%',
+            top: '30%',
+            transform: 'translate(-50%, -50%)',
+            width: '100%',
+            height: '250%',
+          }}
+        >
           <Suspense fallback={false}>
             <ScrollBasedAnimation />
           </Suspense>
@@ -144,7 +146,7 @@ export default function Client({ kudosref }: { kudosref: string | null }) {
   );
 }
 
-function Html({openModal}: {openModal:any;}) {
+function Html({ openModal }: { openModal: any }) {
   const [data, setData] = useState(0);
 
   useLayoutEffect(() => {
@@ -161,7 +163,8 @@ function Html({openModal}: {openModal:any;}) {
     })();
   }, []);
   return (
-    <div className="w-full max-w-[1000px] h-fit flex flex-col gap-20 mx-auto py-40 absolute"
+    <div
+      className="w-full max-w-[1000px] h-fit flex flex-col gap-20 mx-auto py-40 absolute"
       style={{
         position: 'absolute',
         float: 'left',
@@ -170,7 +173,7 @@ function Html({openModal}: {openModal:any;}) {
         transform: 'translate(-50%, -50%)',
         width: '100%',
         height: '100%',
-        zIndex: '10'
+        zIndex: '10',
       }}
     >
       <div className="w-fit h-fit flex flex-col gap-2">
@@ -211,6 +214,17 @@ function Html({openModal}: {openModal:any;}) {
           Kudos yang join. Waitlist Kudoku nambah terus setiap harinya.
           <br />
           Pastiin lo ga ketinggalan. Sekarang Kudoku lagi diuji coba versi Beta.
+          <br />
+          Buat lo yang penasaran tentang keamanan data finansial di Kudoku, lo
+          bisa baca{' '}
+          <a
+            href="https://kudoku.notion.site/Security-a02d29697a5b41a5a106ec72ce6a0eaa"
+            className="text-white"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            disini.
+          </a>
         </h3>
       </div>
 
@@ -220,7 +234,6 @@ function Html({openModal}: {openModal:any;}) {
 }
 
 function Particles({ size = 1000 }) {
-
   const particleColors = [
     '#673ab7',
     '#f4b677',
@@ -455,6 +468,8 @@ function Manifesto() {
       <Link
         href="https://kudoku.notion.site/Manifesto-af777ccb94c24aa8becf134f684520c0"
         className="no-underline"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         <button className="bg-gradient-to-br from-primary to-secondary text-onPrimary font-[500] text-lg px-4 py-1.5 rounded-md flex items-center gap-2 shadow-md transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">
           <span>Baca lebih lengkap</span>

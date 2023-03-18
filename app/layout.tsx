@@ -53,7 +53,7 @@ function Navbar() {
           <Image src={Logo2} alt="Kudoku Logo" />
         </Link>
       </div>
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4 z-50">
         <Link
           href="https://app.kudoku.id/"
           target="_blank"
